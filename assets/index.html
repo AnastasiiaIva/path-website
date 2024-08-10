@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Challenge Hub</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<!-- Header Section -->
-<header>
-
-    <nav class="navbar">
-        <a href="#" class="navbar-logo">Logo</a>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav class="navbar">
+        <a href="#" class="navbar-logo">
+          <img
+            src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/c57e3b5fcaa2296d14386dd2b48d457f4448adf6/assets/images/IconBlue.png"
+            alt="Logo - Path"
+          />
+        </a>
         <div class="navbar-menu">
-            <a href="#home">Home</a>
-            <a href="#app">The App</a>
-            <a href="#about">About us</a>
-            <a href="#contact">Contact</a>
-            <a href="#help">Help</a>
-            <a href="#" class="btn">Login</a>
-            <a href="#" class="btn">Sign Up</a>
+          <a href="#">Home</a>
+          <a href="#">The App</a>
+          <a href="#">About us</a>
+          <a href="#">Contact</a>
+          <a href="#">Help</a>
+        </div>
+        <div class="navbar-menu-btn">
+          <a href="#" class="btn">Login</a>
+          <a href="#" class="btn">Sign Up</a>
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
-    </nav>
+      </nav>
 
-
-    <!--
-    <div class="logo">Logo</div>
+      <!--  
     <nav class="menu">
-        <a href="#home">Home</a>
-        <a href="#app">The App</a>
-        <a href="#about">About us</a>
-        <a href="#contact">Contact</a>
+        <div class="logo">
+            <a href=""
+        </div>
+        <a href="#blog">Blog</a>
         <a href="#help">Help</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About us</a>
         <button class="login-button">
             <i class="icon-login"></i> Login
         </button>
@@ -44,80 +50,86 @@
     <div class="burger-menu">
         <i class="icon-menu"></i>
     </div>
-    -->
 
-</header>
+-->
+    </header>
 
-<!-- Main Section -->
-<main>
-    <section class="hero">
+    <!-- Main Section -->
+    <main>
+      <section class="hero">
         <div class="text-content">
-            <h1>Welcome to Your Daily Challenge Hub!</h1>
-            <p>We're here to help you become the best version of yourself:</p>
-            <button class="btn" id="get-daily-missions">1. Get Daily Missions</button>
-            <button class="btn" id="accept-challenges">2. Accept Challenges</button>
-            <button class="btn" id="improve-life">3. Improve Your Life</button>
-            <button class="btn try-now" id="try-it-now">Try it now</button>
+          <h1>Welcome to Your Daily Challenge Hub!</h1>
+          <p>We're here to help you become the best version of yourself:</p>
+          <button class="btn" id="get-daily-missions">
+            1. Get Daily Missions
+          </button>
+          <button class="btn" id="accept-challenges">
+            2. Accept Challenges
+          </button>
+          <button class="btn" id="improve-life">3. Improve Your Life</button>
+          <button class="btn try-now" id="try-it-now">Try it now</button>
         </div>
         <div class="cards-container">
-            <div class="card active">
-                <button class="details-button">Details</button>
-                <img src="image1.jpg" alt="Image 1">
-                <p class="mission-text">Don't use any transport today (only walk)</p>
-                <button class="accept-button">Accept</button>
-            </div>
-            <div class="card">
-                <!-- Placeholder for second card -->
-            </div>
-            <div class="card">
-                <!-- Placeholder for third card -->
-            </div>
-            <!-- Pagination Dots -->
-            <div class="pagination-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
+          <div class="card active">
+            <button class="details-button">Details</button>
+            <img src="image1.jpg" alt="Image 1" />
+            <p class="mission-text">
+              Don't use any transport today (only walk)
+            </p>
+            <button class="accept-button">Accept</button>
+          </div>
+          <div class="card">
+            <!-- Placeholder for second card -->
+          </div>
+          <div class="card">
+            <!-- Placeholder for third card -->
+          </div>
+          <!-- Pagination Dots -->
+          <div class="pagination-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Section for Get Daily Missions -->
-    <section class="daily-missions" id="daily-missions">
+      <!-- Section for Get Daily Missions -->
+      <section class="daily-missions" id="daily-missions">
         <h2>Daily Missions</h2>
         <p>Details about daily missions...</p>
-    </section>
+      </section>
 
-    <!-- Section for Additional Information -->
-    <section class="additional-info" id="additional-info">
+      <!-- Section for Additional Information -->
+      <section class="additional-info" id="additional-info">
         <h2>Additional Information</h2>
         <p>More details...</p>
-    </section>
+      </section>
 
-    <!-- Section for Accept Challenges -->
-    <section class="challenges" id="challenges">
+      <!-- Section for Accept Challenges -->
+      <section class="challenges" id="challenges">
         <div class="challenge-box">
-            <h2>Challenge 1</h2>
-            <p>Details about challenge 1...</p>
+          <h2>Challenge 1</h2>
+          <p>Details about challenge 1...</p>
         </div>
         <div class="challenge-box">
-            <h2>Challenge 2</h2>
-            <p>Details about challenge 2...</p>
+          <h2>Challenge 2</h2>
+          <p>Details about challenge 2...</p>
         </div>
-    </section>
+      </section>
 
-    <!-- Full Width Section -->
-    <section class="full-width" id="full-width">
+      <!-- Full Width Section -->
+      <section class="full-width" id="full-width">
         <h2>More Information</h2>
         <p>Further details...</p>
-    </section>
-</main>
+      </section>
+    </main>
 
-<!-- Footer Section -->
-<footer>
-    <p>© 2024 Daily Challenge Hub. All rights reserved.</p>
-</footer>
+    <!-- Footer Section -->
+    <footer>
+      <p>© 2024 Daily Challenge Hub. All rights reserved.</p>
+    </footer>
 
-<!-- Scripts -->
-<script src="scripts.js"></script>
-</body>
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+  </body>
 </html>
