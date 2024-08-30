@@ -1,0 +1,103 @@
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* вирівнює елементи по верхньому краю */
+  height: calc(100vh - 60px); /* Height of the screen minus navbar height */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.left-section {
+  text-align: left;
+  max-width: 600px;
+  width: 50%; /* Зменшити ширину секції для відповідності */
+  padding-right: 20px; /* Відступ справа для вирівнювання кнопки "Try It Now" */
+}
+
+.left-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Khmer", sans-serif;
+  font-weight: 520;
+  font-style: normal;
+  line-height: 60px;
+}
+
+.left-section .content {
+  display: flex;
+  flex-direction: row; /* Розміщення елементів вертикально */
+}
+
+.left-section h2 {
+  font-size: 28px;
+  margin: 0;
+  width: 65%;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 28px;
+}
+
+.btn-try {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.left-section .row {
+  display: flex;
+  align-items: center; /* Вирівнює текст і кнопку по вертикалі */
+  gap: 20px; /* Відстань між текстом і кнопкою */
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Вирівнювання кнопок по лівому краю */
+  justify-content: left;
+  gap: 10px;
+  width: 50%;
+  padding-top: 40px;
+}
+
+/* Buttons */
+.btn-orange,
+.btn-blue,
+.btn-pink {
+  font-family: "Inder", sans-serif;
+  font-weight: 30;
+  font-style: normal;
+  display: inline-block;
+  color: white;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 24px;
+  transform: rotate(0deg); /* Default */
+}
+
+/* Tilt for each button */
+.btn-orange {
+  background-color: #ffab5f;
+  transform: rotate(3deg); /* Tilted slightly down to the right */
+}
+
+.btn-blue {
+  background-color: #5bb4f4cf;
+  transform: rotate(-4deg); /* Tilted slightly up to the right */
+}
+
+.btn-pink {
+  background-color: #f369a5d0;
+  transform: rotate(2deg); /* Tilted slightly up to the left */
+}
