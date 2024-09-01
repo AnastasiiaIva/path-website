@@ -1,7 +1,7 @@
 .main-section {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* вирівнює елементи по верхньому краю */
+  align-items: flex-start; /* Align items to the top */
   height: calc(100vh - 60px); /* Height of the screen minus navbar height */
   max-width: 1200px;
   margin: 0 auto;
@@ -11,8 +11,8 @@
 .left-section {
   text-align: left;
   max-width: 600px;
-  width: 50%; /* Зменшити ширину секції для відповідності */
-  padding-right: 20px; /* Відступ справа для вирівнювання кнопки "Try It Now" */
+  width: 50%; /* Adjust width for balance */
+  padding-right: 20px; /* Space for button alignment */
 }
 
 .left-section h1 {
@@ -26,7 +26,7 @@
 
 .left-section .content {
   display: flex;
-  flex-direction: row; /* Розміщення елементів вертикально */
+  flex-direction: row; /* Align text and button horizontally */
 }
 
 .left-section h2 {
@@ -54,15 +54,15 @@
 
 .left-section .row {
   display: flex;
-  align-items: center; /* Вирівнює текст і кнопку по вертикалі */
-  gap: 20px; /* Відстань між текстом і кнопкою */
+  align-items: center; /* Align text and button vertically */
+  gap: 20px; /* Space between text and button */
 }
 
 /* Button group */
 .button-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Вирівнювання кнопок по лівому краю */
+  align-items: flex-start; /* Align buttons to the left */
   justify-content: left;
   gap: 10px;
   width: 50%;
@@ -100,4 +100,191 @@
 .btn-pink {
   background-color: #f369a5d0;
   transform: rotate(2deg); /* Tilted slightly up to the left */
+}
+
+/*Card*/
+.right-section {
+  position: absolute;
+  top: 5%; /* Aligns the section with the top of the page */
+  right: 0;
+  bottom: 0; /* Extends the section to the bottom of the page */
+  left: 50%;
+  background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Ensures the background stays behind other elements */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1px;
+  width: 50%;
+}
+
+.card-container {
+  position: relative;
+  z-index: 2; /* Ensures the card stays above the background */
+  width: 100%;
+  max-width: 400px;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  perspective: 1000px; /* Adds 3D effect for the flip */
+  margin-bottom: 10px;
+}
+
+.card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s; /* Smooth flip animation */
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg); /* Flips card */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides back side of the card */
+}
+
+.card-front {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 30px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-back {
+  background-color: rgb(0, 0, 0.2);
+  border-radius: 20px;
+  transform: rotateY(180deg); /* Position back side correctly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 20px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card-upper {
+  position: relative;
+  height: 70%;
+  overflow: hidden;
+}
+
+.card-upper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.help-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+}
+
+/* Нова кнопка закриття */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+}
+
+.card-lower {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.card-lower p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.action-btn {
+  background-color: #7ec0f1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  width: calc(100% - 20px);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  perspective: 1000px; /* Для 3D ефекту перевороту */
+}
+
+/* Dot Indicators */
+
+.dot-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 1px; /* Padding added for better spacing */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #1c2e8d;
 }
