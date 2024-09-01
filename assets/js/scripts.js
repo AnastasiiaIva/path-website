@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function startAutoSwitch() {
     if (!autoSwitchEnabled) return;
-    autoSwitchInterval = setInterval(nextCard, 30000);
+    autoSwitchInterval = setInterval(nextCard, 10000);
   }
 
   function stopAutoSwitch() {
