@@ -1,3 +1,4 @@
+/*CSS 2.0*/
 .main-section {
   display: flex;
   justify-content: space-between;
@@ -321,4 +322,201 @@
 
 .dot.active {
   background-color: #1c2e8d;
+}
+
+/* Blue Block*/
+.blue-block {
+  background-color: #85c6f7; /* Light blue */
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -110px;
+}
+
+.blue-section {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  margin: 0 12px;
+}
+
+.circle {
+  background-color: #ffffff; /* White background for the circle */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.circle img {
+  width: 40px;
+  height: 40px;
+}
+
+h4 {
+  margin: 10px 0;
+  color: white;
+}
+
+.blue-section p {
+  margin: 0;
+  color: white;
+}
+
+.faq-section {
+  padding: 20px;
+  background-color: #ffffff; /* White background for the entire section */
+  margin: 20px 0; /* Margin around the section */
+  text-align: center; /* Center align text */
+}
+
+.faq-section h2 {
+  margin-bottom: 10px;
+  color: #ffb777; /* Title color */
+  font-size: 48px;
+}
+
+.faq-help-text {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #555; /* Help text color */
+}
+
+.faq-help-text a {
+  color: #2196f3; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.faq-item {
+  margin-bottom: 10px; /* Space between FAQ items */
+  background-color: #ffffff; /* White background for each FAQ item */
+  overflow: hidden; /* Hide overflow to ensure rounded corners */
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  border: none; /* Remove default button border */
+  background-color: #ffffff; /* White background for the question */
+  border-bottom: 1px solid #ddd; /* Light grey border between questions */
+  text-align: left; /* Left align text */
+  cursor: pointer; /* Change cursor to pointer */
+  font-size: 20px; /* Font size */
+  color: #333; /* Dark grey color */
+  position: relative; /* For positioning the arrow */
+}
+
+.faq-answer {
+  display: none; /* Hide answers by default */
+  padding: 15px;
+  text-align: left;
+  background-color: #ffffff; /* White background for the answer */
+  color: #555; /* Slightly lighter grey for the text */
+}
+
+.arrow {
+  width: 20px; /* Set the width for the arrow */
+  height: 20px; /* Set the height for the arrow */
+  position: absolute; /* Absolute positioning for the arrow */
+  right: 15px; /* Right align the arrow */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%) rotate(0deg); /* Center vertically */
+  transition: transform 0.3s ease; /* Smooth transition for arrow rotation */
+}
+
+.faq-question.active .arrow {
+  transform: translateY(-50%) rotate(90deg); /* Rotate arrow when question is open */
+}
+
+.faq-item:not(:last-child) {
+  border-bottom: 1px solid #ddd; /* Light grey border between FAQ items */
+}
+
+.faq-item.open .faq-answer {
+  border-top: none; /* Remove top border when answer is open */
+}
+
+.faq-item.open .faq-question {
+  border-bottom: none; /* Remove bottom border when answer is open */
+}
+
+/* Footer Section */
+.footer {
+  background-color: #85c6f7; /* Light blue background */
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the content */
+}
+
+.footer-column {
+  flex: 1;
+  margin: 0 10px; /* Space between columns */
+}
+
+.footer-logo {
+  width: 150px; /* Adjust the logo size */
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px; /* Space between social icons */
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-column p {
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Responsive Adjustments 
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+    */
+
+.footer-column {
+  margin-bottom: 20px;
+}
+
+.social-links {
+  justify-content: center;
+}
+
+.footer-links li {
+  margin-bottom: 15px;
 }
