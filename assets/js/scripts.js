@@ -13,19 +13,34 @@ document.addEventListener("DOMContentLoaded", function () {
       image:
         "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png",
       text: "Don’t use any transport today (only walk)",
-      backText: "More details about card 1",
+      missionText:
+        "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease.",
+      challengeText:
+        "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease.",
+      lifeText:
+        "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease.",
     },
     {
       image:
         "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image2.png",
       text: "Plant a Tree or a Plant",
-      backText: "More details about card 2",
+      missionText:
+        "Gardening is a great moderate exercise that improves strength, flexibility, and mood. Science shows it reduces stress and boosts immune function.",
+      challengeText:
+        "Trees absorb carbon dioxide and release oxygen, combating climate change, improving air quality, and supporting biodiversity.",
+      lifeText:
+        "Planting fosters a sense of accomplishment and connection to nature. Research indicates it enhances mental well-being and life satisfaction.",
     },
     {
       image:
         "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image3.png",
       text: "Declutter and Donate",
-      backText: "More details about card 3",
+      missionText:
+        "A tidy space reduces anxiety, improves focus, and enhances mental well-being. Plus, decluttering encourages physical activity, boosting cardiovascular health.",
+      challengeText:
+        "Donating items helps reduce waste and the demand for new products. Reusing and recycling conserve resources and decrease landfill waste.",
+      lifeText:
+        "Donating fosters community and purpose, enhancing personal happiness and social connections. A clutter-free space also boosts productivity and creativity.",
     },
   ];
 
@@ -38,20 +53,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const cardContainer = document.querySelector(".card-container");
   const cardImage = document.querySelector(".card-upper img");
   const cardText = document.querySelector(".card-lower p");
-  const backText = document.querySelector(".card-back p");
+  const missionText = document.querySelector("#mission-text");
+  const challengeText = document.querySelector("#challenge-text");
+  const lifeText = document.querySelector("#life-text");
   const dots = document.querySelectorAll(".dot");
 
   function updateCard(index) {
     cardImage.src = cards[index].image;
     cardText.textContent = cards[index].text;
-    backText.textContent = cards[index].backText;
+    missionText.textContent = cards[index].missionText;
+    challengeText.textContent = cards[index].challengeText;
+    lifeText.textContent = cards[index].lifeText;
     dots.forEach((dot) => dot.classList.remove("active"));
     dots[index].classList.add("active");
   }
 
   function startAutoSwitch() {
     if (!autoSwitchEnabled) return;
-    autoSwitchInterval = setInterval(nextCard, 3000);
+    autoSwitchInterval = setInterval(nextCard, 30000);
   }
 
   function stopAutoSwitch() {
