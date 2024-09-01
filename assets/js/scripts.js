@@ -140,3 +140,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const questions = document.querySelectorAll(".faq-question");
+
+  questions.forEach((question) => {
+    question.addEventListener("click", function () {
+      const faqItem = this.parentElement;
+      const answer = this.nextElementSibling;
+      const isVisible = answer.style.display === "block";
+
+      // Close all answers and reset arrow rotation
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.classList.remove("open");
+        item.querySelector(".faq-answer").style.display = "none";
+        item.querySelector(".arrow").style.transform =
+          "translateY(-50%) rotate(0deg)";
+      });
+
+      // If the clicked question's answer is not visible, show it
+      if (!isVisible) {
+        faqItem.classList.add("open");
+        answer.style.display = "block";
+        this.querySelector(".arrow").style.transform =
+          "translateY(-50%) rotate(90deg)";
+      }
+    });
+  });
+});
