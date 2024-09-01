@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/stylesMain.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
       <link
       href="https://fonts.googleapis.com/css2?family=Inder&family=Khmer&display=swap"
       rel="stylesheet"
@@ -67,16 +66,45 @@
           <a href="#" class="btn-pink">3. Improve Your Life</a>
         </div>
       </div>
+
+      <!-- Right Section with Cards -->
+      <div class="right-section">
+        <!-- Card Container -->
+        <div class="card-container">
+          <div class="card">
+            <!-- Card Front -->
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-upper">
+                  <img
+                    src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png"
+                    alt="Image 1"
+                  />
+                  <button class="help-btn">?</button>
+                </div>
+                <div class="card-lower">
+                  <p>Don’t use any transport today (only walk)</p>
+                  <button class="action-btn">Accept</button>
+                </div>
+              </div>
+              <!-- Card Back -->
+              <div class="card-back">
+                <button class="help-btn">Х</button>
+                <p>Card Back Text</p>
+              </div>
+            </div>
+          </div>
+          <!-- Behind Card -->
+          <div class="card-back-overlay"></div>
+          <!-- Dot Indicators -->
+          <div class="dot-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
     </section>
 
-    <script>
-      function toggleMenu() {
-        const menu = document.querySelector(".navbar-menu");
-        const burgerIcon = document.querySelector(".burger-menu"); // Find the burger menu item
-
-        menu.classList.toggle("active"); // Opens or closes the menu
-        burgerIcon.classList.toggle("change"); // Turns the burger menu into a cross
-      }
-    </script>
+    <script src="js/scripts.js" defer></script>
   </body>
 </html>
