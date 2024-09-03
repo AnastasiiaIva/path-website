@@ -6,6 +6,8 @@ function toggleMenu() {
   burgerIcon.classList.toggle("change"); // Turns the burger menu into a cross
 }
 
+console.log("Pagina cargada");
+
 //Card//
 document.addEventListener("DOMContentLoaded", function () {
   const cards = [
@@ -102,7 +104,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   startAutoSwitch();
 
+  console.log(document.querySelectorAll(".help-btn"));
+
   document.querySelectorAll(".help-btn").forEach((button) => {
+    console.log("boton");
     button.addEventListener("click", function () {
       if (isFlipping) return;
 

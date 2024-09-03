@@ -23,6 +23,7 @@ body {
   align-items: center;
   position: relative;
   padding: 10px 0;
+  z-index: 100;
 }
 
 .navbar-logo img {

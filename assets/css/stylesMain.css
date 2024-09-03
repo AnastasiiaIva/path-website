@@ -1,9 +1,13 @@
 /*CSS 2.0*/
-.main-section {
+body {
+  width: 100vw;
+}
+
+.main-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align items to the top */
-  height: calc(100vh - 60px); /* Height of the screen minus navbar height */
+  align-items: stretch; /* Align items to the top */
+  /* height: calc(100vh - 60px); */ /* Height of the screen minus navbar height */
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -14,6 +18,7 @@
   max-width: 600px;
   width: 50%; /* Adjust width for balance */
   padding-right: 20px; /* Space for button alignment */
+  flex-shrink: 0;
 }
 
 .left-section h1 {
@@ -108,11 +113,6 @@
 
 /*Card*/
 .right-section {
-  position: absolute;
-  top: 5%; /* Aligns the section with the top of the page */
-  right: 0;
-  bottom: 0; /* Extends the section to the bottom of the page */
-  left: 50%;
   background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg");
   background-size: cover;
   background-position: center;
@@ -121,7 +121,9 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 1px;
-  width: 50%;
+  /* width: 50%; */
+  z-index: 1;
+  width: 100%;
 }
 
 .card-container {
@@ -143,6 +145,11 @@
   height: 100%;
   perspective: 1000px; /* Adds 3D effect for the flip */
   margin-bottom: 10px;
+}
+
+.card,
+.card-overlay {
+  min-height: 400px;
 }
 
 .card-inner {
@@ -333,33 +340,6 @@
   background-color: #1c2e8d;
 }
 
-@media (max-width: 768px) {
-  .left-section h1 {
-    font-size: 1.5rem; /* Менший розмір шрифта для мобільних */
-    line-height: 2rem;
-  }
-
-  .left-section h2 {
-    font-size: 1rem;
-    line-height: 1rem;
-  }
-
-  .btn-try {
-    display: none;
-  }
-
-  .btn-orange,
-  .btn-blue,
-  .btn-pink {
-    font-size: 0.9rem;
-    line-height: 1rem;
-    margin: 0;
-    padding: 10px; /* Налаштувати відступи всередині кнопок */
-    width: 100%; /* Дати кнопкам 100% ширини батьківського елемента */
-    box-sizing: border-box;
-  }
-}
-
 /* Blue Block*/
 .blue-block {
   background-color: #85c6f7; /* Light blue */
@@ -367,7 +347,7 @@
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
-  margin-top: -110px;
+  /* margin-top: -110px; */
 }
 
 .blue-section-block {
@@ -402,6 +382,8 @@ h4 {
   margin: 0;
   color: white;
 }
+
+/*FQA*/
 
 .faq-section {
   padding: 20px;
@@ -538,6 +520,86 @@ h4 {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    order: 2;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .right-section {
+    order: 1;
+    /* width: 100%; */
+    /* position: relative; */ /* Може знадобитися для коректного позиціонування */
+    /* height: auto; */
+    margin-bottom: 1rem;
+  }
+
+  .card-container {
+    width: 100%;
+    height: auto;
+
+    .card {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .left-section h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .left-section h2 {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .btn-try {
+    display: none;
+  }
+
+  .btn-orange,
+  .btn-blue,
+  .btn-pink {
+    font-size: 0.9rem;
+    line-height: 1rem;
+    margin: 0;
+    padding: 10px;
+    width: 100%; /* Дати кнопкам 100% ширини батьківського елемента */
+    box-sizing: border-box;
+  }
+
+  /*Blue Block*/
+
+  .blue-block {
+    flex-direction: column; /* Розміщує блоки в стовпчик */
+    align-items: center; /* Вирівнює блоки по центру */
+  }
+
+  .blue-section-block {
+    margin: 10px 0; /* Додає відступ між блоками */
+    padding: 20px 10px; /* Зменшує внутрішні відступи */
+    text-align: center; /* Центрує текст у блоках */
+  }
+
+  .circle {
+    margin: 0 auto 15px auto; /* Центрує коло та додає відступ знизу */
+  }
+
+  h4 {
+    font-size: 18px; /* Зменшує розмір заголовка для мобільних пристроїв */
+  }
+
+  .blue-section-block p {
+    font-size: 14px; /* Зменшує розмір тексту для мобільних пристроїв */
+  }
+
+  /*Footer*/
+
   .footer-content {
     flex-direction: column;
     align-items: center;
@@ -603,7 +665,7 @@ h4 {
 
 .popup-header span {
   cursor: pointer;
-  padding: 5px 10px; /* Added padding 
+  padding: 5px 10px; 
 }
 
 .popup-header .active {
@@ -614,13 +676,13 @@ h4 {
 .close-btn {
   background: transparent;
   border: none;
-  font-size: 30px; /* Increased font size for visibility 
+  font-size: 30px; 
   cursor: pointer;
-  color: black; /* Ensure color contrast 
+  color: black; 
 }
 
 .form-group {
-  margin-bottom: 20px; /* Increased margin 
+  margin-bottom: 20px; 
   position: relative;
 }
 
@@ -675,7 +737,7 @@ h4 {
   border-radius: 5px;
   padding: 10px;
   cursor: pointer;
-  width: 100%; /* Full width for button 
+  width: 100%; 
 }
 
 .submit-btn:hover {
