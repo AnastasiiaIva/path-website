@@ -8,6 +8,47 @@ function toggleMenu() {
 
 console.log("Pagina cargada");
 
+// Bookmarks
+document.addEventListener("DOMContentLoaded", () => {
+  const btnGetDailyMissions = document.querySelector(".btn-orange");
+  const btnAcceptChallenges = document.querySelector(".btn-blue");
+  const btnImproveLife = document.querySelector(".btn-pink");
+  const blueBlock = document.getElementById("blue-block");
+  const faqSection = document.getElementById("faq-section");
+  const benefitQuestion = document.getElementById("benefit-question");
+  const card = document.getElementById("card");
+
+  btnGetDailyMissions.addEventListener("click", (event) => {
+    event.preventDefault();
+    card.scrollIntoView({ behavior: "smooth" });
+  });
+
+  btnAcceptChallenges.addEventListener("click", (event) => {
+    event.preventDefault();
+    blueBlock.scrollIntoView({ behavior: "smooth" });
+  });
+
+  btnImproveLife.addEventListener("click", (event) => {
+    event.preventDefault();
+    faqSection.scrollIntoView({ behavior: "smooth" });
+
+    // Toggle FAQ answer for "How do the challenges benefit me?"
+    const faqItem = benefitQuestion.parentElement;
+    const isOpen = faqItem.classList.contains("open");
+
+    // Close all FAQ items
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      item.classList.remove("open");
+      item.querySelector(".faq-answer").style.display = "none";
+    });
+
+    if (!isOpen) {
+      faqItem.classList.add("open");
+      faqItem.querySelector(".faq-answer").style.display = "block";
+    }
+  });
+});
+
 //Card//
 document.addEventListener("DOMContentLoaded", function () {
   const cards = [
