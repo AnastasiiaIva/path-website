@@ -1,6 +1,8 @@
 :root {
-  --blue: #7ec0f1;
+  --blue: #5bb4f4cf;
   --white: #ffffff;
+  --orange:#ffab5f;
+  --pink:#f369a5d0;
 }
 
 * {
@@ -63,9 +65,13 @@ body {
 }
 
 .navbar-menu a:hover {
-  /* color: var(--blue); */
-  text-shadow: 2px 2px 4px;
+  /* text-shadow: 2px 2px 4px; */
   text-decoration: underline black;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 8px 15px;
+  text-decoration: none;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); ;
 }
 
 .navbar-menu-btn .btn1,
@@ -151,20 +157,13 @@ body {
     flex-direction: column;
     background-color: rgb(255, 255, 255);
     position: absolute;
-    top: -300px;
+    top: 100px;
     right: 0;
     width: 100vw;
     text-align: right;
     padding: 20px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); Drop shadow
     z-index: 1; /* Overlaps the dashed line */
-    transition: all 1s ease-in-out; /* Плавний перехід */
-    opacity: 0; /* Спочатку невидимий */
-  }
-
-  .navbar-menu.active {
-    top: 100px; /* Виставляємо бажану позицію */
-    opacity: 1; /* Відображаємо меню */
   }
   
 

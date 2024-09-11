@@ -3,10 +3,35 @@ body {
   width: 100vw;
 }
 
+/* Bookmarks */
+
+.faq-item {
+  position: relative;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .arrow {
+  transform: rotate(90deg);
+}
+
+.faq-answer {
+  display: none;
+  transition: display 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+/* Main */
+
 .main-container {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* Align items to the top */
+  align-items: stretch; /*Align items to the top*/
   /* height: calc(100vh - 60px); */ /* Height of the screen minus navbar height */
   max-width: 1200px;
   margin: 0 auto;
@@ -31,9 +56,10 @@ body {
   line-height: 60px;
 }
 
-.left-section .content {
+.left-section .content-h2 {
   display: flex;
   flex-direction: row; /* Align text and button horizontally */
+  margin-bottom: 20px;
 }
 
 .left-section h2 {
@@ -53,12 +79,13 @@ body {
   color: white;
   border: none;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 2% 4%;
   text-decoration: none;
-  font-size: calc(1vw + 1em);
+  font-size: calc(1em + 0.4vw);
   line-height: calc(1em + 0.5vw);
   margin-bottom: 20px;
   align-self: center;
+  text-align: center;
 }
 
 .left-section .row {
@@ -74,7 +101,7 @@ body {
   align-items: flex-start; /* Align buttons to the left */
   justify-content: left;
   gap: 10px;
-  padding-top: 40px;
+  /* padding-top: 40px; */
 }
 
 /* Buttons */
@@ -88,7 +115,7 @@ body {
   color: white;
   border: 1px solid black;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 4px 2vw;
   text-decoration: none;
   font-size: calc(1vw + 1em);
   line-height: calc(1.5em + 0.5vw);
@@ -97,26 +124,30 @@ body {
 
 /* Tilt for each button */
 .btn-orange {
-  background-color: #ffab5f;
+  background-color: var(--orange);
   transform: rotate(3deg); /* Tilted slightly down to the right */
 }
 
 .btn-blue {
-  background-color: #5bb4f4cf;
+  background-color: var(--blue);
   transform: rotate(-4deg); /* Tilted slightly up to the right */
 }
 
 .btn-pink {
-  background-color: #f369a5d0;
+  background-color: var(--pink);
   transform: rotate(2deg); /* Tilted slightly up to the left */
+}
+
+.main-container a:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+.main-container button:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
 }
 
 /*Card*/
 .right-section {
-  background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg");
-  background-size: cover;
-  background-position: center;
-  z-index: 1; /* Ensures the background stays behind other elements */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,12 +157,19 @@ body {
   width: 100%;
 }
 
+.right-section {
+  background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg");
+  background-size: 120% 120%;
+  background-position: center;
+  overflow: visible;
+}
+
 .card-container {
   position: relative;
   z-index: 2; /* Ensures the card stays above the background */
   width: 100%;
-  max-width: 400px;
-  height: 70%;
+  max-width: 600px;
+  height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,6 +261,10 @@ body {
   font-weight: 400;
 }
 
+.main-container a:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
 /* Нова кнопка закриття */
 .close-btn {
   position: absolute;
@@ -248,11 +290,12 @@ body {
   font-family: "Inder", sans-serif;
   font-weight: 400;
   padding: 10px;
+  padding-bottom: 20px;
 }
 
 .card-lower p {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
   text-align: center;
 }
 
@@ -307,15 +350,15 @@ body {
 }
 
 .orange-section h3 {
-  background-color: #ffab5f; /* Помаранчевий */
+  background-color: var(--orange); /* Помаранчевий */
 }
 
 .blue-section h3 {
-  background-color: #5bb4f4cf; /* Голубий */
+  background-color: var(--blue); /* Голубий */
 }
 
 .pink-section h3 {
-  background-color: #f369a5d0; /* Рожевий */
+  background-color: var(--pink); /* Рожевий */
 }
 
 /* Dot Indicators */
@@ -347,7 +390,6 @@ body {
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
-  /* margin-top: -110px; */
 }
 
 .blue-section-block {
@@ -385,6 +427,37 @@ h4 {
 
 /*FQA*/
 
+.faq-question {
+  display: flex; /* Використовуємо flexbox для розміщення тексту і стрілки */
+  justify-content: space-between; /* Розміщення тексту зліва і стрілки справа */
+  align-items: center; /* Вирівнювання по вертикалі */
+  width: 100%;
+  padding: 15px;
+  border: none; /* Видалення стандартних рамок кнопки */
+  background-color: #ffffff; /* Білий фон для питання */
+  border-bottom: 1px solid #ddd; /* Легкий сірий бордер між питаннями */
+  text-align: left; /* Вирівнювання тексту по лівому краю */
+  cursor: pointer; /* Зміна курсору на pointer */
+  font-size: 20px; /* Розмір шрифту */
+  color: #333; /* Темно-сірий колір */
+  position: relative; /* Для позиціонування стрілки */
+}
+
+.faq-question .question-text {
+  margin-right: 10px; /* Відступ між текстом і стрілкою */
+}
+
+.arrow {
+  width: 20px; /* Ширина стрілки */
+  height: 20px; /* Висота стрілки */
+  position: relative; /* Відносне позиціонування */
+  transition: transform 0.3s ease; /* Плавний перехід для обертання стрілки */
+}
+
+.faq-question.active .arrow {
+  transform: rotate(90deg); /* Обертання стрілки, коли питання відкрите */
+}
+
 .faq-section {
   padding: 20px;
   background-color: #ffffff; /* White background for the entire section */
@@ -394,8 +467,8 @@ h4 {
 
 .faq-section h2 {
   margin-bottom: 10px;
-  color: #ffb777; /* Title color */
-  font-size: 48px;
+  color: var(--orange); /* Title color */
+  font-size: calc(2rem + 1vw);
 }
 
 .faq-help-text {
@@ -405,7 +478,7 @@ h4 {
 }
 
 .faq-help-text a {
-  color: #2196f3; /* Link color */
+  color: var(--blue); /* Link color */
   text-decoration: none; /* Remove underline */
 }
 
@@ -415,35 +488,12 @@ h4 {
   overflow: hidden; /* Hide overflow to ensure rounded corners */
 }
 
-.faq-question {
-  width: 100%;
-  padding: 15px;
-  border: none; /* Remove default button border */
-  background-color: #ffffff; /* White background for the question */
-  border-bottom: 1px solid #ddd; /* Light grey border between questions */
-  text-align: left; /* Left align text */
-  cursor: pointer; /* Change cursor to pointer */
-  font-size: 20px; /* Font size */
-  color: #333; /* Dark grey color */
-  position: relative; /* For positioning the arrow */
-}
-
 .faq-answer {
   display: none; /* Hide answers by default */
   padding: 15px;
   text-align: left;
   background-color: #ffffff; /* White background for the answer */
   color: #555; /* Slightly lighter grey for the text */
-}
-
-.arrow {
-  width: 20px; /* Set the width for the arrow */
-  height: 20px; /* Set the height for the arrow */
-  position: absolute; /* Absolute positioning for the arrow */
-  right: 15px; /* Right align the arrow */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%) rotate(0deg); /* Center vertically */
-  transition: transform 0.3s ease; /* Smooth transition for arrow rotation */
 }
 
 .faq-question.active .arrow {
@@ -525,13 +575,59 @@ h4 {
   }
 
   .left-section {
-    order: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    order: 1;
     width: 100%;
     padding-right: 0;
+    margin-bottom: calc(1.2em + 2vh);
+    text-align: left;
+    min-height: 50%;
+  }
+
+  .content {
+    text-align: left;
+    width: 50%; /* Adjust width for balance */
+    flex-shrink: 0;
+  }
+
+  .left-section h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .left-section h2 {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .btn-try {
+    display: none;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0px;
+  }
+
+  .btn-orange,
+  .btn-blue,
+  .btn-pink {
+    font-size: calc(0.5rem + 1vw);
+    line-height: 1rem;
+    margin: 0;
+    padding: calc(1vh + 1vw) calc(1vh + 5vw);
+    width: auto; /* Дати кнопкам 100% ширини батьківського елемента */
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .right-section {
-    order: 1;
+    order: 2;
     /* width: 100%; */
     /* position: relative; */ /* Може знадобитися для коректного позиціонування */
     /* height: auto; */
@@ -548,29 +644,9 @@ h4 {
     }
   }
 
-  .left-section h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .left-section h2 {
-    font-size: 1rem;
-    line-height: 1rem;
-  }
-
-  .btn-try {
-    display: none;
-  }
-
-  .btn-orange,
-  .btn-blue,
-  .btn-pink {
-    font-size: 0.9rem;
-    line-height: 1rem;
-    margin: 0;
-    padding: 10px;
-    width: 100%; /* Дати кнопкам 100% ширини батьківського елемента */
-    box-sizing: border-box;
+  .card {
+    border-radius: 20px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
   }
 
   /*Blue Block*/
