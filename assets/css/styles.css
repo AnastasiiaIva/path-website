@@ -63,8 +63,9 @@ body {
 }
 
 .navbar-menu a:hover {
-  color: var(--blue);
-  text-shadow: 2px 2px black;
+  /* color: var(--blue); */
+  text-shadow: 2px 2px 4px;
+  text-decoration: underline black;
 }
 
 .navbar-menu-btn .btn1,
@@ -150,13 +151,20 @@ body {
     flex-direction: column;
     background-color: rgb(255, 255, 255);
     position: absolute;
-    top: 100px;
+    top: -300px;
     right: 0;
     width: 100vw;
     text-align: right;
     padding: 20px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); Drop shadow
     z-index: 1; /* Overlaps the dashed line */
+    transition: all 1s ease-in-out; /* Плавний перехід */
+    opacity: 0; /* Спочатку невидимий */
+  }
+
+  .navbar-menu.active {
+    top: 100px; /* Виставляємо бажану позицію */
+    opacity: 1; /* Відображаємо меню */
   }
   
 
@@ -181,13 +189,10 @@ body {
     padding: 10px 20px;
   }
 
-  /* .navbar-menu a:hover  {
-    color: red;
-  } */
 
   .navbar-menu-btn .btn1,
   .navbar-menu-btn .btn2 {
-    /* margin-right: 20px; */
+    margin-top: 1.25rem;
   }
  
   /* Pseudo element for lower dashed line */
