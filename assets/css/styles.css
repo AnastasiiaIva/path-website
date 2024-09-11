@@ -1,3 +1,8 @@
+:root {
+  --blue: #7ec0f1;
+  --white: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -44,6 +49,7 @@ body {
   justify-content: center; /* Centers text links */
 }
 
+
 .navbar-menu-btn {
   display: flex;
   gap: 20px;
@@ -54,6 +60,12 @@ body {
   color: black;
   text-decoration: none;
   padding: 10px;
+}
+
+.navbar-menu a:hover {
+  /* color: var(--blue); */
+  text-shadow: 2px 2px 4px;
+  text-decoration: underline black;
 }
 
 .navbar-menu-btn .btn1,
@@ -90,18 +102,16 @@ body {
 
 /* Adaptive styles */
 @media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+
   .navbar-menu {
     display: none;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    text-align: right;
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
-    z-index: 1; /* Overlaps the dashed line */
+  }
+
+  .navbar-logo img {
+    padding: 0 20px;
   }
 
   /* Burger menu */
@@ -111,6 +121,7 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 0 5%;
   }
 
   .burger-menu div {
@@ -124,7 +135,7 @@ body {
 
   /* Styles for burger menu animation when changing */
   .change .line1 {
-    transform: rotate(-50deg) translate(-5px, 10px);
+    transform: rotate(-50deg) translate(-7px, 10px);
   }
 
   .change .line2 {
@@ -132,20 +143,35 @@ body {
   }
 
   .change .line3 {
-    transform: rotate(50deg) translate(-8px, -10px);
+    transform: rotate(50deg) translate(-7px, -10px);
   }
-
-  /* .navbar-menu {
-    display: none; 
-  } Ховає меню за замовчуванням */
 
   .navbar-menu.active {
     display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: -300px;
+    right: 0;
+    width: 100vw;
+    text-align: right;
+    padding: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); Drop shadow
+    z-index: 1; /* Overlaps the dashed line */
+    transition: all 1s ease-in-out; /* Плавний перехід */
+    opacity: 0; /* Спочатку невидимий */
   }
+
+  .navbar-menu.active {
+    top: 100px; /* Виставляємо бажану позицію */
+    opacity: 1; /* Відображаємо меню */
+  }
+  
 
   .burger-menu {
     display: flex;
   }
+
 
   .navbar-menu-text {
     flex-direction: column;
@@ -163,8 +189,31 @@ body {
     padding: 10px 20px;
   }
 
+
   .navbar-menu-btn .btn1,
   .navbar-menu-btn .btn2 {
-    margin-right: 20px;
+    margin-top: 1.25rem;
   }
+ 
+  /* Pseudo element for lower dashed line */
+.navbar::after {
+  content: "";
+  position: absolute;
+  left: 20px; /* Відступ 20px зліва */
+  /* right: 20px; */
+  bottom: 0;
+  width: 90%;
+  height: 1.5px;
+  background: repeating-linear-gradient(
+    to right,
+    black 0,
+    black 10px,
+    transparent 10px,
+    transparent 30px
+  );
+  border-radius: 0 0 15px 15px;
+  z-index: -1;
+}
+
+
 }
