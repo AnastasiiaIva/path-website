@@ -7,7 +7,6 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Dark background with transparency */
   z-index: 999; /* To ensure it stays on top */
-  padding: 50px, 50px;
 }
 
 /* Popup container */
@@ -18,8 +17,6 @@
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 40px;
-  padding-left: 50px;
-  padding-right: 50px;
   border-radius: 40px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   width: 500px;
@@ -30,10 +27,10 @@
 /* Popup header */
 .popup-header {
   display: flex;
-  justify-content: space-between; /* Вирівнюємо елементи по краях */
-  align-items: center; /* Вирівнюємо елементи по вертикалі */
+  justify-content: space-between; /* Align items to edges */
+  align-items: center; /* Vertically align items */
   margin-bottom: 20px;
-  position: relative; /* Додаємо позиціонування для точного розміщення */
+  position: relative; /* For precise positioning */
 }
 
 /* Tabs for login/register */
@@ -47,7 +44,7 @@
   padding: 10px 0;
   font-size: 16px;
   color: var(--gray);
-  margin-right: 15px; /* Відступ між табами */
+  margin-right: 15px; /* Space between tabs */
 }
 
 .popup-header .tabs span.active {
@@ -58,7 +55,7 @@
 
 /* Close button */
 .close-btn {
-  font-size: 20px; /* Збільшуємо розмір кнопки закриття */
+  font-size: 20px; /* Increase close button size */
   cursor: pointer;
   position: absolute;
   top: 10px;
@@ -67,7 +64,6 @@
   color: white;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
   font-family: "Inder", sans-serif;
   font-weight: 400;
 }
@@ -75,7 +71,6 @@
 /* Form styling */
 .form-group {
   margin-bottom: 20px;
-  position: relative; /* Додаємо, щоб елементи могли розміщуватись всередині */
 }
 
 form h2 {
@@ -85,10 +80,15 @@ form h2 {
   margin-bottom: 20px;
 }
 
+/* Input wrapper */
+.input-wrapper {
+  position: relative;
+}
+
 .form-group input {
   width: 100%;
   padding: 10px;
-  padding-right: 40px; /* Додаємо простір для кнопки toggle-password */
+  padding-right: 40px; /* Space for toggle-password button */
   border: 1px solid var(--light-gray);
   border-radius: 6px;
 }
@@ -100,6 +100,15 @@ form h2 {
   color: var(--gray);
 }
 
+/* Status icon (checkmark/cross) */
+.status-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
 /* Toggle password button */
 .password-group .toggle-btn {
   position: absolute;
@@ -108,9 +117,23 @@ form h2 {
   transform: translateY(-50%);
   font-size: 18px;
   color: var(--gray);
-  background: none; /* Прибираємо фон */
-  border: none; /* Прибираємо бордер */
+  background: none; /* Remove background */
+  border: none; /* Remove border */
   cursor: pointer;
+}
+
+.password-group .status-icon {
+  right: 40px; /* Відступ від правого краю */
+  font-size: 18px;
+  color: var(--gray);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.password-group .toggle-btn {
+  right: 10px; /* Око завжди правіше за статус */
+  font-size: 18px;
+  color: var(--gray);
 }
 
 /* Submit button */
@@ -129,9 +152,10 @@ form h2 {
   background-color: #7895da;
 }
 
+/* Error message */
 .error-message {
   font-size: 12px;
-  color: var(--gray);
+  color: red; /* Red color for errors */
   margin-top: 5px;
 }
 
