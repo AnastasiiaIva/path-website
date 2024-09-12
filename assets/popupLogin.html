@@ -6,6 +6,7 @@
     <title>Responsive Navbar</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/stylesMain.css" />
+    <link rel="stylesheet" href="css/popups.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,8 +20,10 @@
       <div class="popup-overlay"></div>
       <div class="popup-content">
         <div class="popup-header">
-          <span id="login-tab" class="active">Log in</span>
-          <span id="register-tab">Register</span>
+          <div class="tabs">
+            <span id="register-tab">Register</span>
+            <span id="login-tab" class="active">Log in</span>
+          </div>
           <button id="close-popup" class="close-btn">X</button>
         </div>
         <form id="login-form">
@@ -36,7 +39,7 @@
             <span id="email-status" class="status-icon"></span>
             <div id="email-error" class="error-message"></div>
           </div>
-          <div class="form-group">
+          <div class="form-group password-group">
             <label for="password">Password</label>
             <input
               type="password"
@@ -51,15 +54,15 @@
             <div id="password-error" class="error-message">8+ characters</div>
           </div>
           <button type="submit" class="submit-btn">Create account</button>
-          <p>
+          <h5>
             Not registered yet?
             <a href="#" id="register-link">Create an account</a>
-          </p>
-          <p>
+          </h5>
+          <h6>
             By continuing I agree with the
             <a href="#" id="terms-link">Terms & Conditions</a> and
             <a href="#" id="privacy-link">Privacy Policy</a>.
-          </p>
+          </h6>
         </form>
       </div>
     </div>
