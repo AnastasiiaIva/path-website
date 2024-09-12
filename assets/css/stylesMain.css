@@ -1,4 +1,9 @@
 /*CSS 2.0*/
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   width: 100vw;
 }
@@ -157,11 +162,17 @@ body {
   width: 100%;
 }
 
-.right-section {
+/* .right-section {
   background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg");
   background-size: 120% 120%;
   background-position: center;
   overflow: visible;
+} */
+
+.right-section #card_background {
+  position: absolute;
+  width: 50%;
+  z-index: -1; /* Щоб фон був позаду іншого вмісту */
 }
 
 .card-container {
@@ -174,6 +185,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  z-index: 100;
 }
 
 .card {
