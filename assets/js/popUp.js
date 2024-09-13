@@ -139,38 +139,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//   // Password confirmation validation
-//   const confirmPasswordInput = document.getElementById("confirm-password");
-//   const confirmPasswordError = document.getElementById(
-//     "confirm-password-error"
-//   );
-//   const confirmPasswordStatus = document.getElementById(
-//     "confirm-password-status"
-//   );
+// // Password confirmation validation
+// const confirmPasswordInput = document.getElementById("confirm-password");
+// const confirmPasswordError = document.getElementById(
+//   "confirm-password-error"
+// );
+// const confirmPasswordStatus = document.getElementById(
+//   "confirm-password-status"
+// );
 
-//   confirmPasswordInput.addEventListener("input", function () {
-//     const confirmPasswordValue = confirmPasswordInput.value;
-//     const registerPasswordValue = registerPasswordInput.value;
+// confirmPasswordInput.addEventListener("input", function () {
+//   const confirmPasswordValue = confirmPasswordInput.value;
+//   const registerPasswordValue = registerPasswordInput.value;
 
-//     if (confirmPasswordValue === "") {
-//       confirmPasswordInput.style.borderColor = "";
-//       confirmPasswordStatus.innerHTML = "";
-//       confirmPasswordError.textContent = "";
-//     } else if (confirmPasswordValue === registerPasswordValue) {
-//       confirmPasswordInput.style.borderColor = "green";
-//       confirmPasswordStatus.innerHTML = "✔";
-//       confirmPasswordStatus.style.color = "green";
-//       confirmPasswordError.textContent = "";
-//     } else {
-//       confirmPasswordInput.style.borderColor = "red";
-//       confirmPasswordStatus.innerHTML = "✖";
-//       confirmPasswordStatus.style.color = "red";
-//       confirmPasswordError.textContent = "Passwords do not match.";
-//     }
-//   });
-
-//   function validateEmail(email) {
-//     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     return re.test(String(email).toLowerCase());
+//   if (confirmPasswordValue === "") {
+//     confirmPasswordInput.style.borderColor = "";
+//     confirmPasswordStatus.innerHTML = "";
+//     confirmPasswordError.textContent = "";
+//   } else if (confirmPasswordValue === registerPasswordValue) {
+//     confirmPasswordInput.style.borderColor = "green";
+//     confirmPasswordStatus.innerHTML = "✔";
+//     confirmPasswordStatus.style.color = "green";
+//     confirmPasswordError.textContent = "";
+//   } else {
+//     confirmPasswordInput.style.borderColor = "red";
+//     confirmPasswordStatus.innerHTML = "✖";
+//     confirmPasswordStatus.style.color = "red";
+//     confirmPasswordError.textContent = "Passwords do not match.";
 //   }
+// });
+
+// function validateEmail(email) {
+//   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   return re.test(String(email).toLowerCase());
+// }
 // });
