@@ -159,7 +159,7 @@ form h2 {
 /* Error message */
 .error-message {
   font-size: 12px;
-  color: red; /* Red color for errors */
+  color: var(--gray); /* Red color for errors */
   margin-top: 5px;
 }
 
@@ -196,4 +196,94 @@ h6 a:hover {
   margin-right: 10px;
   cursor: pointer;
   vertical-align: middle;
+}
+
+/* PopUps 3-4 */
+.popup3-4-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  width: 500px;
+  max-width: 90%;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#popup3 {
+  background-color: var(--green);
+}
+
+.popup-upper img {
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.popup-lower {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Вирівнює елементи по центру горизонтально */
+  text-align: center; /* Текст вирівняний по центру */
+}
+
+.popup-lower h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.popup-lower p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.popup-btn {
+  background-color: #7ed957;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: calc(100% - 20px);
+}
+
+.popup-btn:hover {
+  background-color: #6cba4b;
+}
+
+.popup-lower p span {
+  font-size: 24px;
+}
+
+#close-popup {
+  margin: 20px;
+}
+
+#popup4 {
+  background-color: var(--blue);
+}
+
+@media (max-width: 768px) {
+  .popup-lower {
+    padding: 10px;
+  }
+
+  #close-popup {
+    margin: 8px;
+  }
+
+  .popup-btn {
+    margin-bottom: 10px;
+  }
 }
