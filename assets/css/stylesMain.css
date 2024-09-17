@@ -844,8 +844,8 @@ text-align: center;
 }
 
 /* Buttons */
-.btn-orange,
-.btn-blue,
+.profile .btn-orange,
+.profile .btn-blue,
 .profile .btn-pink {
   font-family: "Inder", sans-serif;
   font-weight: 30;
