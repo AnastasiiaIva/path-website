@@ -146,7 +146,7 @@ form h2 {
   color: white;
   padding: 10px;
   border: none;
-  border-radius: 6px;
+  border-radius: 40px;
   width: 100%;
   font-size: 16px;
   cursor: pointer;
@@ -184,18 +184,19 @@ h6 a:hover {
 }
 
 /* Checkbox alignment */
-.form-group label {
+.form-group-checkbox label {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  color: var(--gray);
   cursor: pointer;
+  font-size: 12px;
+  color: #000;
+  margin: 15px;
 }
 
-.form-group input[type="checkbox"] {
-  margin-right: 10px;
+.form-group-checkbox input[type="checkbox"] {
+  margin-left: 0; /* Приклеює чекбокс до лівого краю */
+  margin-right: 10px; /* Регулює відстань між чекбоксом і текстом */
   cursor: pointer;
-  vertical-align: middle;
 }
 
 /* PopUps 3-4 */
@@ -252,7 +253,7 @@ h6 a:hover {
   color: white;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 40px;
   font-size: 16px;
   cursor: pointer;
   width: calc(100% - 20px);
