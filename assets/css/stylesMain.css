@@ -1,9 +1,43 @@
 /*CSS 2.0*/
-.main-section {
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+}
+
+/* Bookmarks */
+
+.faq-item {
+  position: relative;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .arrow {
+  transform: rotate(90deg);
+}
+
+.faq-answer {
+  display: none;
+  transition: display 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+/* Main */
+
+.main-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align items to the top */
-  height: calc(100vh - 60px); /* Height of the screen minus navbar height */
+  align-items: stretch; /*Align items to the top*/
+  /* height: calc(100vh - 60px); */ /* Height of the screen minus navbar height */
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -14,10 +48,12 @@
   max-width: 600px;
   width: 50%; /* Adjust width for balance */
   padding-right: 20px; /* Space for button alignment */
+  flex-shrink: 0;
 }
 
 .left-section h1 {
-  font-size: 48px;
+  font-size: calc(2.5vw + 2.5vh);
+  line-height: calc(1.2em + 1vw);
   margin-bottom: 20px;
   font-family: "Khmer", sans-serif;
   font-weight: 520;
@@ -25,13 +61,15 @@
   line-height: 60px;
 }
 
-.left-section .content {
+.left-section .content-h2 {
   display: flex;
   flex-direction: row; /* Align text and button horizontally */
+  margin-bottom: 20px;
 }
 
 .left-section h2 {
-  font-size: 28px;
+  font-size: calc(1.2vw + 1.2vh);
+  line-height: calc(1.1em + 0.8vw);
   margin: 0;
   width: 65%;
   font-family: "Inder", sans-serif;
@@ -46,11 +84,13 @@
   color: white;
   border: none;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 2% 4%;
   text-decoration: none;
-  font-size: 30px;
+  font-size: calc(1em + 0.4vw);
+  line-height: calc(1em + 0.5vw);
   margin-bottom: 20px;
   align-self: center;
+  text-align: center;
 }
 
 .left-section .row {
@@ -66,8 +106,7 @@
   align-items: flex-start; /* Align buttons to the left */
   justify-content: left;
   gap: 10px;
-  width: 50%;
-  padding-top: 40px;
+  /* padding-top: 40px; */
 }
 
 /* Buttons */
@@ -81,56 +120,72 @@
   color: white;
   border: 1px solid black;
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 4px 2vw;
   text-decoration: none;
-  font-size: 24px;
+  font-size: calc(1vw + 1em);
+  line-height: calc(1.5em + 0.5vw);
   transform: rotate(0deg); /* Default */
 }
 
 /* Tilt for each button */
 .btn-orange {
-  background-color: #ffab5f;
+  background-color: var(--orange);
   transform: rotate(3deg); /* Tilted slightly down to the right */
 }
 
 .btn-blue {
-  background-color: #5bb4f4cf;
+  background-color: var(--blue);
   transform: rotate(-4deg); /* Tilted slightly up to the right */
 }
 
 .btn-pink {
-  background-color: #f369a5d0;
+  background-color: var(--pink);
   transform: rotate(2deg); /* Tilted slightly up to the left */
+}
+
+.main-container a:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+.main-container button:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
 }
 
 /*Card*/
 .right-section {
-  position: absolute;
-  top: 5%; /* Aligns the section with the top of the page */
-  right: 0;
-  bottom: 0; /* Extends the section to the bottom of the page */
-  left: 50%;
-  background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg");
-  background-size: cover;
-  background-position: center;
-  z-index: 1; /* Ensures the background stays behind other elements */
   display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 1px;
+  /* width: 50%; */
+  z-index: 1;
+  width: 100%;
+}
+
+/* .right-section {
+  background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg");
+  background-size: 120% 120%;
+  background-position: center;
+  overflow: visible;
+} */
+
+.right-section #card_background {
+  position: absolute;
   width: 50%;
+  z-index: -1; /* Щоб фон був позаду іншого вмісту */
 }
 
 .card-container {
   position: relative;
   z-index: 2; /* Ensures the card stays above the background */
   width: 100%;
-  max-width: 400px;
-  height: 70%;
+  max-width: 600px;
+  height: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  z-index: 100;
 }
 
 .card {
@@ -140,6 +195,11 @@
   height: 100%;
   perspective: 1000px; /* Adds 3D effect for the flip */
   margin-bottom: 10px;
+}
+
+.card,
+.card-overlay {
+  min-height: 400px;
 }
 
 .card-inner {
@@ -213,6 +273,10 @@
   font-weight: 400;
 }
 
+.main-container a:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
 /* Нова кнопка закриття */
 .close-btn {
   position: absolute;
@@ -238,11 +302,12 @@
   font-family: "Inder", sans-serif;
   font-weight: 400;
   padding: 10px;
+  padding-bottom: 20px;
 }
 
 .card-lower p {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
   text-align: center;
 }
 
@@ -297,15 +362,15 @@
 }
 
 .orange-section h3 {
-  background-color: #ffab5f; /* Помаранчевий */
+  background-color: var(--orange); /* Помаранчевий */
 }
 
 .blue-section h3 {
-  background-color: #5bb4f4cf; /* Голубий */
+  background-color: var(--blue); /* Голубий */
 }
 
 .pink-section h3 {
-  background-color: #f369a5d0; /* Рожевий */
+  background-color: var(--pink); /* Рожевий */
 }
 
 /* Dot Indicators */
@@ -337,7 +402,6 @@
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
-  margin-top: -110px;
 }
 
 .blue-section-block {
@@ -373,6 +437,39 @@ h4 {
   color: white;
 }
 
+/*FQA*/
+
+.faq-question {
+  display: flex; /* Використовуємо flexbox для розміщення тексту і стрілки */
+  justify-content: space-between; /* Розміщення тексту зліва і стрілки справа */
+  align-items: center; /* Вирівнювання по вертикалі */
+  width: 100%;
+  padding: 15px;
+  border: none; /* Видалення стандартних рамок кнопки */
+  background-color: #ffffff; /* Білий фон для питання */
+  border-bottom: 1px solid #ddd; /* Легкий сірий бордер між питаннями */
+  text-align: left; /* Вирівнювання тексту по лівому краю */
+  cursor: pointer; /* Зміна курсору на pointer */
+  font-size: 20px; /* Розмір шрифту */
+  color: #333; /* Темно-сірий колір */
+  position: relative; /* Для позиціонування стрілки */
+}
+
+.faq-question .question-text {
+  margin-right: 10px; /* Відступ між текстом і стрілкою */
+}
+
+.arrow {
+  width: 20px; /* Ширина стрілки */
+  height: 20px; /* Висота стрілки */
+  position: relative; /* Відносне позиціонування */
+  transition: transform 0.3s ease; /* Плавний перехід для обертання стрілки */
+}
+
+.faq-question.active .arrow {
+  transform: rotate(90deg); /* Обертання стрілки, коли питання відкрите */
+}
+
 .faq-section {
   padding: 20px;
   background-color: #ffffff; /* White background for the entire section */
@@ -382,8 +479,8 @@ h4 {
 
 .faq-section h2 {
   margin-bottom: 10px;
-  color: #ffb777; /* Title color */
-  font-size: 48px;
+  color: var(--orange); /* Title color */
+  font-size: calc(2rem + 1vw);
 }
 
 .faq-help-text {
@@ -393,7 +490,7 @@ h4 {
 }
 
 .faq-help-text a {
-  color: #2196f3; /* Link color */
+  color: var(--blue); /* Link color */
   text-decoration: none; /* Remove underline */
 }
 
@@ -403,35 +500,12 @@ h4 {
   overflow: hidden; /* Hide overflow to ensure rounded corners */
 }
 
-.faq-question {
-  width: 100%;
-  padding: 15px;
-  border: none; /* Remove default button border */
-  background-color: #ffffff; /* White background for the question */
-  border-bottom: 1px solid #ddd; /* Light grey border between questions */
-  text-align: left; /* Left align text */
-  cursor: pointer; /* Change cursor to pointer */
-  font-size: 20px; /* Font size */
-  color: #333; /* Dark grey color */
-  position: relative; /* For positioning the arrow */
-}
-
 .faq-answer {
   display: none; /* Hide answers by default */
   padding: 15px;
   text-align: left;
   background-color: #ffffff; /* White background for the answer */
   color: #555; /* Slightly lighter grey for the text */
-}
-
-.arrow {
-  width: 20px; /* Set the width for the arrow */
-  height: 20px; /* Set the height for the arrow */
-  position: absolute; /* Absolute positioning for the arrow */
-  right: 15px; /* Right align the arrow */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%) rotate(0deg); /* Center vertically */
-  transition: transform 0.3s ease; /* Smooth transition for arrow rotation */
 }
 
 .faq-question.active .arrow {
@@ -450,79 +524,579 @@ h4 {
   border-bottom: none; /* Remove bottom border when answer is open */
 }
 
-/* Footer Section */
-.footer {
-  background-color: #85c6f7; /* Light blue background */
-  padding: 40px 20px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto; /* Center the content */
-}
-
-.footer-column {
-  flex: 1;
-  margin: 0 10px; /* Space between columns */
-}
-
-.footer-logo {
-  width: 150px; /* Adjust the logo size */
-  margin-bottom: 20px;
-}
-
-.social-links {
-  display: flex;
-  gap: 10px; /* Space between social icons */
-}
-
-.social-links img {
-  width: 30px;
-  height: 30px;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links li {
-  margin-bottom: 10px;
-}
-
-.footer-links a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-.footer-column p {
-  color: #fff;
-  line-height: 1.5;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .footer-content {
+  .main-container {
     flex-direction: column;
+  }
+
+  .left-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    order: 1;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: calc(1.2em + 2vh);
+    text-align: left;
+    min-height: 50%;
+  }
+
+  .content {
+    text-align: left;
+    width: 50%; /* Adjust width for balance */
+    flex-shrink: 0;
+  }
+
+  .left-section h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .left-section h2 {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .btn-try {
+    display: none;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    padding-bottom: 0px;
+  }
+
+  .btn-orange,
+  .btn-blue,
+  .btn-pink {
+    font-size: calc(0.5rem + 1vw);
+    line-height: 1rem;
+    margin: 0;
+    padding: calc(1vh + 1vw) calc(1vh + 5vw);
+    width: auto; /* Дати кнопкам 100% ширини батьківського елемента */
+    box-sizing: border-box;
     text-align: center;
   }
 
-  .footer-column {
-    margin-bottom: 20px;
+  .right-section {
+    order: 2;
+    /* width: 100%; */
+    /* position: relative; */ /* Може знадобитися для коректного позиціонування */
+    /* height: auto; */
+    margin-bottom: 1rem;
   }
 
-  .social-links {
-    justify-content: center;
+  .card-container {
+    width: 100%;
+    height: auto;
+
+    .card {
+      width: 100%;
+      height: auto;
+    }
   }
 
-  .footer-links li {
-    margin-bottom: 15px;
+  .card {
+    border-radius: 20px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /*Blue Block*/
+
+  .blue-block {
+    flex-direction: column; /* Розміщує блоки в стовпчик */
+    align-items: center; /* Вирівнює блоки по центру */
+  }
+
+  .blue-section-block {
+    margin: 10px 0; /* Додає відступ між блоками */
+    padding: 20px 10px; /* Зменшує внутрішні відступи */
+    text-align: center; /* Центрує текст у блоках */
+  }
+
+  .circle {
+    margin: 0 auto 15px auto; /* Центрує коло та додає відступ знизу */
+  }
+
+  h4 {
+    font-size: 18px; /* Зменшує розмір заголовка для мобільних пристроїв */
+  }
+
+  .blue-section-block p {
+    font-size: 14px; /* Зменшує розмір тексту для мобільних пристроїв */
   }
 }
+
+/*Popup
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 0;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px; 
+  border-radius: 10px;
+  width: 80%; 
+  max-width: 600px; 
+  position: relative;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+.popup-header span {
+  cursor: pointer;
+  padding: 5px 10px; 
+}
+
+.popup-header .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 30px; 
+  cursor: pointer;
+  color: black; 
+}
+
+.form-group {
+  margin-bottom: 20px; 
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.status-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.status-icon::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+#error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%; 
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+#register-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#register-link:hover {
+  text-decoration: underline;
+}
+  */
+
+
+/***** LUIS *****/
+.profile .main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  height: calc(100vh - 60px); /* Height of the screen minus navbar height */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.profile .left-section {
+  text-align: left;
+  max-width: 600px;
+  width: 50%; /* Adjust width for balance */
+  padding-right: 20px; /* Space for button alignment */
+}
+
+.profile .left-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Khmer", sans-serif;
+  font-weight: 520;
+  font-style: normal;
+  line-height: 60px;
+}
+.profile h1 {
+margin:10px;
+padding:15p;
+text-align: center;
+}
+
+.profile .left-section .content {
+  display: flex;
+  flex-direction: row; /* Align text and button horizontally */
+}
+
+.profile .left-section h2 {
+  font-size: 28px;
+  margin: 0;
+  width: 65%;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 28px;
+}
+
+.profile .btn-try {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.profile .left-section .row {
+  display: flex;
+  align-items: center; /* Align text and button vertically */
+  gap: 20px; /* Space between text and button */
+}
+
+/* Button group */
+.profile .button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align buttons to the left */
+  justify-content: left;
+  gap: 10px;
+  width: 50%;
+  padding-top: 40px;
+}
+
+/* Buttons */
+.profile .btn-orange,
+.profile .btn-blue,
+.profile .btn-pink {
+  font-family: "Inder", sans-serif;
+  font-weight: 30;
+  font-style: normal;
+  display: inline-block;
+  color: white;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 24px;
+  transform: rotate(0deg); /* Default */
+}
+
+/* Tilt for each button */
+.profile .btn-orange {
+  background-color: #ffab5f;
+  transform: rotate(3deg); /* Tilted slightly down to the right */
+}
+
+.profile .btn-blue {
+  background-color: #5bb4f4cf;
+  transform: rotate(-4deg); /* Tilted slightly up to the right */
+}
+
+.profile .btn-pink {
+  background-color: #f369a5d0;
+  transform: rotate(2deg); /* Tilted slightly up to the left */
+}
+
+.profile .left{
+  background-color: orange;
+  border: 3px solid  orange;
+  border-radius: 24px;
+  justify-content: space-around;
+  gap:20px;
+
+}
+.profile .right {
+background-color: blueviolet;
+border: 3px solid blue;
+border-radius: 24px;
+justify-content: space-around;
+gap:20px;
+padding:10px;
+margin:15px;
+}
+.profile .container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap:20px;
+  margin:10px;
+  padding:10px;
+}
+.profile .left, .right {
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+  border: 3px solid rgba(37, 7, 68, 0.274);
+}
+.profile .header__1 {
+  border-color: orange;
+}
+.profile .header__2 {
+  display:flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+  background-color:orange;
+  width:90%;
+  font-family: "Khmer", sans-serif;
+  .profile .header__3 {
+  display:flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+  background-color:white;
+  width:90%;
+  }
+}
+.profile .header__left {
+  display:flex;
+  width: 120px;
+  border-radius: 2px orange;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:10px;
+  padding:15px;
+  font-family: sans-serif;
+  font-size:25px;
+
+}
+.profile .header__right {
+  display:flex;
+  justify-content:center ;
+  width: 120px;
+  border-radius: 2px orange; 
+  flex-direction: column;
+  font-family: "Khmer", sans-serif;
+
+}
+.profile .ranking{
+  display:flex;
+  justify-content:space-between;
+  color:white;
+  flex-direction:column;
+  flex-wrap: wrap;
+}
+.profile ul {
+  list-style: none;
+  padding: 10px;
+  margin: 15px;
+}
+  .profile .li {
+  color: black;
+  display:flex;
+  justify-content:space-between;
+  margin: 10px;px;
+  padding:10px;
+  }
+ .profile .li__ranking {
+  color: white;
+  display:grid;
+  flex-grow: initial;
+  grid-template-columns: 0.1fr 0.5fr 0.8fr;
+  justify-content:space-between ;
+  margin: 7px;
+  padding:7px;
+ }
+
+  .profile .li__ranking span:last-child{
+    background-color: white;
+    color:black;
+    border-radius: 5px;
+    padding:3px;
+    text-align:center;
+  }
+
+.profile .ul, li {
+  list-style:none;
+  padding:0;
+  display:flex;
+  justify-content: space-between;
+  padding: 50;
+  margin: 15;
+}
+
+.profile body {
+  background:white;
+
+}
+
+.profile .title {
+  text-align: left;
+  color: white;
+}
+
+.profile .content {
+  list-style: none;
+  padding: 50;
+  margin: 15;
+  color: white;
+}
+.profile .Counter{
+  background-color: orange;
+  max-width: 700px;
+}
+.profile .h2{
+  border-color: orange;
+  font-size:120px;
+}
+.profile .Lista{
+  font-size: 30px;
+  display:flex;
+  flex-direction:wrap;
+  border:3px solid blue;
+  border-radius:22px;
+  font-family: sans-serif;
+}
+.profile .img {
+  margin-right: 10px;
+}
+.profile section > * {
+  width: 100%;
+}
+.profile .accept-btn {
+  background-color: rgb(0, 89, 255);
+  border-radius: 4px rgb(0, 174, 255);
+  cursor: pointer;
+  color:aqua;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+}
+.profile .product-card {
+  display: flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:5px;
+  padding:5px;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+}
+
+.profile .product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.profile .product-details {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.profile .product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.profile .product-price {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 16px;
+}
+.profile .card-contenedor2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding:20px;
+  margin-right: 20px;
+  gap:20px;
+
+}
+.profile p {
+  margin:10px;
+  padding:15px;
+  font-family:"Khmer", sans-serif;
+  font-size: 16px;
+}
+/***** END LUIS *****/
