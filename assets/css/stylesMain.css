@@ -42,6 +42,7 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
 .left-section {
   text-align: left;
   max-width: 600px;
@@ -58,11 +59,6 @@ body {
   font-weight: 520;
   font-style: normal;
   line-height: 60px;
-}
-h1 {
-margin:10px;
-padding:15p;
-text-align: center;
 }
 
 .left-section .content-h2 {
@@ -222,16 +218,28 @@ text-align: center;
 .card-back {
   position: absolute;
   width: 100%;
-  border-radius: 20px;
-  border: 3px solid rgba(37, 7, 68, 0.274);
+  height: 100%;
+  backface-visibility: hidden; /* Hides back side of the card */
 }
 
-.header__1 {
-  border-color: orange;
+.card-front {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 30px 8px rgba(0, 0, 0, 0.2);
 }
-.header__2 {
-  display:flex;
-  justify-content: space-between;
+
+.card-back {
+  background-color: rgb(0, 0, 0.2);
+  border-radius: 20px;
+  transform: rotateY(180deg); /* Position back side correctly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background-color: white;
   border-radius: 20px;
   box-shadow: 20px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -263,6 +271,10 @@ text-align: center;
   cursor: pointer;
   font-family: "Inder", sans-serif;
   font-weight: 400;
+}
+
+.main-container a:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* Нова кнопка закриття */
@@ -304,54 +316,38 @@ text-align: center;
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
-  padding: 10px;
-  margin: 15px;
-  background-color:white;
-  width:90%;
-  }
+  cursor: pointer;
+  border: none;
+  width: calc(100% - 20px);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 
-.header__left {
-  display:flex;
-  width: 120px;
-  border-radius: 2px orange;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin:10px;
-  padding:15px;
-  font-family: sans-serif;
-  font-size:25px;
-
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  perspective: 1000px; /* Для 3D ефекту перевороту */
 }
-.header__right {
-  display:flex;
-  justify-content:center ;
-  width: 120px;
-  border-radius: 2px orange; 
+
+.card-back-content {
+  display: flex;
   flex-direction: column;
-  font-family: "Khmer", sans-serif;
+  gap: 1px;
+  padding: 1px;
+}
 
+.section {
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.ranking{
-  display:flex;
-  justify-content:space-between;
-  color:white;
-  flex-direction:column;
-  flex-wrap: wrap;
-}
-ul {
-  list-style: none;
-  padding: 10px;
-  margin: 15px;
-}
-  .li {
-  color: black;
-  display:flex;
-  justify-content:space-between;
-  margin: 10px;px;
-  padding:10px;
-  }
- .li__ranking {
+
+.section h3 {
+  padding: 1px;
+  border-radius: 20px;
   color: white;
   text-align: center;
   margin-bottom: 0.1px;
@@ -408,20 +404,36 @@ ul {
   justify-content: space-between;
 }
 
-body {
-  background:white;
-
+.blue-section-block {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  margin: 0 12px;
 }
 
-.title {
-  text-align: left;
+.circle {
+  background-color: #ffffff; /* White background for the circle */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.circle img {
+  width: 40px;
+  height: 40px;
+}
+
+h4 {
+  margin: 10px 0;
   color: white;
 }
 
-.content {
-  list-style: none;
-  padding: 50;
-  margin: 15;
+.blue-section-block p {
+  margin: 0;
   color: white;
 }
 
@@ -496,10 +508,8 @@ body {
   color: #555; /* Slightly lighter grey for the text */
 }
 
-.product-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
+.faq-question.active .arrow {
+  transform: translateY(-50%) rotate(90deg); /* Rotate arrow when question is open */
 }
 
 .faq-item:not(:last-child) {
@@ -756,7 +766,6 @@ body {
 }
   */
 
-
 /***** LUIS *****/
 .profile .main-section {
   display: flex;
@@ -908,7 +917,10 @@ margin:15px;
   background-color:orange;
   width:90%;
   font-family: "Khmer", sans-serif;
-  .profile .header__3 {
+
+}
+
+.profile .header__3 {
   display:flex;
   justify-content: space-between;
   border-radius: 20px;
@@ -916,8 +928,8 @@ margin:15px;
   margin: 15px;
   background-color:white;
   width:90%;
-  }
 }
+
 .profile .header__left {
   display:flex;
   width: 120px;
