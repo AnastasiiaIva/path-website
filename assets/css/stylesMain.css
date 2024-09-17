@@ -768,7 +768,7 @@ h4 {
 
 
 /***** LUIS *****/
-.main-section {
+.profile .main-section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start; /* Align items to the top */
@@ -777,14 +777,14 @@ h4 {
   margin: 0 auto;
   padding: 20px;
 }
-.left-section {
+.profile .left-section {
   text-align: left;
   max-width: 600px;
   width: 50%; /* Adjust width for balance */
   padding-right: 20px; /* Space for button alignment */
 }
 
-.left-section h1 {
+.profile .left-section h1 {
   font-size: 48px;
   margin-bottom: 20px;
   font-family: "Khmer", sans-serif;
@@ -792,18 +792,18 @@ h4 {
   font-style: normal;
   line-height: 60px;
 }
-h1 {
+.profile h1 {
 margin:10px;
 padding:15p;
 text-align: center;
 }
 
-.left-section .content {
+.profile .left-section .content {
   display: flex;
   flex-direction: row; /* Align text and button horizontally */
 }
 
-.left-section h2 {
+.profile .left-section h2 {
   font-size: 28px;
   margin: 0;
   width: 65%;
@@ -813,7 +813,7 @@ text-align: center;
   line-height: 28px;
 }
 
-.btn-try {
+.profile .btn-try {
   display: inline-block;
   background-color: black;
   color: white;
@@ -826,14 +826,14 @@ text-align: center;
   align-self: center;
 }
 
-.left-section .row {
+.profile .left-section .row {
   display: flex;
   align-items: center; /* Align text and button vertically */
   gap: 20px; /* Space between text and button */
 }
 
 /* Button group */
-.button-group {
+.profile .button-group {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align buttons to the left */
@@ -846,7 +846,7 @@ text-align: center;
 /* Buttons */
 .btn-orange,
 .btn-blue,
-.btn-pink {
+.profile .btn-pink {
   font-family: "Inder", sans-serif;
   font-weight: 30;
   font-style: normal;
@@ -861,22 +861,22 @@ text-align: center;
 }
 
 /* Tilt for each button */
-.btn-orange {
+.profile .btn-orange {
   background-color: #ffab5f;
   transform: rotate(3deg); /* Tilted slightly down to the right */
 }
 
-.btn-blue {
+.profile .btn-blue {
   background-color: #5bb4f4cf;
   transform: rotate(-4deg); /* Tilted slightly up to the right */
 }
 
-.btn-pink {
+.profile .btn-pink {
   background-color: #f369a5d0;
   transform: rotate(2deg); /* Tilted slightly up to the left */
 }
 
-.left{
+.profile .left{
   background-color: orange;
   border: 3px solid  orange;
   border-radius: 24px;
@@ -884,7 +884,7 @@ text-align: center;
   gap:20px;
 
 }
-.right {
+.profile .right {
 background-color: blueviolet;
 border: 3px solid blue;
 border-radius: 24px;
@@ -893,7 +893,7 @@ gap:20px;
 padding:10px;
 margin:15px;
 }
-.container{
+.profile .container{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -901,16 +901,16 @@ margin:15px;
   margin:10px;
   padding:10px;
 }
-.left, .right {
+.profile .left, .right {
   padding: 10px;
   width: 100%;
   border-radius: 20px;
   border: 3px solid rgba(37, 7, 68, 0.274);
 }
-.header__1 {
+.profile .header__1 {
   border-color: orange;
 }
-.header__2 {
+.profile .header__2 {
   display:flex;
   justify-content: space-between;
   border-radius: 20px;
@@ -919,7 +919,7 @@ margin:15px;
   background-color:orange;
   width:90%;
   font-family: "Khmer", sans-serif;
-  .header__3 {
+  .profile .header__3 {
   display:flex;
   justify-content: space-between;
   border-radius: 20px;
@@ -929,7 +929,7 @@ margin:15px;
   width:90%;
   }
 }
-.header__left {
+.profile .header__left {
   display:flex;
   width: 120px;
   border-radius: 2px orange;
@@ -941,7 +941,7 @@ margin:15px;
   font-size:25px;
 
 }
-.header__right {
+.profile .header__right {
   display:flex;
   justify-content:center ;
   width: 120px;
@@ -950,26 +950,26 @@ margin:15px;
   font-family: "Khmer", sans-serif;
 
 }
-.ranking{
+.profile .ranking{
   display:flex;
   justify-content:space-between;
   color:white;
   flex-direction:column;
   flex-wrap: wrap;
 }
-ul {
+.profile ul {
   list-style: none;
   padding: 10px;
   margin: 15px;
 }
-  .li {
+  .profile .li {
   color: black;
   display:flex;
   justify-content:space-between;
   margin: 10px;px;
   padding:10px;
   }
- .li__ranking {
+ .profile .li__ranking {
   color: white;
   display:grid;
   flex-grow: initial;
@@ -979,7 +979,7 @@ ul {
   padding:7px;
  }
 
-  .li__ranking span:last-child{
+  .profile .li__ranking span:last-child{
     background-color: white;
     color:black;
     border-radius: 5px;
@@ -987,7 +987,7 @@ ul {
     text-align:center;
   }
 
-.ul, li {
+.profile .ul, li {
   list-style:none;
   padding:0;
   display:flex;
@@ -996,31 +996,31 @@ ul {
   margin: 15;
 }
 
-body {
+.profile body {
   background:white;
 
 }
 
-.title {
+.profile .title {
   text-align: left;
   color: white;
 }
 
-.content {
+.profile .content {
   list-style: none;
   padding: 50;
   margin: 15;
   color: white;
 }
-.Counter{
+.profile .Counter{
   background-color: orange;
   max-width: 700px;
 }
-.h2{
+.profile .h2{
   border-color: orange;
   font-size:120px;
 }
-.Lista{
+.profile .Lista{
   font-size: 30px;
   display:flex;
   flex-direction:wrap;
@@ -1028,13 +1028,13 @@ body {
   border-radius:22px;
   font-family: sans-serif;
 }
-.img {
+.profile .img {
   margin-right: 10px;
 }
-section > * {
+.profile section > * {
   width: 100%;
 }
-.accept-btn {
+.profile .accept-btn {
   background-color: rgb(0, 89, 255);
   border-radius: 4px rgb(0, 174, 255);
   cursor: pointer;
@@ -1043,7 +1043,7 @@ section > * {
   margin: 10px;
   padding: 10px;
 }
-.product-card {
+.profile .product-card {
   display: flex;
   flex-wrap:wrap;
   gap:10px;
@@ -1059,13 +1059,13 @@ section > * {
   transition: width 0.3s ease;
 }
 
-.product-card img {
+.profile .product-card img {
   width: 150px;
   height: 150px;
   object-fit: cover;
 }
 
-.product-details {
+.profile .product-details {
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -1073,18 +1073,18 @@ section > * {
   flex: 1;
 }
 
-.product-title {
+.profile .product-title {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-.product-price {
+.profile .product-price {
   font-size: 16px;
   color: #888;
   margin-bottom: 16px;
 }
-.card-contenedor2 {
+.profile .card-contenedor2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -1093,7 +1093,7 @@ section > * {
   gap:20px;
 
 }
-p {
+.profile p {
   margin:10px;
   padding:15px;
   font-family:"Khmer", sans-serif;
