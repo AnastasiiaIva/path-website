@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Navbar</title>
     <link rel="stylesheet" href="css/stylesMain.css" />
+    <link rel="stylesheet" href="css/popups.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="CSS/stylesMain.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inder&family=Khmer&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
       <!-- Navbar -->
@@ -50,33 +54,79 @@
     
 
     <!-- Main Section -->
-    <main>
-      <section class="header__1">
-        <div class="container">
-          <div class="left">
-            <h1>Tips for Success:</h1>
-            <ul class="List">
-              <li>1. Plan Ahead: Map your walking routes.</li>
-              <li>2. Dress Comfortably: Wear suitable shoes and weather-appropriate clothes.</li>
-              <li>3. Stay Hydrated: Carry a reusable water bottle.</li>
-              <li>4. Allow Extra Time: Start earlier to account for walking time.</li>
-              <li>5. Combine Errands: Group tasks into one walk.</li>
-              <li>6. Track Progress: Use a fitness app or tracker.</li>
-              <li>7. Enjoy It: Listen to music or podcasts.</li>
-              <li>8. Walk with a Friend: Make it social..</li>
-              <li>9. Take Breaks: Rest when needed.</li>
-              <li>10. Explore: Discover new routes and enjoy nature.</li>
-            </ul>
+    <section class="main-container">
+      <div class="left-section">
+        <div class="content">
+          <h1>Welcome To Your Daily Challenge Hub!</h1>
+          <div class="content-h2">
+            <h2>We’re here to help you become the best version of yourself:</h2>
+            <a href="#" class="btn-try">Try It Now</a>
           </div>
-          <div class="right">
-            <header class="header__2">
-              <div class="header__left">  
-                <p>Timer Left</p>
-                <p>00:23:45 hs</p>
+        </div>
+        <div class="button-group">
+          <a href="#card" class="btn-orange">1. Get Daily Missions</a>
+          <a href="#blue-block" class="btn-blue">2. Accept Challenges</a>
+          <a href="#faq-section" class="btn-pink">3. Improve Your Life</a>
+        </div>
+      </div>
+
+      <!-- Right Section with Cards -->
+      <div class="right-section">
+        <img
+          id="card_background"
+          src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg"
+        />
+
+        <!-- Card Container -->
+        <div class="card-container">
+          <div class="card" id="card">
+            <!-- Card Front -->
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="card-upper">
+                  <img
+                    src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png"
+                    alt="Image 1"
+                  />
+                  <button class="help-btn">?</button>
+                </div>
+                <div class="card-lower">
+                  <p>Don’t use any transport today (only walk)</p>
+                  <button class="action-btn">Accept</button>
+                </div>
               </div>
-              <div class="header__right">
-                <p>Today</p>
-                <p>2 places</p>
+              <!-- Card Back -->
+              <div class="card-back">
+                <button class="help-btn">Х</button>
+                <div class="card-back-content">
+                  <div class="section orange-section">
+                    <h3>Boost Your Health:</h3>
+                    <p id="mission-text">
+                      Walking increases your cardiovascular fitness, strengthens
+                      muscles, and improves mood. Science shows that just 30
+                      minutes of walking daily can reduce the risk of heart
+                      disease.
+                    </p>
+                  </div>
+                  <div class="section blue-section">
+                    <h3>Protect the Environment:</h3>
+                    <p id="challenge-text">
+                      Walking increases your cardiovascular fitness, strengthens
+                      muscles, and improves mood. Science shows that just 30
+                      minutes of walking daily can reduce the risk of heart
+                      disease.
+                    </p>
+                  </div>
+                  <div class="section pink-section">
+                    <h3>Feel Better, Live Better:</h3>
+                    <p id="life-text">
+                      Walking increases your cardiovascular fitness, strengthens
+                      muscles, and improves mood. Science shows that just 30
+                      minutes of walking daily can reduce the risk of heart
+                      disease.
+                    </p>
+                  </div>
+                </div>
               </div>
             </header>
             <div class="Content">
@@ -124,62 +174,225 @@
               </ul>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="header__3">
-        <div class="card-contenedor2">
-          <div class="product-card">
-            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto">
-              <div class="product-details">
-                <div>
-                  <div class="product-title">Don’t use any transport today (only walk)</div>
-                </div>
-                <button class="accept-btn">Aceptar</button>
-              </div>
-          </div>
-          <div class="product-card">
-            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto">
-            <div class="product-details">
-              <div>
-                <div class="product-title">Don’t use any transport today (only walk)</div>
-              </div>
-              <button class="accept-btn">Aceptar</button>
-            </div>
+          <!-- Behind Card -->
+          <div class="card-back-overlay"></div>
+          <!-- Dot Indicators -->
+          <div class="dot-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
           </div>
         </div>
-      </section>
-    </main>
-    <script src="js/main.js"></script>
-<!-- Footer Section -->
-<footer class="footer">
-  <div class="footer-content">
-    
-    <!-- First Column: Logo and Social Links -->
-    <div class="footer-column">
-      <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/IconBlack.png" alt="Path Logo" class="footer-logo">
-      <div class="social-links">
-        <a href="#"><img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/inst.png" alt="Instagram"></a>
-        <a href="#"><img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/twitter.png" alt="Twitter"></a>
-        <a href="#"><img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/linkedIn.png" alt="LinkedIn"></a>
+      </div>
+    </section>
+
+    <!-- New Blue Section with Circles -->
+    <div class="container">
+      <div class="blue-block" id="blue-block">
+        <div class="blue-section-block">
+          <div class="circle">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/1emoji.png"
+              alt="Icon 1"
+            />
+          </div>
+          <h4>Start each day with a unique mission</h4>
+          <p>
+            Our carefully curated tasks are meant to push you out of your
+            comfort zone and encourage personal growth.
+          </p>
+        </div>
+        <div class="blue-section-block">
+          <div class="circle">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/2emoji.png"
+              alt="Icon 2"
+            />
+          </div>
+          <h4>Gain new perspectives and skills</h4>
+          <p>
+            Each mission is crafted to help you develop new abilities and
+            broaden your horizons.
+          </p>
+        </div>
+        <div class="blue-section-block">
+          <div class="circle">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/3emoji.png"
+              alt="Icon 3"
+            />
+          </div>
+          <h4>Stay motivated with exciting and achievable goals</h4>
+          <p>
+            Our missions are designed to be engaging and within reach, ensuring
+            you stay driven and committed.
+          </p>
+        </div>
       </div>
     </div>
-    
-    <!-- Second Column: Links -->
-    <div class="footer-column">
-      <ul class="footer-links">
-        <li><a class="aloja" href="#">About us</a></li>
-        <li><a class="aloja" href="#">Contact</a></li>
-        <li><a class="aloja"href="#">Help</a></li>
-      </ul>
+
+    <!--FQA-->
+    <div class="container">
+      <section class="faq-section" id="faq-section">
+        <h2>Frequent Ask Questions</h2>
+        <p class="faq-help-text">
+          Still need help? <a href="#">Get Help Now</a>
+        </p>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >What is the Daily Challenge program?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The Daily Challenge program is designed to help you improve
+              various aspects of your life through simple, daily missions. Each
+              day, you receive a new challenge aimed at enhancing your health,
+              well-being, and productivity. It’s about making small, achievable
+              changes that lead to significant benefits over time.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >How do I participate in a Daily Challenge?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Participation is easy! Sign up on our website to receive your
+              daily mission via email. Follow the task for the day, and track
+              your progress directly on our platform. You can also engage with
+              our community for support and motivation.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Are the Daily Challenges customizable?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              While the daily missions are designed to be universally
+              beneficial, they are crafted to be adaptable. If you have specific
+              goals or needs, you can choose from various categories to tailor
+              the challenges to better suit your lifestyle and preferences.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="benefit-question">
+            <span class="question-text">How do the challenges benefit me?</span>
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Each challenge is crafted to address different aspects of personal
+              growth, including physical health, mental well-being, and
+              environmental sustainability. By participating, you’ll boost your
+              overall health, develop positive habits, and contribute to a
+              greener planet.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text">What if I miss a day?</span>
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Don’t worry! You can always catch up on missed challenges. Our
+              platform allows you to view previous missions and complete them at
+              your own pace. The key is consistency, but life happens—so just
+              pick up where you left off.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-    
-    <!-- Third Column: About Text -->
-    <div class="footer-column">
-      <p>
-        At Path, we are dedicated to delivering excellence and innovation. We strive to create value and make a positive impact on the lives of our customers, employees, and communities through our commitment to quality and integrity.
-      </p>
-    </div>
-</footer>
-    <script src="js/main.js" defer></script>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- First Column: Logo and Social Links -->
+        <div class="footer-column">
+          <img
+            src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/IconBlack.png"
+            alt="Path Logo"
+            class="footer-logo"
+          />
+          <div class="social-links">
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/inst.png"
+                alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/twitter.png"
+                alt="Twitter"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/linkedIn.png"
+                alt="LinkedIn"
+            /></a>
+          </div>
+        </div>
+
+        <!-- Second Column: Links -->
+        <div class="footer-column">
+          <ul class="footer-links">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+
+        <!-- Third Column: About Text -->
+        <div class="footer-column">
+          <p>
+            At Path, we are dedicated to delivering excellence and innovation.
+            We strive to create value and make a positive impact on the lives of
+            our customers, employees, and communities through our commitment to
+            quality and integrity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/scripts.js" defer></script>
   </body>
 </html>
