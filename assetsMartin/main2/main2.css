@@ -1,0 +1,92 @@
+/*Step bar*/
+
+.step-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding-top: 60px;
+    
+    
+  }
+  
+  /* Media query para pantallas pequeñas (mobile) */
+  @media (max-width: 768px) {
+    .step-container {
+      flex-direction: column; /* Cambiamos la dirección a columna en móviles */
+      padding: 20px; /* Reducimos el padding aún más */
+      width: 100%; /* Aseguramos que ocupe todo el ancho de la pantalla */
+    }
+  }
+  
+  .step-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%; /* Asegura que la barra ocupe el 100% del contenedor */
+    align-items: center;
+    max-width: 1200px;
+    
+    
+  }
+  
+  .step {
+     /* Mantiene un tamaño proporcional para cada círculo */
+    padding: 24px;
+    background-color: #ddd;
+    color: black;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Asegura que los círculos estén encima de la línea */
+
+  }
+  
+  .step.active {
+    background-color: #5911c5;
+    color: white;
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  .step-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%; /* La línea ahora cubre todo el ancho del step bar */
+    height: 4px;
+    background-color: #f1f1f1;
+    z-index: 0;
+  }
+  
+  .step-bar .step.active ~ .step-bar::before {
+    background-color: #c62fc4;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    margin: 0 auto;
+  }
+  
+  .help-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
