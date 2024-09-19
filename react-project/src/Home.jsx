@@ -1,8 +1,5 @@
+import Card from "./Card"
 import { FaqItem } from "./FaqItem"
-
-
-
-
 
 function Home() {
 
@@ -31,7 +28,7 @@ function Home() {
           src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg"
         />
 
-        
+        <Card />
       </div>
     </section>
               {/* <!-- New Blue Section with Circles --> */}

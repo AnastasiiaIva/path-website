@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
 
 function Header() {
+    const toggleMenu = () => {
+      return
+    }
 
     return (
       <>
@@ -27,13 +30,13 @@ function Header() {
             </div>
             {/* <!-- Action Buttons --> */}
             <div className="navbar-menu-btn">
-              <a href="#" className="btn1">Login</a>
+              <Link to="/login">Login</Link>
               <a href="#" className="btn2">Sign Up</a>
             </div>
           </div>
 
           {/* <!-- Burger Menu --> */}
-          <div className="burger-menu" onClick="toggleMenu()">
+          <div className="burger-menu" onClick={toggleMenu}>
             <div className="line1"></div>
             <div className="line2"></div>
             <div className="line3"></div>

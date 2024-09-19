@@ -1,4 +1,7 @@
-{
+{"cards":
+[
+  {
+    "id": 1,
     "image":
       "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png",
     "text": "Don’t use any transport today (only walk)",
@@ -7,9 +10,10 @@
     "challengeText":
       "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease.",
     "lifeText":
-      "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease.",
-  }
+      "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease."
+  },
   {
+    "id": 2,
     "image":
       "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image2.png",
     "text": "Plant a Tree or a Plant",
@@ -18,9 +22,10 @@
     "challengeText":
       "Trees absorb carbon dioxide and release oxygen, combating climate change, improving air quality, and supporting biodiversity.",
     "lifeText":
-      "Planting fosters a sense of accomplishment and connection to nature. Research indicates it enhances mental well-being and life satisfaction.",
+      "Planting fosters a sense of accomplishment and connection to nature. Research indicates it enhances mental well-being and life satisfaction."
   },
   {
+    "id": 3,
     "image":
       "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image3.png",
     "text": "Declutter and Donate",
@@ -29,5 +34,7 @@
     "challengeText":
       "Donating items helps reduce waste and the demand for new products. Reusing and recycling conserve resources and decrease landfill waste.",
     "lifeText":
-      "Donating fosters community and purpose, enhancing personal happiness and social connections. A clutter-free space also boosts productivity and creativity.",
-  },
+      "Donating fosters community and purpose, enhancing personal happiness and social connections. A clutter-free space also boosts productivity and creativity."
+  }
+]
+}

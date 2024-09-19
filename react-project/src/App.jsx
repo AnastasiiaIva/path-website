@@ -5,7 +5,7 @@ import Home from "./Home";
 import TheApp from "./TheApp";
 import Header from "./Header";
 import Footer from "./Footer";
-import Main2 from "./main2";
+import PopUp from "./PopUp";
 
 export default function App() {
     return (
@@ -16,7 +16,7 @@ export default function App() {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/theapp" element={<TheApp />} />
-            <Route path="/main2" element={<Main2/>}/>
+            <Route path="/login" element={<PopUp/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
