@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.hero-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content-app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text-app {
+  max-width: 500px;
+}
+
+.hero-text-app h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: "inder";
+}
+
+.hero-text-app p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-buttons-app {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px 24px;
+  background-color: #c20ab0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  min-width: 50%;
+  font-family: "inder";
+  font-weight: 900;
+  font-size: 1rem;
+  border-color: #000000;
+  border-width: 2px;
+  border-style: solid;
+
+}
+
+.btn:hover {
+  background-color: #840c82;
+  border-color: #000000;
+}
+
+.hero-image-app img {
+  display: block;
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  width: 100%;     /* Ajusta la imagen al ancho del contenedor */
+  height: auto;    /* Mantiene la proporción de la imagen */
+  border-radius: 10px;
+}
+
+/* Responsivo para dispositivos móviles */
+@media (max-width: 768px) {
+  .hero-app {
+    padding: 30px 10px; /* Ajustamos el padding general del contenedor en mobile */
+  }
+
+  .hero-content-app {
+    grid-template-columns: 1fr;  /* Cambiamos a una columna */
+    text-align: left;
+    gap: 20px; /* Ajustamos el espacio entre los elementos */
+  }
+
+  .hero-text-app {
+    padding: 10px 15px; /* Añadimos padding interno al texto */
+  }
+
+  .hero-text-app h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons-app {
+    justify-content: center;
+  }
+
+  .hero-image-app img {
+    max-width: 100%; /* La imagen ocupará el 100% del ancho del contenedor */
+    width: 100%;     /* Forzamos que la imagen se ajuste al ancho disponible */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    margin: 0 auto;  /* Centramos la imagen si es necesario */
+  }
+}
+
+/*Section 3 columns*/
+
+/* Estilos generales para la sección */
+.three-columns-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos para cada columna */
+.feature {
+  text-align: center;
+  padding-bottom: 100px;
+}
+
+.feature img {
+  width: 100%; /* Imagen ocupa el ancho de la columna */
+  height: 400px; /* Alto fijo para todas las imágenes */
+  object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
+  border-radius: 8px;
+  
+}
+
+.zoom {
+
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+}
+.feature h3 {
+  font-size: 2rem;
+  margin: 10px 0;
+  padding: 24px 0;
+  font-family: "inder";
+  text-align: left;
+  color: #c20ab0;
+
+}
+
+.feature p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #000000;
+  text-align: left;
+  font-family: "inder";
+
+}
+
