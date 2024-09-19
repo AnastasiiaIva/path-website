@@ -1,3 +1,4 @@
+import { FaqItem } from "./FaqItem"
 
 
 
@@ -59,60 +60,27 @@ function Home() {
                 </div>
               </div>
             </div>
+
             <div className="container">
               <section className="faq-section">
                 <h2>Frequent Ask Questions</h2>
                 <p className="faq-help-text">Still need help? <a href="#">Get Help Now</a></p>
-            
-                <div className="faq-item">
-                  <button className="faq-question">
-                    <span className="question-text">What is the Daily Challenge program?</span>
-                    <span className="arrow"><img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png" alt="arrow icon"/></span>
-                  </button>
-                  <div className="faq-answer">
-                    <p>The Daily Challenge program is designed to help you improve various aspects of your life through simple, daily missions. Each day, you receive a new challenge aimed at enhancing your health, well-being, and productivity. It’s about making small, achievable changes that lead to significant benefits over time.</p>
-                  </div>
-                </div>
-            
-                <div className="faq-item">
-                  <button className="faq-question">
-                    <span className="question-text">How do I participate in a Daily Challenge?</span>
-                    <span className="arrow"><img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png" alt="arrow icon"/></span>
-                  </button>
-                  <div className="faq-answer">
-                    <p>Participation is easy! Sign up on our website to receive your daily mission via email. Follow the task for the day, and track your progress directly on our platform. You can also engage with our community for support and motivation.</p>
-                  </div>
-                </div>
-            
-                <div className="faq-item">
-                  <button className="faq-question">
-                    <span className="question-text">Are the Daily Challenges customizable?</span>
-                    <span className="arrow"><img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png" alt="arrow icon"/></span>
-                  </button>
-                  <div className="faq-answer">
-                    <p>While the daily missions are designed to be universally beneficial, they are crafted to be adaptable. If you have specific goals or needs, you can choose from various categories to tailor the challenges to better suit your lifestyle and preferences.</p>
-                  </div>
-                </div>
-            
-                <div className="faq-item">
-                  <button className="faq-question">
-                    <span className="question-text">How do the challenges benefit me?</span>
-                    <span className="arrow"><img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png" alt="arrow icon"/></span>
-                  </button>
-                  <div className="faq-answer">
-                    <p>Each challenge is crafted to address different aspects of personal growth, including physical health, mental well-being, and environmental sustainability. By participating, you’ll boost your overall health, develop positive habits, and contribute to a greener planet.</p>
-                  </div>
-                </div>
-            
-                <div className="faq-item">
-                  <button className="faq-question">
-                    <span className="question-text">What if I miss a day?</span>
-                    <span className="arrow"><img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png" alt="arrow icon"/></span>
-                  </button>
-                  <div className="faq-answer">
-                    <p>Don’t worry! You can always catch up on missed challenges. Our platform allows you to view previous missions and complete them at your own pace. The key is consistency, but life happens—so just pick up where you left off.</p>
-                  </div>
-                </div>
+
+                <FaqItem title="What is the Daily Challenge program?">
+                  <p>The Daily Challenge program is designed to help you improve various aspects of your life through simple, daily missions. Each day, you receive a new challenge aimed at enhancing your health, well-being, and productivity. It’s about making small, achievable changes that lead to significant benefits over time.</p>
+                </FaqItem>
+                <FaqItem title="How do I participate in a Daily Challenge?">
+                  <p>Participation is easy! Sign up on our website to receive your daily mission via email. Follow the task for the day, and track your progress directly on our platform. You can also engage with our community for support and motivation.</p>
+                </FaqItem>
+                <FaqItem title="Are the Daily Challenges customizable?">
+                  <p>While the daily missions are designed to be universally beneficial, they are crafted to be adaptable. If you have specific goals or needs, you can choose from various categories to tailor the challenges to better suit your lifestyle and preferences.</p>
+                </FaqItem>
+                <FaqItem title="How do the challenges benefit me?">
+                  <p>Each challenge is crafted to address different aspects of personal growth, including physical health, mental well-being, and environmental sustainability. By participating, you’ll boost your overall health, develop positive habits, and contribute to a greener planet.</p>
+                </FaqItem>
+                <FaqItem title="What if I miss a day?">
+                  <p>Don’t worry! You can always catch up on missed challenges. Our platform allows you to view previous missions and complete them at your own pace. The key is consistency, but life happens—so just pick up where you left off.</p>
+                </FaqItem>
               </section>
             </div>
             <script src="js/scripts.jsx" defer></script>
