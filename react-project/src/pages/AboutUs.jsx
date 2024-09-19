@@ -2,7 +2,7 @@ function AboutUs() {
 
     return (
       <>
-
+      <link rel="stylesheet" href="css/aboutus.css" />
       <main>
       <section className="team-intro">
       <div className="intro-content">

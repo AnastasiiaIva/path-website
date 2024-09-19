@@ -1,5 +1,4 @@
-import '../css/popups.css'
-import Home from './Home'
+import Home from '../pages/Home'
 import { Link } from "react-router-dom"
 
 
@@ -7,6 +6,7 @@ function PopUp() {
 
     return (
       <>
+      <link rel="stylesheet" href="css/popups.css" />
        <body>
         <Home/>
     {/* <!-- Popup Container hidden--> */}
@@ -15,7 +15,7 @@ function PopUp() {
       <div className="popup-content">
         <div className="popup-header">
           <div className="tabs">
-            <span id="register-tab">Register</span>
+            {/* <span id="register-tab">Register</span> */}
             <span id="login-tab" className="active">Log in</span>
           </div>
           <Link to="/" id="close-popup" className="close-btn">X</Link>
@@ -53,8 +53,8 @@ function PopUp() {
               </div>
               <div id="password-error" className="error-message">8+ characters</div>
             </div>
-            <button type="submit" className="submit-btn">Log in</button>
-            <h5>
+            <Link to="/profile"><button type="submit" className="submit-btn">Log in</button></Link>
+            {/* <h5>
               Not registered yet?
               <a href="#" id="register-link">Create an account</a>
             </h5>
@@ -62,7 +62,7 @@ function PopUp() {
               By continuing I agree with the
               <a href="#" id="terms-link">Terms & Conditions</a> and
               <a href="#" id="privacy-link">Privacy Policy</a>.
-            </h6>
+            </h6> */}
           </form>
 
           {/* <!-- Registration Form (Initially hidden) --> */}
@@ -148,7 +148,7 @@ function PopUp() {
       </div>
     </div>
 
-    <script src="../js/scripts.js" defer></script>
+    <script src="js/scripts.js" defer></script>
     <script src="js/popUp.js" defer></script>
   </body>
       </>

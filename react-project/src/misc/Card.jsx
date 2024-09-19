@@ -1,7 +1,7 @@
 // import data as backendData from '../json/cards.json'
 import { useEffect, useState } from 'react'
-import backendData from '../json/cards.json'
-// import Fetchdata from '../js/Fetchdata'
+import backendData from '../../json/cards.json'
+import { Link } from "react-router-dom"
 
 
 function Card() {
@@ -28,6 +28,7 @@ function Card() {
 
     return (
       <>
+      
         {/* <!-- Card Container --> */}
         <div className={isFlipped ? "card-container open" : "card-container"}>
         <div className={isFlipped ? "card flipped" : "card"} id="card">
@@ -42,9 +43,8 @@ function Card() {
                 <button className="help-btn" onClick={changeFlipped}>?</button>
               </div>
               <div className="card-lower">
-                {/* <Fetchdata data={data}/> */}
                 <p>{data['cards'][currentIndex]['text']}</p>
-                <button className="action-btn">Accept</button>
+                <Link to="/login" className="action-btn">Accept</Link>
               </div>
             </div>
             {/* <!-- Card Back --> */}

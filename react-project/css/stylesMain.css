@@ -171,7 +171,7 @@ body {
 
 .right-section #card_background {
   position: absolute;
-  width: 50%;
+  width: 35%;
   z-index: -1; /* Щоб фон був позаду іншого вмісту */
 }
 
@@ -323,6 +323,8 @@ body {
   font-family: "Inder", sans-serif;
   font-weight: 400;
   font-size: 18px;
+  text-align: center;
+  text-decoration: none;
 }
 
 .card-back {

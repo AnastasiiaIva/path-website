@@ -1,18 +1,19 @@
-import Card from "./Card"
-import { FaqItem } from "./FaqItem"
+import Card from "../misc/Card"
+import { FaqItem } from "../misc/FaqItem"
+import { Link } from "react-router-dom"
 
 function Home() {
 
   return (
     <>
-      
+      <link rel="stylesheet" href="css/stylesMain.css" />
         {/* <!-- Main Section --> */}
     <section className="main-container">
       <div className="left-section">
         <h1>Welcome To Your Daily Challenge Hub!</h1>
         <div className="content-h2">
           <h2>We’re here to help you become the best version of yourself:</h2>
-          <a href="#" className="btn-try">Try It Now</a>
+          <Link to="/login" className="btn-try">Try It Now</Link>
         </div>
         <div className="button-group">
           <a href="#" className="btn-orange">1. Get Daily Missions</a>
@@ -61,7 +62,7 @@ function Home() {
             <div className="container">
               <section className="faq-section">
                 <h2>Frequent Ask Questions</h2>
-                <p className="faq-help-text">Still need help? <a href="#">Get Help Now</a></p>
+                {/* <p className="faq-help-text">Still need help? <a href="#">Get Help Now</a></p> */}
 
                 <FaqItem title="What is the Daily Challenge program?">
                   <p>The Daily Challenge program is designed to help you improve various aspects of your life through simple, daily missions. Each day, you receive a new challenge aimed at enhancing your health, well-being, and productivity. It’s about making small, achievable changes that lead to significant benefits over time.</p>
@@ -80,7 +81,7 @@ function Home() {
                 </FaqItem>
               </section>
             </div>
-            <script src="js/scripts.jsx" defer></script>
+            {/* <script src="js/scripts.jsx" defer></script> */}
       
     </>
   )

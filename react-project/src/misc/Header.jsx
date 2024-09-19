@@ -7,7 +7,7 @@ function Header() {
 
     return (
       <>
-        
+        <link rel="stylesheet" href="css/styles.css" />
         <div className="container">
       <header>
         <nav className="navbar">
@@ -26,12 +26,12 @@ function Header() {
               <Link to="/theapp">The App</Link>
               <Link to="/aboutus">About us</Link>
               <Link to="/contact">Contact</Link>
-              <Link to="/">Help</Link>
+              {/* <Link to="/">Help</Link> */}
             </div>
             {/* <!-- Action Buttons --> */}
             <div className="navbar-menu-btn">
-              <Link to="/login">Login</Link>
-              <a href="#" className="btn2">Sign Up</a>
+              <Link to="/login" className="btn2">Login</Link>
+              {/* <a href="#" className="btn2">Sign Up</a> */}
             </div>
           </div>
 

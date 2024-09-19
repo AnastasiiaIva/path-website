@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Footer() {
 
     return (
@@ -19,9 +21,9 @@ function Footer() {
     {/* <!-- Second Column: Links --> */}
     <div className="footer-column">
       <ul className="footer-links">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Help</a></li>
+        <li><Link to="/theapp">The App</Link></li>
+        <li><Link to="/aboutus">About us</Link></li>
+        {/* <li><a href="#">Help</a></li> */}
       </ul>
     </div>
     

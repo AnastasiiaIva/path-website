@@ -1,10 +1,8 @@
-import '../css/theapp.css'
-
 function TheApp() {
 
     return (
       <>
-
+<link rel="stylesheet" href="css/theapp.css" />
 
 <section className="hero-app">
 <div className="hero-content-app">
