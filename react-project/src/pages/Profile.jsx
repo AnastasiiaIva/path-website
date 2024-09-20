@@ -4,14 +4,15 @@ function Profile() {
 
     return (
       <>
-      {<link rel="stylesheet" href="css/stylesMainProfile.css" />}
+      <link rel="stylesheet" href="css/stylesMainProfile.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossOrigin="anonymous" referrerPolicy="no-referrer"></link>
       {/* <!-- Main Section --> */}
     <main className="profile">
       <section className="header__1">
         <div className="container" >
-        <div class="left">
+        <div className="left">
             <h1>Tips for Success:</h1>
-            <ul class="List">
+            <ul className="List">
               <li>1. Plan Ahead: Map your walking routes.</li>
               <li>2. Dress Comfortably: Wear suitable shoes and weather-appropriate clothes.</li>
               <li>3. Stay Hydrated: Carry a reusable water bottle.</li>
@@ -27,11 +28,11 @@ function Profile() {
           <div className="right">
             <header className="header__2">
               <div className="header__left">  
-                <p>Timer Left</p>
+                <p><i className="fa-regular fa-clock"></i>Timer Left</p>
                 <p>00:23:45 hs</p>
               </div>
               <div className="header__right">
-                <p>Today</p>
+                <p><i className="fa-regular fa-calendar"></i>Today</p>
                 <p>2 places</p>
               </div>
             </header>

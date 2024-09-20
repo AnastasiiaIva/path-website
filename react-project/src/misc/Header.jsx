@@ -12,12 +12,12 @@ function Header() {
       <header>
         <nav className="navbar">
           {/* <!-- Logo --> */}
-          <a href="#" className="navbar-logo">
+          <Link to="/" className="navbar-logo">
             <img
               src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/c57e3b5fcaa2296d14386dd2b48d457f4448adf6/assets/images/IconBlue.png"
               alt="Logo - Path"
             />
-          </a>
+          </Link>
 
           {/* <!-- Menu Items --> */}
           <div className="navbar-menu">

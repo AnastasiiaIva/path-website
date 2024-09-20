@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function TheApp() {
 
     return (
@@ -11,8 +13,8 @@ function TheApp() {
     <p>Discover the advantages of using Path in your daily life where you can improve your 
       healthy habits and daily goals that help your well-being.</p>
     <div className="hero-buttons-app">
-      <a href="#" className="btn" id="conocenos">About us</a>
-      <a href="#" className="btn" id="contactanos">Contact us</a>
+      <Link to="/aboutus" className="btn" id="conocenos">About us</Link>
+      <Link to="/contact" className="btn" id="contactanos">Contact us</Link>
     </div>
   </div>
   <div className="hero-image-app">
