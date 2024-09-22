@@ -11,7 +11,9 @@ import Profile from "./pages/Profile";
 export default function App() {
     return (
       <BrowserRouter>
+      
         <Header />
+        
         <Routes>
             <Route index path="/" element={<Home />} />
             <Route path="/aboutus" element={<AboutUs />} />

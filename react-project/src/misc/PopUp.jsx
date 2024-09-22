@@ -54,7 +54,7 @@ function PopUp() {
               <div id="password-error" className="error-message">8+ characters</div>
             </div>
             <Link to="/profile"><button type="submit" className="submit-btn">Log in</button></Link>
-            {/* <h5>
+            <h5>
               Not registered yet?
               <a href="#" id="register-link">Create an account</a>
             </h5>
@@ -62,7 +62,7 @@ function PopUp() {
               By continuing I agree with the
               <a href="#" id="terms-link">Terms & Conditions</a> and
               <a href="#" id="privacy-link">Privacy Policy</a>.
-            </h6> */}
+            </h6>
           </form>
 
           {/* <!-- Registration Form (Initially hidden) --> */}
