@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import LoginPlaceholder from "./LoginPlaceholder";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);   
@@ -10,7 +11,7 @@ function Header() {
 
   };
 
-  const menuClasses = `navbar-menu ${isMenuOpen ? 'active' : ''}`; // Combine menu and active class
+  const menuClasses = `navbar-menu ${isMenuOpen ? "active" : ""}`; // Combine menu and active class
 
   return (
     <>
@@ -39,9 +40,7 @@ function Header() {
 
               {/* Action Buttons (optional) */}
               <div className="navbar-menu-btn">
-                <Link to="/login" className="btn1">
-                  Login
-                </Link>
+                <LoginPlaceholder/>
                 <a href="#" className="btn2">Sign Up</a>
               </div>
             </div>
@@ -55,6 +54,8 @@ function Header() {
           </nav>
         </header>
       </div>
+
+
     </>
   );
 }

@@ -44,7 +44,7 @@ function Card() {
               </div>
               <div className="card-lower">
                 <p>{data['cards'][currentIndex]['text']}</p>
-                <Link to="/login" className="action-btn">Accept</Link>
+                <Link to="/" className="action-btn">Accept</Link>
               </div>
             </div>
             {/* <!-- Card Back --> */}

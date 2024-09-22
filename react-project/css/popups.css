@@ -2,6 +2,7 @@
   display: none;
 }
 
+
 /* Popup overlay to darken the background */
 .popup-overlay {
   position: fixed;
@@ -43,7 +44,7 @@
   align-items: center;
 }
 
-.popup-header .tabs span {
+.popup-header .tabs .span {
   cursor: pointer;
   padding: 10px 0;
   font-size: 16px;
@@ -277,6 +278,7 @@ h6 a:hover {
   background-color: var(--blue);
 }
 
+
 @media (max-width: 768px) {
   .popup-lower {
     padding: 10px;
@@ -289,4 +291,6 @@ h6 a:hover {
   .popup-btn {
     margin-bottom: 10px;
   }
+
+  
 }

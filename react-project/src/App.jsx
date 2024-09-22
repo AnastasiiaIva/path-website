@@ -7,19 +7,18 @@ import Header from "./misc/Header";
 import Footer from "./misc/Footer";
 import PopUp from "./misc/PopUp";
 import Profile from "./pages/Profile";
+import LoginPlaceholder from "./misc/LoginPlaceholder";
 
 export default function App() {
     return (
       <BrowserRouter>
-      
         <Header />
-        
         <Routes>
             <Route index path="/" element={<Home />} />
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/theapp" element={<TheApp />} />
-            <Route path="/login" element={<PopUp/>}/>
+            <Route path="/login" element={<LoginPlaceholder/>}/>
             <Route path="/profile" element={<Profile/>}/>
         </Routes>
         <Footer />

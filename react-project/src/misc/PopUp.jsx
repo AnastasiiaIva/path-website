@@ -1,5 +1,5 @@
-import Home from '../pages/Home'
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import React from 'react';
 
 
 function PopUp() {
@@ -8,14 +8,13 @@ function PopUp() {
       <>
       <link rel="stylesheet" href="css/popups.css" />
        <body>
-        <Home/>
     {/* <!-- Popup Container hidden--> */}
     <div id="login-popup" className="popup">
       <div className="popup-overlay"></div>
       <div className="popup-content">
         <div className="popup-header">
           <div className="tabs">
-            {/* <span id="register-tab">Register</span> */}
+            <span id="register-tab">Register</span>
             <span id="login-tab" className="active">Log in</span>
           </div>
           <Link to="/" id="close-popup" className="close-btn">X</Link>
