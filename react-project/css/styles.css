@@ -77,8 +77,8 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); ;
 }
 
-.navbar-menu-btn .btn1,
-.navbar-menu-btn .btn2 {
+.popup .btn1,
+.popup .btn2 {
   border: 1px solid black;
   border-radius: 30px;
   padding: 8px 15px;
@@ -86,7 +86,13 @@ body {
   text-decoration: none;
 }
 
-.navbar-menu-btn .btn2 {
+.btn1{
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.btn2 {
   background-color: black;
   color: white;
 }

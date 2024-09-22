@@ -35,13 +35,13 @@ function Header() {
                 <Link to="/theapp">The App</Link>
                 <Link to="/aboutus">About us</Link>
                 <Link to="/contact">Contact</Link>
-                <Link to="/">Help</Link>
+                <Link to="/help">Help</Link>
               </div>
 
               {/* Action Buttons (optional) */}
               <div className="navbar-menu-btn">
                 <LoginPlaceholder/>
-                <a href="#" className="btn2">Sign Up</a>
+                {/* <a href="#" className="btn2">Sign Up</a> */}
               </div>
             </div>
 

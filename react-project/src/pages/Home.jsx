@@ -1,7 +1,6 @@
 import Card from "../misc/Card"
 import { FaqItem } from "../misc/FaqItem"
 import { Link } from "react-router-dom"
-import PopUp from "../misc/PopUp"
 
 function Home() {
 

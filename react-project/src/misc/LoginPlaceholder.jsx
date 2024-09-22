@@ -12,14 +12,21 @@ function LoginPlaceholder() {
   const [isPopupOpen, setPopupOpen] = useState(false);
 
 
-  // Función para abrir el popup
-  const openPopup = () => {
+  // Funciónes para abrir el popup
+  const openPopupLogin = () => {
     setPopupOpen(true);
   };
+
+  const openPopupRegister = () => {
+    setPopupOpen(true);
+    setTabIndex(1);
+  };
+
 
   // Función para cerrar el popup
   const closePopup = () => {
     setPopupOpen(false);
+    setTabIndex(0);
   };
 
 
@@ -31,7 +38,8 @@ function LoginPlaceholder() {
     
     <div id="login-popup" className="popup">
         {/* Botón para abrir el popup */}
-      <button className='btn1' onClick={openPopup}>Log in</button>
+      <button className='btn1' onClick={openPopupLogin}>Log in</button>
+      <button className='btn2' onClick={openPopupRegister} >Sign up</button>
       {/* Popup: se muestra si isPopupOpen es true */}
       {isPopupOpen && (
     <><div className="popup-overlay"></div><div className="popup-content">
@@ -63,7 +71,7 @@ function LoginPlaceholder() {
                           </Tabs>
 
                           {/* Botón para cerrar el popup */}
-                          <button onClick={closePopup}>Cerrar</button>
+                          <button className="close-btn" onClick={closePopup}>X</button>
 
                       </div>
                   </div></>

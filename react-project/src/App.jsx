@@ -5,9 +5,8 @@ import Home from "./pages/Home";
 import TheApp from "./pages/TheApp";
 import Header from "./misc/Header";
 import Footer from "./misc/Footer";
-import PopUp from "./misc/PopUp";
 import Profile from "./pages/Profile";
-import LoginPlaceholder from "./misc/LoginPlaceholder";
+import Help from "./pages/Help";
 
 export default function App() {
     return (
@@ -18,7 +17,7 @@ export default function App() {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/theapp" element={<TheApp />} />
-            <Route path="/login" element={<LoginPlaceholder/>}/>
+            <Route path="/help" element={<Help/>}/>
             <Route path="/profile" element={<Profile/>}/>
         </Routes>
         <Footer />

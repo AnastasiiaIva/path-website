@@ -84,11 +84,20 @@ body {
   padding: 8px 15px;
   font-size: 16px;
   text-decoration: none;
+
 }
+
+.navbar-menu-btn .btn1 {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
 
 .navbar-menu-btn .btn2 {
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 
 /* Pseudo element for lower dashed line */

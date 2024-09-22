@@ -23,7 +23,7 @@ function Footer() {
       <ul className="footer-links">
         <li><Link to="/theapp">The App</Link></li>
         <li><Link to="/aboutus">About us</Link></li>
-        {/* <li><a href="#">Help</a></li> */}
+        <li><Link to="/help">Help</Link></li>
       </ul>
     </div>
     
