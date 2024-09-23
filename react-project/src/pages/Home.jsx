@@ -10,10 +10,12 @@ function Home() {
         {/* <!-- Main Section --> */}
     <section className="main-container">
       <div className="left-section">
+      <div className="content">
         <h1>Welcome To Your Daily Challenge Hub!</h1>
         <div className="content-h2">
           <h2>We’re here to help you become the best version of yourself:</h2>
           <buttom className="btn-try">Try It Now</buttom>
+        </div>
         </div>
         <div className="button-group">
           <a href="#" className="btn-orange">1. Get Daily Missions</a>

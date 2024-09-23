@@ -1,6 +1,7 @@
 import { useState} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import LRTabs from './LRTabs';
+import Login from './Login';
+import Register from './Register';
 
 
 
@@ -43,7 +44,31 @@ function LoginPlaceholder() {
       {isPopupOpen && (
     <><div className="popup-overlay"></div><div className="popup-content">
                       <div className="popup-header">
-                          <LRTabs/>
+                          <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
+
+                              <TabList className="tabs">
+                                  <Tab className="span">Log in</Tab>
+                                  <Tab className="span">Register</Tab>
+                              </TabList>
+
+
+
+                              <TabPanel>
+
+                                  <Login />
+
+                              </TabPanel>
+
+
+
+                              <TabPanel>
+
+                                  <Register />
+
+                              </TabPanel>
+
+
+                          </Tabs>
 
                           {/* Botón para cerrar el popup */}
                           <button className="close-btn" onClick={closePopup}>X</button>

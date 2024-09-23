@@ -211,15 +211,15 @@ body {
   }
 
   /* Styles for burger menu animation when changing */
-  .active .line1 {
+  .change .line1 {
     transform: rotate(-50deg) translate(-7px, 10px);
   }
 
-  .active .line2 {
+  .change .line2 {
     opacity: 0;
   }
 
-  .active .line3 {
+  .change .line3 {
     transform: rotate(50deg) translate(-7px, -10px);
   }
 
