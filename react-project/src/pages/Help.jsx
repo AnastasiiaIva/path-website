@@ -1,5 +1,6 @@
 import { FaqItem } from "../misc/FaqItem"
-
+import '../../css/help.css'
+import { Link } from "react-router-dom"
 
 function Help() {
 
@@ -142,7 +143,7 @@ function Help() {
                 <section className="contact-section">
         <div className="container">
           <h2>Any questions left?</h2>
-          <button className="contact-btn">Contact us</button>
+          <Link to="/contact"><button className="contact-btn">Contact us</button></Link>
 
           {/* <!-- Floating Elements --> */}
           <div className="floating-icon megaphone">
