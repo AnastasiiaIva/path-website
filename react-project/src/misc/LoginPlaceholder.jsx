@@ -1,9 +1,9 @@
-import React, { useState, createContext } from 'react';
+import { useState} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Login from './Login';
 import Register from './Register';
 
-const ThemeContext = createContext('light'); // Valor por defecto
+
 
 
 

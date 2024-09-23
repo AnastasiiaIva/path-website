@@ -139,6 +139,26 @@ function Help() {
                     </FaqItem>
 
                 </section>
+                <section className="contact-section">
+        <div className="container">
+          <h2>Any questions left?</h2>
+          <button className="contact-btn">Contact us</button>
+
+          {/* <!-- Floating Elements --> */}
+          <div className="floating-icon megaphone">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/refs/heads/main/assets/images/fqa-question-mark3.png"
+              alt="Megaphone Icon"
+            />
+          </div>
+          <div className="floating-icon help">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/refs/heads/main/assets/images/fqa-navigation-mark1.png"
+              alt="We'll Help Icon"
+            />
+          </div>
+        </div>
+      </section>
             </div>
       
       </>
