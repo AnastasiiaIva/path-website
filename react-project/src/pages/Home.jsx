@@ -1,8 +1,11 @@
-import Card from "../misc/Card"
-import { FaqItem } from "../misc/FaqItem"
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
+import Card from "../misc/Card";
+import { FaqItem } from "../misc/FaqItem";
 
 
-function Home() {
+
+function Home({openPopupLogin, closePopup}) {
 
   return (
     <>
@@ -13,8 +16,8 @@ function Home() {
       <div className="content">
         <h1>Welcome To Your Daily Challenge Hub!</h1>
         <div className="content-h2">
-          <h2>We’re here to help you become the best version of yourself:</h2>
-          <buttom className="btn-try">Try It Now</buttom>
+          <h2>We&aps;re here to help you become the best version of yourself:</h2>
+          <button className="btn-try" onClick={openPopupLogin} closePopup={closePopup} >Try It Now</button>
         </div>
         </div>
         <div className="button-group">

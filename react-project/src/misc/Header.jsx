@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginPlaceholder from "./LoginPlaceholder";
 
-function Header() {
+function Header({openPopupLogin, closePopup}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
@@ -45,7 +46,7 @@ function Header() {
 
               {/* Action Buttons (optional) */}
               <div className="navbar-menu-btn">
-                <LoginPlaceholder/>
+                <LoginPlaceholder openPopupLogin={openPopupLogin} closePopup={closePopup} />
                 {/* <a href="#" className="btn2">Sign Up</a> */}
               </div>
             </div>
