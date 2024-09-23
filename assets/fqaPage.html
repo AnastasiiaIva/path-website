@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/stylesMain.css" />
+    <!-- <link rel="stylesheet" href="css/popups.css" /> -->
+    <style>
+      /* Contact Section Styles */
+      .contact-section {
+        background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/refs/heads/main/assets/images/fqa-orange-background.jpg");
+        color: white;
+        padding: 50px;
+        position: relative; /* Necessary for floating elements */
+        text-align: center;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        overflow: visible;
+      }
+
+      .contact-section .container {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .contact-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .contact-section .contact-btn {
+        background-color: #4096d7dd;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+
+      .contact-section .contact-btn:hover {
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Floating Icon Styles */
+      .floating-icon {
+        position: absolute;
+        animation: float 3s ease-in-out infinite;
+        z-index: 2;
+      }
+
+      /* Megaphone position */
+      .floating-icon.megaphone {
+        bottom: -90px;
+        left: 0px;
+      }
+
+      .floating-icon img {
+        width: 20vw;
+        height: 20vw;
+        max-width: 130px;
+        max-height: 130px;
+      }
+
+      /* Help position */
+      .floating-icon.help {
+        top: -80px;
+        right: 0px;
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inder&family=Khmer&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container">
+      <header>
+        <nav class="navbar">
+          <!-- Logo -->
+          <a href="#" class="navbar-logo">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/c57e3b5fcaa2296d14386dd2b48d457f4448adf6/assets/images/IconBlue.png"
+              alt="Logo - Path"
+            />
+          </a>
+
+          <!-- Menu Items -->
+          <div class="navbar-menu">
+            <div class="navbar-menu-text">
+              <a href="#">Home</a>
+              <a href="#">The App</a>
+              <a href="#">About us</a>
+              <a href="#">Contact</a>
+              <a href="#">Help</a>
+            </div>
+            <!-- Action Buttons -->
+            <div class="navbar-menu-btn">
+              <a href="#" class="btn1" id="login-btn">Log in</a>
+              <a href="#" class="btn2">Sign Up</a>
+            </div>
+          </div>
+
+          <!-- Burger Menu -->
+          <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!--FQA-->
+    <div class="container">
+      <section class="faq-section" id="faq-section">
+        <h2>Frequent Ask Questions</h2>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >What is the Daily Challenge program?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The Daily Challenge program is designed to help you improve
+              various aspects of your life through simple, daily missions. Each
+              day, you receive a new challenge aimed at enhancing your health,
+              well-being, and productivity. It’s about making small, achievable
+              changes that lead to significant benefits over time.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >How do I participate in a Daily Challenge?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Participation is easy! Sign up on our website to receive your
+              daily mission via email. Follow the task for the day, and track
+              your progress directly on our platform. You can also engage with
+              our community for support and motivation.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Are the Daily Challenges customizable?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              While the daily missions are designed to be universally
+              beneficial, they are crafted to be adaptable. If you have specific
+              goals or needs, you can choose from various categories to tailor
+              the challenges to better suit your lifestyle and preferences.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="benefit-question">
+            <span class="question-text">How do the challenges benefit me?</span>
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Each challenge is crafted to address different aspects of personal
+              growth, including physical health, mental well-being, and
+              environmental sustainability. By participating, you’ll boost your
+              overall health, develop positive habits, and contribute to a
+              greener planet.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text">Can I compete with friends?</span>
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes! You can challenge your friends by sharing your progress and
+              achievements. The app includes a leaderboard, so you can see how
+              you rank compared to your friends and motivate each other.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text">Is there a reward system?</span>
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Absolutely! You earn points for every task you complete. These
+              points help you level up and unlock rewards, which can motivate
+              you to stay consistent.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >How can I track my daily progress?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The app includes a progress bar that tracks how many days in a row
+              you’ve completed tasks. It’s a great visual reminder of your
+              consistency!
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >What if I fall behind on my tasks?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              No worries! If you miss a day, your progress bar freezes, and you
+              can pick up right where you left off. This way, you can continue
+              without losing your streak.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text">Can I change my daily goals?</span>
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, you can adjust your goals at any time, from completing 1 task
+              to up to 3 tasks a day, allowing you to customize your daily
+              challenge to fit your schedule.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Can I invite my friends to the app?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              You can share the app with your friends by sending them a link.
+              However, there isn’t a built-in feature for inviting friends
+              directly within the app.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Do I get extra benefits for completing tasks early?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Completing a task early doesn’t provide additional benefits, but
+              you’ll still earn points for each task you complete.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Is the app free, or are there paid features?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The app is completely free to use. There are no premium features
+              or hidden fees.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Will I receive the same tasks I’ve already completed?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              No, tasks are unique every day. Once you complete a task, it won’t
+              repeat, ensuring that you’re always progressing with new
+              challenges.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Can I set reminders for my daily tasks?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Currently, the app doesn’t have a reminder feature, but we’re
+              always looking to improve based on user feedback.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Can I suggest new tasks for the app?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, you can reach out to us via the contact form in the app to
+              share your ideas for new tasks. We’re always open to suggestions.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >How are points calculated for each task?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The more tasks you complete, the more points you earn.
+              Additionally, tasks are rated by difficulty, with harder tasks
+              awarding more points.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Can other users see the tasks I’ve completed?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              No, your completed tasks are only visible to you. Your progress
+              and task completion are private.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >What happens if I miss more than three days of tasks?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              If you miss more than three days in a row, your points will reset,
+              and you’ll need to start over from zero.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <div class="container">
+          <h2>Any questions left?</h2>
+          <button class="contact-btn">Contact us</button>
+
+          <!-- Floating Elements -->
+          <div class="floating-icon megaphone">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/refs/heads/main/assets/images/fqa-question-mark3.png"
+              alt="Megaphone Icon"
+            />
+          </div>
+          <div class="floating-icon help">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/refs/heads/main/assets/images/fqa-navigation-mark1.png"
+              alt="We'll Help Icon"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- First Column: Logo and Social Links -->
+        <div class="footer-column">
+          <img
+            src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/IconBlack.png"
+            alt="Path Logo"
+            class="footer-logo"
+          />
+          <div class="social-links">
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/inst.png"
+                alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/twitter.png"
+                alt="Twitter"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/linkedIn.png"
+                alt="LinkedIn"
+            /></a>
+          </div>
+        </div>
+
+        <!-- Second Column: Links -->
+        <div class="footer-column">
+          <ul class="footer-links">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+
+        <!-- Third Column: About Text -->
+        <div class="footer-column">
+          <p>
+            At Path, we are dedicated to delivering excellence and innovation.
+            We strive to create value and make a positive impact on the lives of
+            our customers, employees, and communities through our commitment to
+            quality and integrity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/scripts.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,624 @@
+/*CSS 2.0*/
+
+
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items to the top */
+  /* height: calc(100vh - 60px); */ /* Height of the screen minus navbar height */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 24px;
+  
+}
+
+.left-section, .right-section {
+  flex: 1;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 620px) {
+  .main-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-section, .right-section {
+    margin-bottom: 12px;
+    padding: 12px;
+  }
+}
+
+.left-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Khmer", sans-serif;
+  font-weight: 520;
+  font-style: normal;
+  line-height: 60px;
+}
+
+.left-section .content {
+  display: flex;
+  flex-direction: row; /* Align text and button horizontally */
+  align-items: center;
+}
+
+.left-section h2 {
+  font-size: 28px;
+  margin: 0;
+  width: 65%;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 28px;
+}
+
+.btn-try {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.left-section .row {
+  display: flex;
+  align-items: center; /* Align text and button vertically */
+  gap: 20px; /* Space between text and button */
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 10px;
+  width: 100%;
+  padding-top: 40px;
+}
+
+/* Botones sin rotación */
+.btn-orange,
+.btn-orange__norotate,
+.btn-blue,
+.btn-blue__norotate,
+.btn-pink__norotate,
+.btn-pink {
+  font-family: "Inder", sans-serif;
+  font-weight: 30;
+  font-size: 24px;
+  font-style: normal;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 24px;
+  transform: rotate(0deg); /* Eliminada la rotación */
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+/* Colores de los botones */
+.btn-orange__norotate {
+  background-color: #ffab5f;
+}
+
+.btn-blue__norotate {
+  background-color: #5bb4f4cf;
+}
+
+.btn-pink__norotate {
+  background-color: #f369a5d0;
+}
+
+/* Estilo de los paneles (parte del acordeón) */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* Acordeón (para los botones) */
+.accordion__button {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-top: 18px;
+  color: #ffffff;
+  font-size: 24px;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+
+
+.accordion__button:after {
+  content: '\002B';
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.accordion__button.active:after {
+  content: "\2212";
+}
+
+/*Card*/
+
+
+.card-container {
+  /*position: relative;*/
+  z-index: 2; /* Ensures the card stays above the background */
+  width: 100%;
+  max-width: 400px;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  /*position: relative;*/
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  perspective: 1000px; /* Adds 3D effect for the flip */
+  margin-bottom: 10px;
+}
+
+.card-inner {
+  /*position: absolute;*/
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s; /* Smooth flip animation */
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg); /* Flips card */
+}
+
+.card-front,
+.card-back {
+  /*position: absolute;*/
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides back side of the card */
+}
+
+.card-front {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 30px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-back {
+  background-color: rgb(0, 0, 0.2);
+  border-radius: 20px;
+  transform: rotateY(180deg); /* Position back side correctly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 20px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card-upper {
+  position: relative;
+  height: 70%;
+  overflow: hidden;
+}
+
+.card-upper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.help-btn {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50px;
+  width: 100px;
+  cursor: pointer;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  justify-content: center;
+  background-color: #f52d66;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Нова кнопка закриття */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+}
+
+.card-lower {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+  
+  
+}
+
+.card-lower p {
+  display: flex;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  
+}
+
+.action-btn {
+  background-color: #7ec0f1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  width: calc(100% - 20px);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  perspective: 1000px; /* Для 3D ефекту перевороту */
+}
+
+.card-back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 1px;
+}
+
+.section {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.section h3 {
+  padding: 1px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 0.1px;
+}
+
+.mission-text,
+.challenge-text,
+.life-text {
+  color: #000000;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+}
+
+.orange-section h3 {
+  background-color: #ffab5f; /* Помаранчевий */
+}
+
+.blue-section h3 {
+  background-color: #5bb4f4cf; /* Голубий */
+}
+
+.pink-section h3 {
+  background-color: #f369a5d0; /* Рожевий */
+}
+
+/* Dot Indicators */
+
+.dot-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 1px; /* Padding added for better spacing */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #1c2e8d;
+}
+
+/* Blue Block*/
+.blue-block {
+  background-color: #85c6f7; /* Light blue */
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -110px;
+}
+
+.blue-section-block {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  margin: 0 12px;
+}
+
+.circle {
+  background-color: #ffffff; /* White background for the circle */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.circle img {
+  width: 40px;
+  height: 40px;
+}
+
+h4 {
+  margin: 10px 0;
+  color: white;
+}
+
+.blue-section-block p {
+  margin: 0;
+  color: white;
+}
+
+
+/* Blue Block*/
+.blue-block {
+  background-color: #85c6f7; /* Light blue */
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -110px;
+}
+
+.blue-section-block {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  margin: 0 12px;
+}
+
+.circle {
+  background-color: #ffffff; /* White background for the circle */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.circle img {
+  width: 40px;
+  height: 40px;
+}
+
+h4 {
+  margin: 10px 0;
+  color: white;
+}
+
+.blue-section-block p {
+  margin: 0;
+  color: white;
+}
+
+
+.faq-section {
+  padding: 20px;
+  background-color: #ffffff; /* White background for the entire section */
+  margin: 20px 0; /* Margin around the section */
+  text-align: center; /* Center align text */
+}
+
+.faq-section h2 {
+  margin-bottom: 10px;
+  color: #ffb777; /* Title color */
+  font-size: 48px;
+}
+
+.faq-help-text {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #555; /* Help text color */
+}
+
+.faq-help-text a {
+  color: #2196f3; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.faq-item {
+  margin-bottom: 10px; /* Space between FAQ items */
+  background-color: #ffffff; /* White background for each FAQ item */
+  overflow: hidden; /* Hide overflow to ensure rounded corners */
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px;
+  border: none; /* Remove default button border */
+  background-color: #ffffff; /* White background for the question */
+  border-bottom: 1px solid #ddd; /* Light grey border between questions */
+  text-align: left; /* Left align text */
+  cursor: pointer; /* Change cursor to pointer */
+  font-size: 20px; /* Font size */
+  color: #333; /* Dark grey color */
+  position: relative; /* For positioning the arrow */
+}
+
+.faq-answer {
+  display: none; /* Hide answers by default */
+  padding: 15px;
+  text-align: left;
+  background-color: #ffffff; /* White background for the answer */
+  color: #555; /* Slightly lighter grey for the text */
+}
+
+.arrow {
+  width: 20px; /* Set the width for the arrow */
+  height: 20px; /* Set the height for the arrow */
+  position: absolute; /* Absolute positioning for the arrow */
+  right: 15px; /* Right align the arrow */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%) rotate(0deg); /* Center vertically */
+  transition: transform 0.3s ease; /* Smooth transition for arrow rotation */
+}
+
+.faq-question.active .arrow {
+  transform: translateY(-50%) rotate(90deg); /* Rotate arrow when question is open */
+}
+
+.faq-item:not(:last-child) {
+  border-bottom: 1px solid #ddd; /* Light grey border between FAQ items */
+}
+
+.faq-item.open .faq-answer {
+  border-top: none; /* Remove top border when answer is open */
+}
+
+.faq-item.open .faq-question {
+  border-bottom: none; /* Remove bottom border when answer is open */
+}
+
+/* Footer Section */
+.footer {
+  background-color: #85c6f7; /* Light blue background */
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the content */
+}
+
+.footer-column {
+  flex: 1;
+  margin: 0 10px; /* Space between columns */
+}
+
+.footer-logo {
+  width: 150px; /* Adjust the logo size */
+  margin-bottom: 20px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px; /* Space between social icons */
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-column p {
+  color: #fff;
+  line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin-bottom: 20px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-links li {
+    margin-bottom: 15px;
+  }
+}
