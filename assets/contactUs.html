@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/stylesMain.css" />
+    <!-- <link rel="stylesheet" href="css/popups.css" /> -->
+     <style>
+.contact-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /*Align items to the top*/
+  /* height: calc(100vh - 60px); */ /* Height of the screen minus navbar height */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-left-section {
+  text-align: left;
+  max-width: 600px;
+  width: 50%; /* Adjust width for balance */
+  padding-right: 20px; /* Space for button alignment */
+  flex-shrink: 0;
+}
+
+.contact-left-section h1{
+    margin-bottom: 30px;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 50%; /* Adjust width for balance */
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: #fff;
+  color: #555;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .contact-main-container {
+    flex-direction: column;
+  }
+
+  .contact-left-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    order: 1;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: calc(1.2em + 2vh);
+    text-align: left;
+    min-height: 50%;
+  }
+
+  .contact-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    order: 2;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: calc(1.2em + 2vh);
+    text-align: left;
+    min-height: 50%;
+  }
+
+  .contact-form form {
+    width: 100%;
+  }
+}
+
+
+     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inder&family=Khmer&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="container">
+      <header>
+        <nav class="navbar">
+          <!-- Logo -->
+          <a href="#" class="navbar-logo">
+            <img
+              src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/c57e3b5fcaa2296d14386dd2b48d457f4448adf6/assets/images/IconBlue.png"
+              alt="Logo - Path"
+            />
+          </a>
+
+          <!-- Menu Items -->
+          <div class="navbar-menu">
+            <div class="navbar-menu-text">
+              <a href="#">Home</a>
+              <a href="#">The App</a>
+              <a href="#">About us</a>
+              <a href="#">Contact</a>
+              <a href="#">Help</a>
+            </div>
+            <!-- Action Buttons -->
+            <div class="navbar-menu-btn">
+              <a href="#" class="btn1" id="login-btn">Log in</a>
+              <a href="#" class="btn2">Sign Up</a>
+            </div>
+          </div>
+
+          <!-- Burger Menu -->
+          <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- Main Section -->
+    <section class="contact-main-container">
+      <div class="contact-left-section">
+        <div class="contact-content">
+          <h1>Get in Touch with Path</h1>
+            <p class="text-me">We'd love to hear from you! Whether you have a question, feedback, or just want to know more about our products, we're here to help. Feel free to reach out to us using the form below, and a member of our team will get back to you as soon as possible.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Section with Cards -->
+      <div class="contact-form">
+        <form>
+
+          <input type="text" id="name" name="name" placeholder="Name">
+          
+
+          <input type="email" id="email" name="email" placeholder="name@example.com">
+          
+
+          <input type="tel" id="phone" name="phone" placeholder="+34">
+          
+
+          <textarea id="message" name="message" placeholder="Your message here..."></textarea>
+          
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+      
+    </section>
+
+
+    <!--FQA-->
+    <div class="container">
+      <section class="faq-section" id="faq-section">
+        <h2>Frequent Ask Questions</h2>
+        <p class="faq-help-text">
+          Still need help? <a href="#">Get Help Now</a>
+        </p>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >What is the Daily Challenge program?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              The Daily Challenge program is designed to help you improve
+              various aspects of your life through simple, daily missions. Each
+              day, you receive a new challenge aimed at enhancing your health,
+              well-being, and productivity. It’s about making small, achievable
+              changes that lead to significant benefits over time.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >How do I participate in a Daily Challenge?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Participation is easy! Sign up on our website to receive your
+              daily mission via email. Follow the task for the day, and track
+              your progress directly on our platform. You can also engage with
+              our community for support and motivation.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text"
+              >Are the Daily Challenges customizable?</span
+            >
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              While the daily missions are designed to be universally
+              beneficial, they are crafted to be adaptable. If you have specific
+              goals or needs, you can choose from various categories to tailor
+              the challenges to better suit your lifestyle and preferences.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="benefit-question">
+            <span class="question-text">How do the challenges benefit me?</span>
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Each challenge is crafted to address different aspects of personal
+              growth, including physical health, mental well-being, and
+              environmental sustainability. By participating, you’ll boost your
+              overall health, develop positive habits, and contribute to a
+              greener planet.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="question-text">What if I miss a day?</span>
+            <span class="arrow"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/arrow_icon.png"
+                alt="arrow icon"
+            /></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Don’t worry! You can always catch up on missed challenges. Our
+              platform allows you to view previous missions and complete them at
+              your own pace. The key is consistency, but life happens—so just
+              pick up where you left off.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- First Column: Logo and Social Links -->
+        <div class="footer-column">
+          <img
+            src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/IconBlack.png"
+            alt="Path Logo"
+            class="footer-logo"
+          />
+          <div class="social-links">
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/inst.png"
+                alt="Instagram"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/twitter.png"
+                alt="Twitter"
+            /></a>
+            <a href="#"
+              ><img
+                src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/linkedIn.png"
+                alt="LinkedIn"
+            /></a>
+          </div>
+        </div>
+
+        <!-- Second Column: Links -->
+        <div class="footer-column">
+          <ul class="footer-links">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+
+        <!-- Third Column: About Text -->
+        <div class="footer-column">
+          <p>
+            At Path, we are dedicated to delivering excellence and innovation.
+            We strive to create value and make a positive impact on the lives of
+            our customers, employees, and communities through our commitment to
+            quality and integrity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/scripts.js" defer></script>
+  </body>
+</html>
