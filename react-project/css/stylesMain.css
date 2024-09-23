@@ -1,0 +1,1112 @@
+/*CSS 2.0*/
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+}
+
+/* Bookmarks */
+
+.faq-item {
+  position: relative;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.faq-item.open .arrow {
+  transform: rotate(90deg);
+}
+
+.faq-answer {
+  display: none;
+  transition: display 0.3s ease;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
+
+/* Main */
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /*Align items to the top*/
+  /* height: calc(100vh - 60px); */ /* Height of the screen minus navbar height */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.left-section {
+  text-align: left;
+  max-width: 600px;
+  width: 50%; /* Adjust width for balance */
+  padding-right: 20px; /* Space for button alignment */
+  flex-shrink: 0;
+}
+
+.left-section h1 {
+  font-size: calc(2.5vw + 2.5vh);
+  line-height: calc(1.2em + 1vw);
+  margin-bottom: 20px;
+  font-family: "Khmer", sans-serif;
+  font-weight: 520;
+  font-style: normal;
+  line-height: 60px;
+}
+
+.left-section .content-h2 {
+  display: flex;
+  flex-direction: row; /* Align text and button horizontally */
+  margin-bottom: 20px;
+}
+
+.left-section h2 {
+  font-size: calc(1.2vw + 1.2vh);
+  line-height: calc(1.1em + 0.8vw);
+  margin: 0;
+  width: 65%;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 28px;
+}
+
+.btn-try {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 2% 4%;
+  text-decoration: none;
+  font-size: calc(1em + 0.4vw);
+  line-height: calc(1em + 0.5vw);
+  margin-bottom: 20px;
+  align-self: center;
+  text-align: center;
+}
+
+.left-section .row {
+  display: flex;
+  align-items: center; /* Align text and button vertically */
+  gap: 20px; /* Space between text and button */
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align buttons to the left */
+  justify-content: left;
+  gap: 10px;
+  /* padding-top: 40px; */
+}
+
+/* Buttons */
+.btn-orange,
+.btn-blue,
+.btn-pink {
+  font-family: "Inder", sans-serif;
+  font-weight: 30;
+  font-style: normal;
+  display: inline-block;
+  color: white;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 4px 2vw;
+  text-decoration: none;
+  font-size: calc(1vw + 1em);
+  line-height: calc(1.5em + 0.5vw);
+  transform: rotate(0deg); /* Default */
+}
+
+/* Tilt for each button */
+.btn-orange {
+  background-color: var(--orange);
+  transform: rotate(3deg); /* Tilted slightly down to the right */
+}
+
+.btn-blue {
+  background-color: var(--blue);
+  transform: rotate(-4deg); /* Tilted slightly up to the right */
+}
+
+.btn-pink {
+  background-color: var(--pink);
+  transform: rotate(2deg); /* Tilted slightly up to the left */
+}
+
+.main-container a:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+.main-container button:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+/*Card*/
+.right-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1px;
+  /* width: 50%; */
+  z-index: 1;
+  width: 100%;
+}
+
+/* .right-section {
+  background-image: url("https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg");
+  background-size: 120% 120%;
+  background-position: center;
+  overflow: visible;
+} */
+
+.right-section #card_background {
+  position: absolute;
+  width: 35%;
+  z-index: -1; /* Щоб фон був позаду іншого вмісту */
+}
+
+.card-container {
+  position: relative;
+  z-index: 2; /* Ensures the card stays above the background */
+  width: 100%;
+  max-width: 600px;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 100%;
+  perspective: 1000px; /* Adds 3D effect for the flip */
+  margin-bottom: 10px;
+}
+
+.card,
+.card-overlay {
+  min-height: 400px;
+}
+
+.card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s; /* Smooth flip animation */
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg); /* Flips card */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides back side of the card */
+}
+
+.card-front {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 30px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-back {
+  background-color: rgb(0, 0, 0.2);
+  border-radius: 20px;
+  transform: rotateY(180deg); /* Position back side correctly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 20px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.card-upper {
+  position: relative;
+  height: 70%;
+  overflow: hidden;
+}
+
+.card-upper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.help-btn {
+  position: absolute;
+  padding: 0;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+}
+
+.main-container a:hover {
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Нова кнопка закриття */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+}
+
+.card-lower {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+.card-lower p {
+  font-size: 20px;
+  margin-bottom: 1vh;
+  text-align: center;
+}
+
+.action-btn {
+  background-color: #7ec0f1;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  width: calc(100% - 20px);
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  perspective: 1000px; /* Для 3D ефекту перевороту */
+}
+
+.card-back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 1px;
+}
+
+.section {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.section h3 {
+  padding: 1px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 0.1px;
+}
+
+.mission-text,
+.challenge-text,
+.life-text {
+  color: #000000;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+}
+
+.orange-section h3 {
+  background-color: var(--orange); /* Помаранчевий */
+}
+
+.blue-section h3 {
+  background-color: var(--blue); /* Голубий */
+}
+
+.pink-section h3 {
+  background-color: var(--pink); /* Рожевий */
+}
+
+/* Dot Indicators */
+
+.dot-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 1px; /* Padding added for better spacing */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #1c2e8d;
+}
+
+/* Blue Block*/
+.blue-block {
+  background-color: #85c6f7; /* Light blue */
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blue-section-block {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  margin: 0 12px;
+}
+
+.circle {
+  background-color: #ffffff; /* White background for the circle */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px auto;
+}
+
+.circle img {
+  width: 40px;
+  height: 40px;
+}
+
+h4 {
+  margin: 10px 0;
+  color: white;
+}
+
+.blue-section-block p {
+  margin: 0;
+  color: white;
+}
+
+/*FQA*/
+
+.faq-question {
+  display: flex; /* Використовуємо flexbox для розміщення тексту і стрілки */
+  justify-content: space-between; /* Розміщення тексту зліва і стрілки справа */
+  align-items: center; /* Вирівнювання по вертикалі */
+  width: 100%;
+  padding: 15px;
+  border: none; /* Видалення стандартних рамок кнопки */
+  background-color: #ffffff; /* Білий фон для питання */
+  border-bottom: 1px solid #ddd; /* Легкий сірий бордер між питаннями */
+  text-align: left; /* Вирівнювання тексту по лівому краю */
+  cursor: pointer; /* Зміна курсору на pointer */
+  font-size: 20px; /* Розмір шрифту */
+  color: #333; /* Темно-сірий колір */
+  position: relative; /* Для позиціонування стрілки */
+}
+
+.faq-question .question-text {
+  margin-right: 10px; /* Відступ між текстом і стрілкою */
+}
+
+.arrow {
+  width: 20px; /* Ширина стрілки */
+  height: 20px; /* Висота стрілки */
+  position: relative; /* Відносне позиціонування */
+  transition: transform 0.3s ease; /* Плавний перехід для обертання стрілки */
+}
+
+.faq-question.active .arrow {
+  transform: rotate(90deg); /* Обертання стрілки, коли питання відкрите */
+}
+
+.faq-section {
+  padding: 20px;
+  background-color: #ffffff; /* White background for the entire section */
+  margin: 20px 0; /* Margin around the section */
+  text-align: center; /* Center align text */
+}
+
+.faq-section h2 {
+  margin-bottom: 10px;
+  color: var(--orange); /* Title color */
+  font-size: calc(2rem + 1vw);
+}
+
+.faq-help-text {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  color: #555; /* Help text color */
+}
+
+.faq-help-text a {
+  color: var(--blue); /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.faq-item {
+  margin-bottom: 10px; /* Space between FAQ items */
+  background-color: #ffffff; /* White background for each FAQ item */
+  overflow: hidden; /* Hide overflow to ensure rounded corners */
+}
+
+.faq-answer {
+  display: none; /* Hide answers by default */
+  padding: 15px;
+  text-align: left;
+  background-color: #ffffff; /* White background for the answer */
+  color: #555; /* Slightly lighter grey for the text */
+}
+
+.faq-question.active .arrow {
+  transform: translateY(-50%) rotate(90deg); /* Rotate arrow when question is open */
+}
+
+.faq-item:not(:last-child) {
+  border-bottom: 1px solid #ddd; /* Light grey border between FAQ items */
+}
+
+.faq-item.open .faq-answer {
+  border-top: none; /* Remove top border when answer is open */
+}
+
+.faq-item.open .faq-question {
+  border-bottom: none; /* Remove bottom border when answer is open */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    order: 1;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: calc(1.2em + 2vh);
+    text-align: left;
+    min-height: 50%;
+  }
+
+  .content {
+    text-align: left;
+    width: 50%; /* Adjust width for balance */
+    flex-shrink: 0;
+  }
+
+  .left-section h1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .left-section h2 {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  .btn-try {
+    display: none;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0px;
+  }
+
+  .btn-orange,
+  .btn-blue,
+  .btn-pink {
+    font-size: calc(0.5rem + 1vw);
+    line-height: 1rem;
+    margin: 0;
+    padding: calc(1vh + 1vw) calc(1vh + 5vw);
+    width: auto; /* Дати кнопкам 100% ширини батьківського елемента */
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .right-section {
+    order: 2;
+    /* width: 100%; */
+    /* position: relative; */ /* Може знадобитися для коректного позиціонування */
+    /* height: auto; */
+    margin-bottom: 1rem;
+  }
+
+  .card-container {
+    width: 100%;
+    height: auto;
+
+    .card {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .card {
+    border-radius: 20px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /*Blue Block*/
+
+  .blue-block {
+    flex-direction: column; /* Розміщує блоки в стовпчик */
+    align-items: center; /* Вирівнює блоки по центру */
+  }
+
+  .blue-section-block {
+    margin: 10px 0; /* Додає відступ між блоками */
+    padding: 20px 10px; /* Зменшує внутрішні відступи */
+    text-align: center; /* Центрує текст у блоках */
+  }
+
+  .circle {
+    margin: 0 auto 15px auto; /* Центрує коло та додає відступ знизу */
+  }
+
+  h4 {
+    font-size: 18px; /* Зменшує розмір заголовка для мобільних пристроїв */
+  }
+
+  .blue-section-block p {
+    font-size: 14px; /* Зменшує розмір тексту для мобільних пристроїв */
+  }
+}
+
+/*Popup
+.hidden {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 0;
+}
+
+.popup-content {
+  background: white;
+  padding: 30px; 
+  border-radius: 10px;
+  width: 80%; 
+  max-width: 600px; 
+  position: relative;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+.popup-header span {
+  cursor: pointer;
+  padding: 5px 10px; 
+}
+
+.popup-header .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 30px; 
+  cursor: pointer;
+  color: black; 
+}
+
+.form-group {
+  margin-bottom: 20px; 
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.status-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.status-icon::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+#error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%; 
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+#register-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#register-link:hover {
+  text-decoration: underline;
+}
+  */
+
+/***** LUIS *****/
+.profile .main-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+  height: calc(100vh - 60px); /* Height of the screen minus navbar height */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.profile .left-section {
+  text-align: left;
+  max-width: 600px;
+  width: 50%; /* Adjust width for balance */
+  padding-right: 20px; /* Space for button alignment */
+}
+
+.profile .left-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Khmer", sans-serif;
+  font-weight: 520;
+  font-style: normal;
+  line-height: 60px;
+}
+.profile h1 {
+margin:10px;
+padding:15p;
+text-align: center;
+}
+
+.profile .left-section .content {
+  display: flex;
+  flex-direction: row; /* Align text and button horizontally */
+}
+
+.profile .left-section h2 {
+  font-size: 28px;
+  margin: 0;
+  width: 65%;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 28px;
+}
+
+.profile .btn-try {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.profile .left-section .row {
+  display: flex;
+  align-items: center; /* Align text and button vertically */
+  gap: 20px; /* Space between text and button */
+}
+
+/* Button group */
+.profile .button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align buttons to the left */
+  justify-content: left;
+  gap: 10px;
+  width: 50%;
+  padding-top: 40px;
+}
+
+/* Buttons */
+.profile .btn-orange,
+.profile .btn-blue,
+.profile .btn-pink {
+  font-family: "Inder", sans-serif;
+  font-weight: 30;
+  font-style: normal;
+  display: inline-block;
+  color: white;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 24px;
+  transform: rotate(0deg); /* Default */
+}
+
+/* Tilt for each button */
+.profile .btn-orange {
+  background-color: #ffab5f;
+  transform: rotate(3deg); /* Tilted slightly down to the right */
+}
+
+.profile .btn-blue {
+  background-color: #5bb4f4cf;
+  transform: rotate(-4deg); /* Tilted slightly up to the right */
+}
+
+.profile .btn-pink {
+  background-color: #f369a5d0;
+  transform: rotate(2deg); /* Tilted slightly up to the left */
+}
+
+.profile .left{
+  background-color: orange;
+  border: 3px solid  orange;
+  border-radius: 24px;
+  justify-content: space-around;
+  gap:20px;
+
+}
+.profile .right {
+background-color: blueviolet;
+border: 3px solid blue;
+border-radius: 24px;
+justify-content: space-around;
+gap:20px;
+padding:10px;
+margin:15px;
+}
+.profile .container{
+  display: flex;
+  justify-content: space-around;
+  gap:20px;
+  margin:10px;
+  padding:10px;
+}
+.profile .left, .right {
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+  border: 3px solid rgba(37, 7, 68, 0.274);
+}
+.profile .header__1 {
+  border-color: orange;
+}
+.profile .header__2 {
+  display:flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+  background-color:orange;
+  width:90%;
+  font-family: "Khmer", sans-serif;
+
+}
+
+.profile .header__3 {
+  display:flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 15px;
+  background-color:white;
+  width:90%;
+}
+
+.profile .header__left {
+  display:flex;
+  width: 120px;
+  border-radius: 2px orange;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:10px;
+  padding:15px;
+  font-family: sans-serif;
+  font-size:25px;
+
+}
+.profile .header__right {
+  display:flex;
+  justify-content:center ;
+  width: 120px;
+  border-radius: 2px orange; 
+  flex-direction: column;
+  font-family: "Khmer", sans-serif;
+
+}
+.profile .ranking{
+  display:flex;
+  justify-content:space-between;
+  color:white;
+  flex-direction:column;
+  flex-wrap: wrap;
+}
+.profile ul {
+  list-style: none;
+  padding: 10px;
+  margin: 15px;
+}
+  .profile .li {
+  color: black;
+  display:flex;
+  justify-content:space-between;
+  margin: 10px;
+  padding:10px;
+  }
+ .profile .li__ranking {
+  color: white;
+  display:grid;
+  flex-grow: initial;
+  grid-template-columns: 0.1fr 0.5fr 0.8fr;
+  justify-content:space-between ;
+  margin: 7px;
+  padding:7px;
+ }
+
+  .profile .li__ranking span:last-child{
+    background-color: white;
+    color:black;
+    border-radius: 5px;
+    padding:3px;
+    text-align:center;
+  }
+
+.profile .ul, li {
+  list-style:none;
+  padding:0;
+  display:flex;
+  justify-content: space-between;
+  padding: 50;
+  margin: 15;
+}
+
+.profile body {
+  background:white;
+
+}
+
+.profile .title {
+  text-align: left;
+  color: white;
+}
+
+.profile .content {
+  list-style: none;
+  padding: 50;
+  margin: 15;
+  color: white;
+}
+.profile .Counter{
+  background-color: orange;
+  max-width: 700px;
+}
+.profile .h2{
+  border-color: orange;
+  font-size:120px;
+}
+.profile .Lista{
+  font-size: 30px;
+  display:flex;
+  flex-direction:wrap;
+  border:3px solid blue;
+  border-radius:22px;
+  font-family: sans-serif;
+}
+.profile .img {
+  margin-right: 10px;
+}
+.profile section > * {
+  width: 100%;
+}
+.profile .accept-btn {
+  background-color: rgb(0, 89, 255);
+  border-radius: 4px rgb(0, 174, 255);
+  cursor: pointer;
+  color:aqua;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px;
+}
+.profile .product-card {
+  display: flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:5px;
+  padding:5px;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+}
+
+.profile .product-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.profile .product-details {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.profile .product-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.profile .product-price {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 16px;
+}
+.profile .card-contenedor2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding:20px;
+  margin-right: 20px;
+  gap:20px;
+
+}
+.profile p {
+  margin:10px;
+  padding:15px;
+  font-family:"Khmer", sans-serif;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile .container {
+    flex-wrap: wrap;
+  }
+}
+/***** END LUIS *****/

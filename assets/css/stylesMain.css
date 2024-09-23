@@ -1106,6 +1106,12 @@ margin:15px;
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .profile .container {
+    flex-wrap: wrap;
+  }
+}
 /***** END LUIS *****/
 
 /* Contact Section Styles */

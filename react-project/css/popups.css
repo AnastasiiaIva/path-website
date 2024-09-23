@@ -1,0 +1,299 @@
+/* .hidden {
+  display: none;
+}
+ */
+
+
+ 
+
+/* Popup overlay to darken the background */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background with transparency */
+  z-index: 999; /* To ensure it stays on top */
+}
+
+/* Popup container */
+.popup-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 40px;
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  width: 500px;
+  max-width: 90%;
+  z-index: 1000;
+}
+
+/* Popup header */
+.popup-header {
+  display: flex;
+  justify-content: space-between; /* Align items to edges */
+  align-items: center; /* Vertically align items */
+  margin-bottom: 20px;
+  position: relative; /* For precise positioning */
+}
+
+/* Tabs for login/register */
+.popup-header .tabs {
+  display: flex;
+  align-items: center;
+}
+
+.popup-header .tabs .span {
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--gray);
+  margin-right: 15px; /* Space between tabs */
+}
+
+.popup-header .tabs span.active {
+  border-bottom: 4px solid var(--blue);
+  border-radius: 2px;
+  color: black;
+}
+
+/* Close button */
+.close-btn {
+  font-size: 20px; /* Increase close button size */
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+form h2 {
+  font-family: "Inder", sans-serif;
+  color: var(--blue);
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Input wrapper */
+.input-wrapper {
+  position: relative;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px; /* Space for toggle-password button */
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/* Status icon (checkmark/cross) */
+.status-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+/* Toggle password button */
+.password-group .toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--gray);
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  cursor: pointer;
+}
+
+.password-group .status-icon {
+  right: 40px; /* Відступ від правого краю */
+  font-size: 18px;
+  color: var(--gray);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.password-group .toggle-btn {
+  right: 10px; /* Око завжди правіше за статус */
+  font-size: 18px;
+  color: var(--gray);
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: var(--blue);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 40px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #7895da;
+}
+
+/* Error message */
+.error-message {
+  font-size: 12px;
+  color: var(--gray); /* Red color for errors */
+  margin-top: 5px;
+}
+
+/* Links and additional text */
+h5,
+h6 {
+  font-size: 12px;
+  color: #999;
+  margin-top: 10px;
+  text-align: center;
+}
+
+h5 a,
+h6 a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+h5 a:hover,
+h6 a:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox alignment */
+.form-group-checkbox label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  color: #000;
+  margin: 15px;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+  margin-left: 0; /* Приклеює чекбокс до лівого краю */
+  margin-right: 10px; /* Регулює відстань між чекбоксом і текстом */
+  cursor: pointer;
+}
+
+/* PopUps 3-4 */
+.popup3-4-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  width: 500px;
+  max-width: 90%;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#popup3 {
+  background-color: var(--green);
+}
+
+.popup-upper img {
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.popup-lower {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Вирівнює елементи по центру горизонтально */
+  text-align: center; /* Текст вирівняний по центру */
+}
+
+.popup-lower h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+.popup-lower p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.popup-btn {
+  background-color: #7ed957;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  width: calc(100% - 20px);
+}
+
+.popup-btn:hover {
+  background-color: #6cba4b;
+}
+
+.popup-lower p span {
+  font-size: 24px;
+}
+
+#close-popup {
+  margin: 20px;
+}
+
+#popup4 {
+  background-color: var(--blue);
+}
+
+
+@media (max-width: 768px) {
+  .popup-lower {
+    padding: 10px;
+  }
+
+  #close-popup {
+    margin: 8px;
+  }
+
+  .popup-btn {
+    margin-bottom: 10px;
+  }
+
+  
+}
