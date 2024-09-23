@@ -77,36 +77,36 @@
 @media (max-width: 768px) {
   .contact-main-container {
     flex-direction: column;
+    align-items: center; /* Центруємо весь контейнер по горизонталі */
+    justify-content: center; /* Центруємо по вертикалі */
+    text-align: center; /* Додаємо вирівнювання по центру для тексту */
   }
 
-  .contact-left-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    order: 1;
-    width: 100%;
-    padding-right: 0;
-    margin-bottom: calc(1.2em + 2vh);
-    text-align: left;
-    min-height: 50%;
+  .contact-left-section, .contact-form {
+    width: 100%; /* Встановлюємо 100% ширину для всіх блоків */
+    margin-bottom: 20px; /* Відступи між блоками */
+    padding: 0 20px; /* Додаємо відступи для ширини */
   }
 
   .contact-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    order: 2;
-    width: 100%;
-    padding-right: 0;
-    margin-bottom: calc(1.2em + 2vh);
-    text-align: left;
-    min-height: 50%;
+    max-width: 600px; /* Обмежуємо ширину форми, щоб вона не розтягувалася */
+    margin: 0 auto; /* Вирівнюємо форму по центру */
   }
 
   .contact-form form {
-    width: 100%;
+    width: 100%; /* Встановлюємо ширину форми на 100% */
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%; /* Інпути, textarea і кнопка займають всю ширину контейнера */
+    margin: 10px 0; /* Додаємо відступ між елементами форми */
   }
 }
+
+
+
 
 
      </style>
