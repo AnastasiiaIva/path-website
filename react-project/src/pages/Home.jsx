@@ -1,6 +1,6 @@
 import Card from "../misc/Card"
 import { FaqItem } from "../misc/FaqItem"
-import { Link } from "react-router-dom"
+
 
 function Home() {
 
@@ -13,7 +13,7 @@ function Home() {
         <h1>Welcome To Your Daily Challenge Hub!</h1>
         <div className="content-h2">
           <h2>We’re here to help you become the best version of yourself:</h2>
-          <Link to="/login" className="btn-try">Try It Now</Link>
+          <buttom className="btn-try">Try It Now</buttom>
         </div>
         <div className="button-group">
           <a href="#" className="btn-orange">1. Get Daily Missions</a>

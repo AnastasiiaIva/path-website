@@ -85,12 +85,13 @@ body {
   font-size: 16px;
   text-decoration: none;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .btn1{
   background-color: white;
   color: black;
-  cursor: pointer;
+  
 }
 
 .btn2 {
@@ -210,15 +211,15 @@ body {
   }
 
   /* Styles for burger menu animation when changing */
-  .change .line1 {
+  .active .line1 {
     transform: rotate(-50deg) translate(-7px, 10px);
   }
 
-  .change .line2 {
+  .active .line2 {
     opacity: 0;
   }
 
-  .change .line3 {
+  .active .line3 {
     transform: rotate(50deg) translate(-7px, -10px);
   }
 

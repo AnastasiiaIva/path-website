@@ -8,6 +8,7 @@ import Footer from "./misc/Footer";
 import Profile from "./pages/Profile";
 import Help from "./pages/Help";
 
+
 export default function App() {
     return (
       <BrowserRouter>
