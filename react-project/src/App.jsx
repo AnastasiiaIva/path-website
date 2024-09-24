@@ -9,12 +9,13 @@ import Help from "./pages/Help";
 import Main from "./pages/Main2";
 
 
+
+
 export default function App() {
- 
+
 
   return (
     <BrowserRouter>
-      
       <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/aboutus" element={<AboutUs />} />
