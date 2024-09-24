@@ -1,0 +1,29 @@
+{"users":
+[
+    {
+        "id": 1,
+        "username":
+        "Anastasiia",
+        "points": 123
+        },
+    {
+        "id": 2,
+        "username":
+            "asdfgh",
+        "points": 123
+        },
+    {
+        "id": 3,
+        "username":
+            "asdfgh",
+        "points": 123
+        },
+    {
+        "id": 4,
+        "username":
+            "asdfgh",
+        "points": 123
+        }
+
+]
+}

@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Login from './Login';
 import Register from './Register';
  */
-
+import '../../css/popups.css'
 
 
 

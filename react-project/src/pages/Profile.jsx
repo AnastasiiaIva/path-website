@@ -1,7 +1,7 @@
-
+import backendData from "../../json/users.json"
 
 function Profile() {
-
+  const data = backendData
     return (
       <>
       <link rel="stylesheet" href="css/stylesMainProfile.css" />
@@ -40,8 +40,8 @@ function Profile() {
               <ul className="ranking">
                 <li className="li__ranking">
                   <span>1.</span>
-                  <span>Anastassia</span>
-                  <span>120</span>
+                  <span>{data['users'][0]['username']}</span>
+                  <span>{data['users'][0]['points']}</span>
                 </li>
                 <li className="li__ranking">
                   <span>2.</span>

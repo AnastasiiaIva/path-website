@@ -39,12 +39,15 @@
   align-items: center; /* Vertically align items */
   margin-bottom: 20px;
   position: relative; /* For precise positioning */
+  margin-right: 200px;
 }
 
 /* Tabs for login/register */
 .popup-header .tabs {
+  list-style: none;
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .popup-header .tabs .span {
@@ -59,6 +62,10 @@
   border-bottom: 4px solid var(--blue);
   border-radius: 2px;
   color: black;
+}
+
+.popup-header .tabs li.react-tabs__tab--selected {
+  border-bottom: 1px solid blue;
 }
 
 /* Close button */
@@ -89,6 +96,7 @@ form h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
+
 
 /* Input wrapper */
 .input-wrapper {

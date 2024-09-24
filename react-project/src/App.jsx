@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import Login from "./misc/Login";
 import Register from "./misc/Register";
+import "../css/popups.css"
 
 
 export default function App() {
@@ -43,12 +44,13 @@ export default function App() {
       {isPopupOpen ? (
         <>
           {<div className="popup-overlay"></div>}<div className="popup-content">
+              <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)} >
             <div className="popup-header">
-              <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList className="tabs">
-                  <Tab className="span">Log in</Tab>
-                  <Tab className="span">Register</Tab>
+                  <Tab >Log in</Tab>
+                  <Tab >Register</Tab>
                 </TabList>
+                </div>
                 <TabPanel>
                   <Login />
                 </TabPanel>
@@ -59,7 +61,6 @@ export default function App() {
               {/* Botón para cerrar el popup */}
               <button className="close-btn" onClick={closePopup}>X</button>
             </div>
-          </div>
         </>
       ) : <></>}
 

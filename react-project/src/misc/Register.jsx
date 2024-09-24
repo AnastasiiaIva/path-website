@@ -1,81 +1,87 @@
 
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useState } from 'react';
-import * as Yup from 'yup';
+import {useState} from "react"; 
+import {validateEmail} from "./Utils"; 
+ 
+const PasswordErrorMessage = () => { 
+ return ( 
+   <p className="FieldError">Password should have at least 8 characters</p> 
+ ); 
+}; 
+ 
+function Register() { 
+ const [email, setEmail] = useState(""); 
+ const [password, setPassword] = useState({ 
+   value: "", 
+   isTouched: false, 
+ }); 
+ const [role, setRole] = useState("role"); 
 
+ const getIsFormValid = () => { 
+   return ( 
+     validateEmail(email) && 
+     password.value.length >= 8 && 
+     role !== "role" 
+   ); 
+ }; 
+ 
+ const clearForm = () => { 
+   setEmail(""); 
+   setPassword({ 
+     value: "", 
+     isTouched: false, 
+   }); 
+   setRole("role"); 
+ }; 
+ 
+ const handleSubmit = (e) => { 
+   e.preventDefault(); 
+   alert("Account created!"); 
+   clearForm(); 
+ }; 
+ 
+ return ( 
+   <div className="App"> 
+     <form onSubmit={handleSubmit}> 
+       <fieldset>  
+         
+         <div className="Field"> 
+           <label> 
+             Email address <sup>*</sup> 
+           </label> 
+           <input 
+             value={email} 
+             onChange={(e) => { 
+               setEmail(e.target.value); 
+             }} 
+             placeholder="Email address" 
+           /> 
+         </div> 
+         <div className="Field"> 
+           <label> 
+             Password <sup>*</sup> 
+           </label> 
+           <input 
+             value={password.value} 
+             type="password" 
+             onChange={(e) => { 
+               setPassword({ ...password, value: e.target.value }); 
+             }} 
+             onBlur={() => { 
+               setPassword({ ...password, isTouched: true }); 
+             }} 
+             placeholder="Password" 
+           /> 
+           {password.isTouched && password.value.length < 8 ? ( 
+             <PasswordErrorMessage /> 
+           ) : null} 
+         </div> 
+         <button type="submit" disabled={!getIsFormValid()}> 
+           Create account 
+         </button> 
+       </fieldset> 
+     </form> 
+   </div> 
+ ); 
+} 
 
-function Register() {
-
-  const [user, setUser] = useState({ email: '', password: '' });
-
-
-  const handleSubmit = () => {
-    fetch('http://localhost:8080/api/v1/users/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(user),
-    })
-    .then(response => response.json())
-    .then(data => console.log('User created:', data))
-    .catch(error => console.error('Error creating user:', error));
-  };
-
-  const handleChange = (event) => {
-    const { email, value } = event.target;
-    setUser(prevUser => ({ ...prevUser, [email]: value }));
-  };
-    
-      const initialValues2 = {
-        email: '',
-        password: '',
-      };
-    
-      const validationSchema2 = Yup.object().shape({
-        email: Yup.string().required('Required'),
-        password: Yup.string()
-        .required('No password provided.') 
-        .min(8, 'Password is too short - should be 8 chars minimum.')
-        .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
-        passwordConfirmation: Yup.string()
-     .oneOf([Yup.ref('password'), null], 'Passwords must match')
-      });
-
-    return (
-       <>
-       <Formik
-            initialValues={initialValues2}
-            validationSchema={validationSchema2}
-            onSubmit={handleSubmit}/* {(values, { setSubmitting }) => {
-              console.log('Formulario 2 enviado:', values);
-              setSubmitting(false);
-            }} */
-          >
-
-              <Form>
-                <div className="form-group">
-                <label value={user.email}
-        onChange={handleChange} htmlFor="email">Email:</label>
-                <Field type="email" name="email"   placeholder="Enter your email"/>
-                <ErrorMessage name="email" component="div" />
-
-                <label htmlFor="password">Password:</label>
-                <Field type="password" name="password" />
-                <ErrorMessage name="password" component="div" />
-
-                <label htmlFor="password">Confirm Password:</label>
-                <Field type="password" name="passwordConfirmation" />
-                <ErrorMessage name="passwordConfirmation" component="div" />
-
-                <button type="submit" >
-                  Enviar
-                </button>
-                </div>
-              </Form>
-          </Formik>
-    </>
-     );
-   }
-   
-   export default Register;
+export default Register; 

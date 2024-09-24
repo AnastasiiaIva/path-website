@@ -16,7 +16,7 @@ function Home({openPopupLogin, closePopup}) {
       <div className="content">
         <h1>Welcome To Your Daily Challenge Hub!</h1>
         <div className="content-h2">
-          <h2>We&aps;re here to help you become the best version of yourself:</h2>
+          <h2>We&apos;re here to help you become the best version of yourself:</h2>
           <button className="btn-try" onClick={openPopupLogin} closePopup={closePopup} >Try It Now</button>
         </div>
         </div>
