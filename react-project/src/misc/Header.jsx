@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginPlaceholder from "./LoginPlaceholder";
 
-function Header({openPopupLogin, closePopup}) {
+function Header({openPopupLogin, openPopupRegister, closePopup}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
@@ -46,7 +46,7 @@ function Header({openPopupLogin, closePopup}) {
 
               {/* Action Buttons (optional) */}
               <div className="navbar-menu-btn">
-                <LoginPlaceholder openPopupLogin={openPopupLogin} closePopup={closePopup} />
+                <LoginPlaceholder openPopupLogin={openPopupLogin} openPopupRegister={openPopupRegister} closePopup={closePopup} />
                 {/* <a href="#" className="btn2">Sign Up</a> */}
               </div>
             </div>

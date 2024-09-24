@@ -8,7 +8,7 @@ import Register from './Register';
 
 
 
-function LoginPlaceholder({openPopupLogin, /* closePopup, updateTabIndex */}) {
+function LoginPlaceholder({openPopupLogin, openPopupRegister/* closePopup, updateTabIndex */}) {
   // const [tabIndex, setTabIndex] = useState(0);
   // const [isPopupOpen, setPopupOpen] = useState(false);
 
@@ -31,7 +31,7 @@ function LoginPlaceholder({openPopupLogin, /* closePopup, updateTabIndex */}) {
     <div id="login-popup" className="popup">
         {/* Botón para abrir el popup */}
       <button className='btn1' onClick={openPopupLogin}>Log in</button>
-      <button className='btn2' >Sign up</button>
+      <button className='btn2' onClick={openPopupRegister}>Sign up</button>
 </div>
 
     </>

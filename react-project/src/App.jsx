@@ -21,6 +21,11 @@ export default function App() {
     setPopupOpen(true);
   };
 
+  const openPopupRegister = () => {
+    setPopupOpen(true);
+    setTabIndex(1);
+  };
+
   // Función para cerrar el popup
   const closePopup = () => {
     setPopupOpen(false);
@@ -34,10 +39,10 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Header openPopupLogin={openPopupLogin} closePopup={closePopup} updateTabIndex={updateTabIndex} />
+      <Header openPopupLogin={openPopupLogin} openPopupRegister={openPopupRegister} closePopup={closePopup} updateTabIndex={updateTabIndex} />
       {isPopupOpen ? (
         <>
-          <div className="popup-overlay"></div><div className="popup-content">
+          {<div className="popup-overlay"></div>}<div className="popup-content">
             <div className="popup-header">
               <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList className="tabs">
@@ -59,7 +64,7 @@ export default function App() {
       ) : <></>}
 
       <Routes>
-          <Route index path="/" element={<Home openPopupLogin={openPopupLogin} closePopup={closePopup} updateTabIndex={updateTabIndex}  />} />
+          <Route index path="/" element={<Home openPopupLogin={openPopupLogin}  closePopup={closePopup} updateTabIndex={updateTabIndex}  />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/theapp" element={<TheApp />} />
