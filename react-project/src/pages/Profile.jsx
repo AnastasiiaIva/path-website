@@ -1,8 +1,40 @@
 import backendData from "../../json/users.json"
 import Header2 from "../misc/Header2"
+import React, { useState, useEffect } from 'react';
 
 function Profile() {
   const data = backendData
+  const [tiempoRestante, setTiempoRestante] = useState(24 * 60 * 60); // Tiempo en segundos
+  const [cuentaActiva, setCuentaActiva] = useState(false);
+
+  
+
+  useEffect(() => {
+    let intervalId;
+
+    if (cuentaActiva) {
+      intervalId = setInterval(() => {
+      if (tiempoRestante > 0) {
+        setTiempoRestante(tiempoRestante - 1);
+      } else {
+        clearInterval(intervalId);
+        // Aquí puedes agregar acciones al finalizar la cuenta atrás
+        console.log('¡Tiempo agotado!');
+      }
+    }, 1000);
+    }
+    return () => clearInterval(intervalId);
+  }, [cuentaActiva, tiempoRestante]);
+
+  const iniciarCuenta = () => {
+    setCuentaActiva(true);
+  };
+
+
+  const horas = Math.floor(tiempoRestante / 3600);
+  const minutos = Math.floor((tiempoRestante % 3600) / 60);
+  const segundos = tiempoRestante   
+ % 60;
     return (
       <>
       <Header2/>
@@ -31,7 +63,7 @@ function Profile() {
             <header className="header__2">
               <div className="header__left">  
                 <p><i className="fa-regular fa-clock"></i>Timer Left</p>
-                <p>00:23:45 hs</p>
+                <p>{horas}:{minutos}:{segundos}</p>
               </div>
               <div className="header__right">
                 <p><i className="fa-regular fa-calendar"></i>Today</p>
@@ -93,19 +125,10 @@ function Profile() {
                 <div>
                   <div className="product-title">Don’t use any transport today (only walk)</div>
                 </div>
-                <button className="accept-btn">Aceptar</button>
+                <button className="accept-btn" onClick={iniciarCuenta}>Aceptar</button>
               </div>
           </div>
-          <div className="product-card">
-            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto"/>
-            <div className="product-details">
-              <div>
-                <div className="product-title">Don’t use any transport today (only walk)</div>
-              </div>
-              <button className="accept-btn">Aceptar</button>
-            </div>
-          </div>
-        </div>
+         </div>
       </section>
     </main>
 </>

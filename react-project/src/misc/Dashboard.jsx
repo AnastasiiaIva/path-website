@@ -1,35 +1,20 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import '../../css/popups.css'
+import backendData from "../../json/users.json"
 
-const DashboardContainer = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 300px;
-  background-color: #f0f0f0;
-  transform: translateX(${props => props.isOpen ? '0' : '100%'});
-  transition: transform 0.3s ease-in-out;
-`;
+
 
 const Dashboard = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Botón para abrir/cerrar el dashboard
-  const toggleDashboard = () => {
-    setIsOpen(!isOpen);
-  };
+  
+    const data = backendData;
+     
 
   return (
-    <div>
-      {/* Botón para abrir el dashboard */}
-      <button onClick={toggleDashboard}>Abrir Dashboard</button>
-      <DashboardContainer isOpen={isOpen}>
-        {/* Contenido del dashboard (nombre de usuario, notificaciones, etc.) */}
-        <p>Hola, Usuario!</p>
-        {/* Otras secciones del dashboard */}
-      </DashboardContainer>
-    </div>
+    <>
+    
+    <Link to="/profile" className='btnn1'>Fernando / </Link>
+   
+    </>
   );
 };
 
