@@ -24,7 +24,7 @@ function AboutUs() {
     <section className="team-profiles">
       <div className="profile-card">
         <img src="images/Imagen de WhatsApp 2024-09-23 a las 09.34.41_94048058.jpg" alt="Profile image 1"/>
-        <h3>Anastasia</h3>
+        <h3>Anastasiia</h3>
         <p>Frontend Developer</p>
         <p>As a frontend developer, I’m eager to create seamless, user-friendly experiences. With experience in building my first website, I’m passionate about clean design and responsive layouts, and I’m excited to grow and deliver impactful products
         </p>
