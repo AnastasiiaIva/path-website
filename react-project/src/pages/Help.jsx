@@ -1,11 +1,13 @@
 import { FaqItem } from "../misc/FaqItem"
 import '../../css/help.css'
 import { Link } from "react-router-dom"
+import Header2 from "../misc/Header2"
 
 function Help() {
 
     return (
       <>
+      <Header2/>
         <link rel="stylesheet" href="css/stylesMain.css" />
 
       <div className="container">
