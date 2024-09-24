@@ -65,7 +65,7 @@
 }
 
 .popup-header .tabs li.react-tabs__tab--selected {
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid var(--blue);
 }
 
 /* Close button */
