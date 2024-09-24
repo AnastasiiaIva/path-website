@@ -830,6 +830,34 @@ text-align: center;
   align-items: center; /* Align text and button vertically */
   gap: 20px; /* Space between text and button */
 }
+.cuenta-atras {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.horas{
+line-height: 1;
+}
+.grande{
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-size: 6rem;
+font-weight: 600;
+}
+.chico{
+
+}
+@media(width < 550px) {
+  .cuenta-atrás {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(width < 350px) {
+  .cuenta-atras{
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 /* Button group */
 .profile .button-group {
@@ -932,12 +960,12 @@ margin:15px;
 
 .profile .header__left {
   display:flex;
-  width: 120px;
+  width: 70%;
   border-radius: 2px orange;
   flex-wrap: wrap;
   justify-content: center;
-  margin:10px;
-  padding:15px;
+  margin:5px;
+  padding:5px;
   font-family: sans-serif;
   font-size:25px;
 
@@ -962,6 +990,7 @@ margin:15px;
   list-style: none;
   padding: 10px;
   margin: 15px;
+  line-height: 2;
 }
   .profile .li {
   color: black;
@@ -970,7 +999,7 @@ margin:15px;
   margin: 10px;px;
   padding:10px;
   }
- .profile .li__ranking {
+.profile .li__ranking {
   color: white;
   display:grid;
   flex-grow: initial;
@@ -978,7 +1007,7 @@ margin:15px;
   justify-content:space-between ;
   margin: 7px;
   padding:7px;
- }
+}
 
   .profile .li__ranking span:last-child{
     background-color: white;
@@ -1095,8 +1124,8 @@ margin:15px;
 
 }
 .profile p {
-  margin:10px;
-  padding:15px;
+  margin:0px;
+  padding:7px;
   font-family:"Khmer", sans-serif;
   font-size: 16px;
 }
