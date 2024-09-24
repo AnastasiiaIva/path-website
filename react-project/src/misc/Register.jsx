@@ -9,8 +9,7 @@ function Register() {
   const [user, setUser] = useState({ email: '', password: '' });
 
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
     fetch('http://localhost:8080/api/v1/users/', {
       method: 'POST',
       headers: {
@@ -53,7 +52,7 @@ function Register() {
               setSubmitting(false);
             }} */
           >
-            {({ isSubmitting }) => (
+
               <Form>
                 <div className="form-group">
                 <label value={user.email}
@@ -69,12 +68,11 @@ function Register() {
                 <Field type="password" name="passwordConfirmation" />
                 <ErrorMessage name="passwordConfirmation" component="div" />
 
-                <button type="submit" disabled={isSubmitting}>
+                <button type="submit" >
                   Enviar
                 </button>
                 </div>
               </Form>
-            )}
           </Formik>
     </>
      );
