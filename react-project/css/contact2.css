@@ -1,0 +1,98 @@
+.contact-main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /*Align items to the top*/
+    /* height: calc(100vh - 60px); */ /* Height of the screen minus navbar height */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .contact-left-section {
+    text-align: left;
+    max-width: 600px;
+    width: 50%; /* Adjust width for balance */
+    padding-right: 20px; /* Space for button alignment */
+    flex-shrink: 0;
+  }
+  
+  .contact-left-section h1{
+      margin-bottom: 30px;
+  }
+  
+  .contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    width: 50%; /* Adjust width for balance */
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  .contact-form textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .contact-form button {
+    background-color: #fff;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-main-container {
+      flex-direction: column;
+      align-items: center; /* Центруємо весь контейнер по горизонталі */
+      justify-content: center; /* Центруємо по вертикалі */
+      text-align: center; /* Додаємо вирівнювання по центру для тексту */
+    }
+  
+    .contact-left-section, .contact-form {
+      width: 100%; /* Встановлюємо 100% ширину для всіх блоків */
+      margin-bottom: 20px; /* Відступи між блоками */
+      padding: 0 20px; /* Додаємо відступи для ширини */
+    }
+  
+    .contact-form {
+      max-width: 600px; /* Обмежуємо ширину форми, щоб вона не розтягувалася */
+      margin: 0 auto; /* Вирівнюємо форму по центру */
+    }
+  
+    .contact-form form {
+      width: 100%; /* Встановлюємо ширину форми на 100% */
+    }
+  
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+      width: 100%; /* Інпути, textarea і кнопка займають всю ширину контейнера */
+      margin: 10px 0; /* Додаємо відступ між елементами форми */
+    }
+  }
+  
+  

@@ -1,8 +1,11 @@
-import Card from "../misc/Card"
-import { FaqItem } from "../misc/FaqItem"
-import { Link } from "react-router-dom"
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
+import Card from "../misc/Card";
+import { FaqItem } from "../misc/FaqItem";
 
-function Home() {
+
+
+function Home({openPopupLogin, closePopup}) {
 
   return (
     <>
@@ -10,10 +13,12 @@ function Home() {
         {/* <!-- Main Section --> */}
     <section className="main-container">
       <div className="left-section">
+      <div className="content">
         <h1>Welcome To Your Daily Challenge Hub!</h1>
         <div className="content-h2">
-          <h2>We’re here to help you become the best version of yourself:</h2>
-          <Link to="/login" className="btn-try">Try It Now</Link>
+          <h2>We&aps;re here to help you become the best version of yourself:</h2>
+          <button className="btn-try" onClick={openPopupLogin} closePopup={closePopup} >Try It Now</button>
+        </div>
         </div>
         <div className="button-group">
           <a href="#" className="btn-orange">1. Get Daily Missions</a>
@@ -29,7 +34,7 @@ function Home() {
           src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg"
         />
 
-        <Card />
+        <Card openPopupLogin={openPopupLogin} closePopup={closePopup}/>
       </div>
     </section>
               {/* <!-- New Blue Section with Circles --> */}

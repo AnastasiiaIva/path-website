@@ -1,17 +1,23 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LoginPlaceholder from "./LoginPlaceholder";
 
-function Header() {
+function Header({openPopupLogin, openPopupRegister, closePopup}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); 
+    setIsMenuOpen(!isMenuOpen);
+    setIsBurgerOpen(!isBurgerOpen);
 
   };
-
+  
   const menuClasses = `navbar-menu ${isMenuOpen ? "active" : ""}`; // Combine menu and active class
+
+  const burgerClasses = `burger-menu ${isBurgerOpen ? "change" : ""}`;
+ 
 
   return (
     <>
@@ -40,13 +46,13 @@ function Header() {
 
               {/* Action Buttons (optional) */}
               <div className="navbar-menu-btn">
-                <LoginPlaceholder/>
+                <LoginPlaceholder openPopupLogin={openPopupLogin} openPopupRegister={openPopupRegister} closePopup={closePopup} />
                 {/* <a href="#" className="btn2">Sign Up</a> */}
               </div>
             </div>
 
             {/* Burger Menu */}
-            <button className="burger-menu" onClick={toggleMenu}>
+            <button className={burgerClasses} onClick={toggleMenu}>
               <div className="line1"></div>
               <div className="line2"></div>
               <div className="line3"></div>
