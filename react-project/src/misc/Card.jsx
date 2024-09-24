@@ -1,10 +1,11 @@
 // import data as backendData from '../json/cards.json'
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react'
 import backendData from '../../json/cards.json'
-import { Link } from "react-router-dom"
 
 
-function Card() {
+function Card({openPopupLogin, closePopup}) {
     const data = backendData
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFlipped, setIsFlipped] = useState(false);
@@ -44,7 +45,7 @@ function Card() {
               </div>
               <div className="card-lower">
                 <p>{data['cards'][currentIndex]['text']}</p>
-                <Link to="/" className="action-btn">Accept</Link>
+                <button className="action-btn" onClick={openPopupLogin} closePopup={closePopup}>Accept</button>
               </div>
             </div>
             {/* <!-- Card Back --> */}

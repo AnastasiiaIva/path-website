@@ -34,7 +34,7 @@ function Home({openPopupLogin, closePopup}) {
           src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/bef898ff58348c828afc1ca2be1182cf688120f1/assets/images/card_background.svg"
         />
 
-        <Card />
+        <Card openPopupLogin={openPopupLogin} closePopup={closePopup}/>
       </div>
     </section>
               {/* <!-- New Blue Section with Circles --> */}
