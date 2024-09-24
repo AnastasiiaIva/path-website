@@ -2,14 +2,16 @@
 /* eslint-disable react/prop-types */
 import Card from "../misc/Card";
 import { FaqItem } from "../misc/FaqItem";
+import Header2 from "../misc/Header2";
 
 
 
-function Home({openPopupLogin, closePopup}) {
+function Main({openPopupLogin, closePopup}) {
 
   return (
     <>
-    <Header />
+    <Header2/>
+    
       <link rel="stylesheet" href="css/stylesMain.css" />
         {/* <!-- Main Section --> */}
     <section className="main-container">
@@ -93,4 +95,4 @@ function Home({openPopupLogin, closePopup}) {
   )
 }
 
-export default Home
+export default Main
