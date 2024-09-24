@@ -2,6 +2,7 @@
 /* eslint-disable react/prop-types */
 import Card from "../misc/Card";
 import { FaqItem } from "../misc/FaqItem";
+import Header from "../misc/Header";
 
 
 

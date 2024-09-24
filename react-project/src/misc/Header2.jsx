@@ -50,10 +50,10 @@ function Header2() {
               </div>
 
               {/* Action Buttons (optional) */}
-              <div className="navbar-menu-btn" >
+              {/* <div className="navbar-menu-btn" > */}
                 <Dashboard/>
                 {/* <a href="#" className="btn2">Sign Up</a> */}
-              </div>
+              {/* </div> */}
             </div>
 
             {/* Burger Menu */}
