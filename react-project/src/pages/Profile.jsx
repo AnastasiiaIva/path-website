@@ -60,7 +60,7 @@ function Profile() {
               <li>5. Combine Errands: Group tasks into one walk.</li>
               <li>6. Track Progress: Use a fitness app or tracker.</li>
               <li>7. Enjoy It: Listen to music or podcasts.</li>
-              <li>8. Walk with a Friend: Make it social..</li>
+              <li>8. Walk with a Friend: Make it social.</li>
               <li>9. Take Breaks: Rest when needed.</li>
               <li>10. Explore: Discover new routes and enjoy nature.</li>
             </ul>

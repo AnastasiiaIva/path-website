@@ -3,6 +3,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react'
 import backendData from '../../json/cards.json'
+import { Link } from 'react-router-dom';
 
 
 function Card({openPopupLogin, closePopup}) {
@@ -45,7 +46,7 @@ function Card({openPopupLogin, closePopup}) {
               </div>
               <div className="card-lower">
                 <p>{data['cards'][currentIndex]['text']}</p>
-                <button className="action-btn" onClick={openPopupLogin} closePopup={closePopup}>Accept</button>
+                <Link to="/profile"className="action-btn">Accept</Link>
               </div>
             </div>
             {/* <!-- Card Back --> */}

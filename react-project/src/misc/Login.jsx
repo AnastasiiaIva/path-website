@@ -39,7 +39,7 @@ function Login() {
                 <Field type="password" name="password" />
                 <ErrorMessage name="password" component="div" />
 
-                <Link to="/profile"><button type="submit" disabled={isSubmitting}>
+                <Link to="/home"><button type="submit" disabled={isSubmitting}>
                   Enviar
                 </button>
                 </Link>
