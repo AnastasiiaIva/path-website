@@ -3,21 +3,24 @@ import Header2 from "../misc/Header2"
 import React, { useState, useEffect } from 'react';
 
 function Profile() {
-  const data = backendData
+  // const data = backendData
   const [tiempoRestante, setTiempoRestante] = useState(24 * 60 * 60); // Tiempo en segundos
-  const [cuentaActiva, setCuentaActiva] = useState(false);
-  const [mostrarBotonA, setMostrarBotonA] = useState(true);
+  const [acceptedTask, setAcceptedTask] = useState(false);
 
-  const cambiarBoton = () => {
-    setMostrarBotonA(!mostrarBotonA);
-  };
+  const aceptarTarea = () => {
+    // Call to backend
+    setAcceptedTask(true)
+  }
 
-  
+  const completarTarea = () => {
+    // TODO: call to backend, complete task and add points
+    setAcceptedTask(false)
+  }
 
   useEffect(() => {
     let intervalId;
 
-    if (cuentaActiva) {
+    if (acceptedTask) {
       intervalId = setInterval(() => {
       if (tiempoRestante > 0) {
         setTiempoRestante(tiempoRestante - 1);
@@ -29,18 +32,11 @@ function Profile() {
     }, 1000);
     }
     return () => clearInterval(intervalId);
-  }, [cuentaActiva, tiempoRestante]);
-
-  const iniciarCuenta = () => {
-    setCuentaActiva(!cuentaActiva);
-    setMostrarBotonA(!mostrarBotonA);
-  };
-
+  }, [acceptedTask, tiempoRestante]);
 
   const horas = Math.floor(tiempoRestante / 3600);
   const minutos = Math.floor((tiempoRestante % 3600) / 60);
-  const segundos = tiempoRestante   
- % 60;
+  const segundos = tiempoRestante % 60;
     return (
       <>
       <Header2/>
@@ -48,6 +44,29 @@ function Profile() {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossOrigin="anonymous" referrerPolicy="no-referrer"></link>
       {/* <!-- Main Section --> */}
     <main className="profile">
+    <section className="header__3">
+        <div className="card-contenedor2">
+          <div className="product-card">
+            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto"/>
+              <div className="product-details">
+                <div>
+                  <div className="product-title">Don’t use any transport today (only walk)</div>
+                </div>
+                {acceptedTask ? (
+        <button className="accept-btn"style={{ backgroundColor: '#93DB70' }}
+          onClick={completarTarea}>
+            Completar
+            <p>{horas}:{minutos}:{segundos}</p>
+        </button>
+                ) : (
+        <button className="accept-btn"style={{ backgroundColor: '#5bb4f4cf' }}
+          onClick={aceptarTarea}>
+            Aceptar
+        </button>)}
+              </div>
+          </div>
+         </div>
+      </section>
       <section className="header__1">
         <div className="container" >
         <div className="left">
@@ -69,7 +88,7 @@ function Profile() {
             <header className="header__2">
               <div className="header__left">  
                 <p><i className="fa-regular fa-clock"></i>Timer Left</p>
-                <p>{horas}:{minutos}:{segundos}</p>
+                
               </div>
               <div className="header__right">
                 <p><i className="fa-regular fa-calendar"></i>Today</p>
@@ -122,25 +141,6 @@ function Profile() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="header__3">
-        <div className="card-contenedor2">
-          <div className="product-card">
-            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto"/>
-              <div className="product-details">
-                <div>
-                  <div className="product-title">Don’t use any transport today (only walk)</div>
-                </div>
-        <button className="accept-btn"style={{ backgroundColor: mostrarBotonA ? '#5bb4f4cf' : '#93DB70' }}
-      onClick={() => {
-        iniciarCuenta()
-      }}
-    >
-      {mostrarBotonA ? 'Aceptar' : 'Completar'}</button>
-      
-              </div>
-          </div>
-         </div>
       </section>
     </main>
 </>

@@ -6,26 +6,38 @@ import backendData from '../../json/cards.json'
 import { Link } from 'react-router-dom';
 
 
-function Card({openPopupLogin, closePopup}) {
-    const data = backendData
+function Card({openpopuplogin, closepopup}) {
+    // const data = backendData
+    const [cards, setCards] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFlipped, setIsFlipped] = useState(false);
 
     useEffect(() => {
       const interval = setInterval(() => {
         if (!isFlipped)
-          setCurrentIndex((currentIndex + 1) % data.cards.length)
+          setCurrentIndex((currentIndex + 1) % cards.length)
       }, 5000)
 
       return () => clearInterval(interval)
     })
+
+    useEffect(() => {
+      async function getCards() {
+        const cards = await fetch('http://localhost:8080/api/v1/cards/')
+            .then(response => response.json())
+            .then(data => data)
+        console.log(cards)
+        setCards(cards)
+      }
+      getCards()
+    }, [])
 
     const changeFlipped = () => {
       console.log('Changing Flipped')
       setIsFlipped(!isFlipped)
     }
 
-    if (!data?.cards?.length)
+    if (!cards?.length)
         return null
 
     return (
@@ -39,13 +51,13 @@ function Card({openPopupLogin, closePopup}) {
             <div className="card-front">
               <div className="card-upper">
                 <img
-                  src={data['cards'][currentIndex]['image']}
-                  alt={data['cards'][currentIndex]['text']}
+                  src={cards[currentIndex]['img']}
+                  alt={cards[currentIndex]['card']}
                 />
                 <button className="help-btn" onClick={changeFlipped}>?</button>
               </div>
               <div className="card-lower">
-                <p>{data['cards'][currentIndex]['text']}</p>
+                <p>{cards[currentIndex]['card']}</p>
                 <Link to="/profile"className="action-btn">Accept</Link>
               </div>
             </div>
@@ -56,19 +68,19 @@ function Card({openPopupLogin, closePopup}) {
                 <div className="section orange-section">
                   <h3>Boost Your Health:</h3>
                   <p id="mission-text">
-                    {data['cards'][currentIndex]['missionText']}
+                    {cards[currentIndex]['missiont']}
                   </p>
                 </div>
                 <div className="section blue-section">
                   <h3>Protect the Environment:</h3>
                   <p id="challenge-text">
-                  {data['cards'][currentIndex]['challengeText']}
+                  {cards[currentIndex]['challenget']}
                   </p>
                 </div>
                 <div className="section pink-section">
                   <h3>Feel Better, Live Better:</h3>
                   <p id="life-text">
-                  {data['cards'][currentIndex]['lifeText']}
+                  {cards[currentIndex]['lifet']}
                   </p>
                 </div>
               </div>
@@ -79,8 +91,8 @@ function Card({openPopupLogin, closePopup}) {
         <div className="card-back-overlay"></div>
         {/* <!-- Dot Indicators --> */}
         <div className="dot-indicators">
-          {data.cards.map((card, index) => {
-            return <span className={currentIndex == index ? "dot active" : "dot"} key={card.id}></span>
+          {cards.map((card, index) => {
+            return <span className={currentIndex == index ? "dot active" : "dot"} key={card.card_id}></span>
           }
           )}
         </div>
