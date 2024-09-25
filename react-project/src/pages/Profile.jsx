@@ -6,6 +6,11 @@ function Profile() {
   const data = backendData
   const [tiempoRestante, setTiempoRestante] = useState(24 * 60 * 60); // Tiempo en segundos
   const [cuentaActiva, setCuentaActiva] = useState(false);
+  const [mostrarBotonA, setMostrarBotonA] = useState(true);
+
+  const cambiarBoton = () => {
+    setMostrarBotonA(!mostrarBotonA);
+  };
 
   
 
@@ -27,7 +32,8 @@ function Profile() {
   }, [cuentaActiva, tiempoRestante]);
 
   const iniciarCuenta = () => {
-    setCuentaActiva(true);
+    setCuentaActiva(!cuentaActiva);
+    setMostrarBotonA(!mostrarBotonA);
   };
 
 
@@ -125,7 +131,13 @@ function Profile() {
                 <div>
                   <div className="product-title">Don’t use any transport today (only walk)</div>
                 </div>
-                <button className="accept-btn" onClick={iniciarCuenta}>Aceptar</button>
+        <button className="accept-btn"style={{ backgroundColor: mostrarBotonA ? '#5bb4f4cf' : '#93DB70' }}
+      onClick={() => {
+        iniciarCuenta()
+      }}
+    >
+      {mostrarBotonA ? 'Aceptar' : 'Completar'}</button>
+      
               </div>
           </div>
          </div>
