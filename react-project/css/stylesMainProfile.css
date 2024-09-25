@@ -1,5 +1,3 @@
-/* Загальні налаштування для головного контейнера */
-
 .profile .container {
   display: flex;
   gap: 10px;
@@ -7,7 +5,7 @@
   padding: 10px;
 }
 
-/* Ліва частина */
+/* left part */
 .profile .left {
   display: flex;
   flex-direction: column;
@@ -22,7 +20,7 @@
   align-items: center;
 }
 
-/* Оформлення картки */
+/* card */
 .profile .product-card {
   display: flex;
   flex-direction: row;
@@ -52,7 +50,7 @@
   padding-bottom: 20px;
 }
 
-/* Кнопка "Accept" */
+/* btn "Accept" */
 .profile .accept-btn {
   border-radius: 30px;
   padding: 10px 30%;
@@ -63,7 +61,7 @@
   font-size: 16px;
 }
 
-/* Секція з тіпсами */
+/* tips */
 .profile .Tips {
   background-color: var(--orange); /* Жовтий фон для тіпсів */
   border-radius: 20px;
@@ -89,12 +87,12 @@
   margin-bottom: 5px;
 }
 
-/* Права частина */
+/* right part */
 .profile .right {
   background-color: #320c49;
   border-radius: 24px;
   padding: 20px;
-  width: 100%; /* Права частина займає 40% ширини */
+  width: 100%;
   color: white;
   align-self: start;
 }
