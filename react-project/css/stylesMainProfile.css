@@ -1,360 +1,186 @@
-/***** LUIS *****/
-.profile .main-section {
+/* Загальні налаштування для головного контейнера */
+
+.profile .container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* Align items to the top */
-  height: calc(100vh - 60px); /* Height of the screen minus navbar height */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.profile .left-section {
-  text-align: left;
-  max-width: 600px;
-  width: 50%; /* Adjust width for balance */
-  padding-right: 20px; /* Space for button alignment */
-}
-
-.profile .left-section h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  font-family: "Khmer", sans-serif;
-  font-weight: 520;
-  font-style: normal;
-  line-height: 60px;
-}
-.profile h1 {
-margin:10px;
-padding:15p;
-text-align: center;
-}
-
-.profile .left-section .content {
-  display: flex;
-  flex-direction: row; /* Align text and button horizontally */
-}
-
-.profile .left-section h2 {
-  font-size: 28px;
-  margin: 0;
-  width: 65%;
-  font-family: "Inder", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 28px;
-}
-
-.profile .btn-try {
-  display: inline-block;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 30px;
-  margin-bottom: 20px;
-  align-self: center;
-}
-
-.profile .left-section .row {
-  display: flex;
-  align-items: center; /* Align text and button vertically */
-  gap: 20px; /* Space between text and button */
-}
-
-/* Button group */
-.profile .button-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align buttons to the left */
-  justify-content: left;
   gap: 10px;
+  align-items: stretch;
+  padding: 10px;
+}
+
+/* Ліва частина */
+.profile .left {
+  display: flex;
+  flex-direction: column;
   width: 50%;
-  padding-top: 40px;
-}
-
-/* Buttons */
-.profile .btn-orange,
-.profile .btn-blue,
-.profile .btn-pink {
-  font-family: "Inder", sans-serif;
-  font-weight: 30;
-  font-style: normal;
-  display: inline-block;
-  color: white;
-  border: 1px solid black;
-  border-radius: 30px;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 24px;
-  transform: rotate(0deg); /* Default */
-}
-
-/* Tilt for each button */
-.profile .btn-orange {
-  background-color: #ffab5f;
-  transform: rotate(3deg); /* Tilted slightly down to the right */
-}
-
-.profile .btn-blue {
-  background-color: #5bb4f4cf;
-  transform: rotate(-4deg); /* Tilted slightly up to the right */
-}
-
-.profile .btn-pink {
-  background-color: #f369a5d0;
-  transform: rotate(2deg); /* Tilted slightly up to the left */
-}
-
-.profile .left{
-  background-color: orange;
-  border: 3px solid  orange;
-  border-radius: 24px;
-  justify-content: space-around;
-  gap:20px;
-  padding: 48px;
-  line-height: 2rem;
-
-}
-.profile .right {
-background-color: #320C49;
-border-radius: 24px;
-justify-content: space-around;
-gap:20px;
-padding:10px;
-
-}
-.profile .container{
-  display: flex;
-  gap:20px;
-  padding:30px;
-}
-.profile .left, .right {
-  padding: 10px;
-  width: 100%;
-  border-radius: 20px;
-  border: 3px solid rgba(37, 7, 68, 0.274);
-}
-.profile .header__1 {
-  border-color: orange;
-}
-.profile .header__2 {
-  display:flex;
-  justify-content: center;
-  border-radius: 12px;
-  padding: 12px;
-  background-color:orange;
-  width:100%;
-  font-family: "Khmer", sans-serif;
-
-}
-
-.profile .header__3 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  border-radius: 20px;
-  background-color: white;
-  width: 100%;
-  bottom: 0;
-}
-
-.profile .header__left {
-  display:flex;
-  width: 120px;
-  border-radius: 2px orange;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-family: sans-serif;
-  font-size:25px;
-
-}
-.profile .header__right {
-  display:flex;
-  justify-content:center ;
-  width: 120px;
-  border-radius: 2px orange; 
-  flex-direction: column;
-  font-family: "Khmer", sans-serif;
-
-
-}
-.profile .ranking{
-  display:flex;
-  justify-content:space-between;
-  color:white;
-  flex-direction:column;
-  flex-wrap: wrap;
-}
-.profile ul {
-  list-style: none;
-  padding: 10px;
-  margin: 15px;
-}
-  .profile .li {
-  color: black;
-  display:flex;
-  justify-content:space-between;
-  margin: 10px;
-  padding:10px;
-  }
-
-.profile .li__ranking {
-  color: white;
-    display: grid;
-    flex-grow: initial;
-    grid-template-columns: 1fr 9fr 2fr;
-    justify-content: space-between;
-    padding: 12px;
-    align-items: center;
-}
-
-  .profile .li__ranking span:last-child{
-    background-color: white;
-    color:black;
-    border-radius: 50px;
-    padding:10px;
-    text-align:center;
-
-  }
-
-.profile .ul, li {
-  list-style:none;
-  padding:0;
-  display:flex;
-  justify-content: space-between;
-  padding: 50;
-  margin: 15;
-}
-
-.profile body {
-  background:white;
-
-}
-
-.profile .title {
-  text-align: left;
-  color: white;
-}
-
-.profile .content {
-  list-style: none;
-  padding: 50;
-  margin: 15;
-  color: white;
-}
-.profile .Counter{
-  background-color: orange;
-  max-width: 700px;
-}
-.profile .h2{
-  border-color: orange;
-  font-size:120px;
-}
-.profile .Lista{
-  font-size: 30px;
-  display:flex;
-  flex-direction:wrap;
-  border:3px solid blue;
-  border-radius:22px;
-  font-family: sans-serif;
-}
-.profile .img {
-  margin-right: 10px;
-}
-.profile section > * {
-  width: 100%;
-}
-.profile .accept-btn {
-  background-color:#85C6F7;
-  border-radius: 50px;
-  cursor: pointer;
-  color:white;
-  font-size: 16px;
-  padding: 10px;
-}
-.profile .product-card {
-  display: flex;
-  flex-wrap:wrap;
-  gap:20px;
-  flex-direction: row;
-  border: 1px solid #ddd;
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: width 0.3s ease;
-  width: 100%;
-}
-
-@media (max-width: 786px) {
-  .profile .product-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-  }
-}
-
-.profile .product-card img {
-  height: 100%;
-  object-fit: cover;
-  width: 40%;
-}
-
-.profile .product-details {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-  gap: 20px;
-}
-
-.profile .product-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-
-.profile .card-contenedor2 {
-  display: FLEX;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas en desktop */
-  justify-content: center;
-  padding: 100px;
-  gap: 20px;
-  max-width: 1200px;
-  max-height: 500PX;
-  margin: 0 auto; /* Centrar el contenedor en el viewport */
-}
-
-@media (max-width: 786px) {
-  .profile .card-contenedor2 {
-    grid-template-columns: 1fr; /* Una columna en mobile */
-    padding: 20px; /* Padding de 20px por los lados */
-    gap: 20px;
-    width: 100%;
-  }
-}
-
-
-.profile p {
-  display: flex;
-  padding: 5px;
-  font-family: "Inder", sans-serif;
-  font-size: 18px;
-  justify-content: center;
-  align-items: center;  
-  flex-direction: column;
   gap: 5px;
 }
 
-@media screen and (max-width: 768px) {
+.profile .card-contenedor2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Оформлення картки */
+.profile .product-card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  overflow: hidden;
+}
+
+.profile .product-card img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.profile .product-details {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inder", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/* Кнопка "Accept" */
+.profile .accept-btn {
+  border-radius: 30px;
+  padding: 10px 30%;
+  margin-top: 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.accept-btn.Start {
+background-Color: #5bb4f4cf
+}
+
+.accept-btn.Start .contador {
+display: none;
+  }
+
+
+.accept-btn.Complete {
+background-Color: #93DB70
+}
+
+.accept-btn.Congrats {
+background-color: #f369a5d0;
+}
+
+.accept-btn.Congrats .contador{
+  display: none;
+  }
+
+/* Секція з тіпсами */
+.profile .Tips {
+  background-color: var(--orange); /* Жовтий фон для тіпсів */
+  border-radius: 20px;
+  padding: 15px;
+  width: 50%;
+  align-self: start;
+}
+
+.profile .Tips h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.profile .List {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.profile .List li {
+  margin-bottom: 5px;
+}
+
+/* Права частина */
+.profile .right {
+  background-color: #320c49;
+  border-radius: 24px;
+  padding: 20px;
+  width: 100%; /* Права частина займає 40% ширини */
+  color: white;
+  align-self: start;
+}
+
+.header__right {
+  padding: 10px;
+  background-color: var(--orange);
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+}
+
+.header__right h4 {
+  color: black;
+}
+
+.Content .ranking {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.li__ranking {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #450d5e;
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+#points {
+  border: 1px solid white;
+  border-radius: 30%;
+  padding: 3px 15px;
+  background-color: #fff;
+  color: #450d5e;
+}
+
+#medal {
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
   .profile .container {
-    flex-wrap: wrap;
-    padding: 20px;
+    flex-direction: column;
+  }
+
+  .profile .left {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    order: 1;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: calc(1.2em + 2vh);
+    text-align: left;
+    min-height: 50%;
+  }
+
+  .profile .Tips {
+    width: 100%;
+    order: 2;
   }
 }
-/***** END LUIS *****/

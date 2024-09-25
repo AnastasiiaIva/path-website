@@ -91,7 +91,7 @@ function Card() {
         {/* <!-- Dot Indicators --> */}
         <div className="dot-indicators">
           {cards.map((card, index) => {
-            return <span className={currentIndex == index ? "dot active" : "dot"} key={card.card_id}></span>
+            return <span className={currentIndex == index ? "dot active" : "dot"} onClick={currentIndex == index + "dot active"} key={card.card_id}></span>
           }
           )}
         </div>

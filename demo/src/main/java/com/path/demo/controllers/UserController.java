@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin (origins = "http://localhost:5173")
 @Controller
 @RequestMapping("/api/v1/users")
 
@@ -29,7 +29,9 @@ public class UserController {
         return ResponseEntity.ok(userService.createNewUser(username));
     }
 
-    @PutMapping("/points/{id}")
+
+
+    @PutMapping("/points/{user_id}")
     public ResponseEntity<User> updateUser(@PathVariable Long user_id, @RequestBody User username) {
         username.setUser_id(user_id);
         return ResponseEntity.ok(userService.updateUser(username));

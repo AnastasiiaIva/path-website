@@ -1,16 +1,27 @@
-//import data as backendData from '../json/users.json'
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-undef */
-import Header2 from "../misc/Header2"
-import { useState, useEffect } from 'react';
+import Header2 from "../misc/Header2";
+import { useState, useEffect } from "react";
 
 function Profile() {
-     // const data = backendData
+  // const data = backendData
   const [tiempoRestante, setTiempoRestante] = useState(24 * 60 * 60); // Tiempo en segundos
   const [acceptedTask, setAcceptedTask] = useState(false);
   const [users, setUsers] = useState([])
- 
+  const [points, setPoints] = useState(710) 
+  const [estadoBoton, setEstadoBoton] = useState('Start'); // Estado inicial
+
+  const cambiarEstado = () => {
+    const nuevosEstados = ['Start', 'Complete' ,'Congrats','Congrats'];
+    const indiceActual = nuevosEstados.indexOf(estadoBoton);
+    const nuevoIndice = (indiceActual + 1) % nuevosEstados.length;
+    setEstadoBoton(nuevosEstados[nuevoIndice]);
+  };
+
+  useEffect(() => {
+    if (estadoBoton === 'Complete') {
+      // Aquí va la función que quieres ejecutar
+      aceptarTarea();
+    }
+  }, [estadoBoton]);
 
   useEffect(() => {
     async function getUsers() {
@@ -22,30 +33,34 @@ function Profile() {
     }
     getUsers()
   }, [])
+  
+
 
   const aceptarTarea = () => {
     // Call to backend
-    setAcceptedTask(true)
-  }
+    setAcceptedTask(true);
+  };
 
-  const completarTarea = () => {
+ /*  const completarTarea = () => {
     // TODO: call to backend, complete task and add points
-    setAcceptedTask(false)
-  }
+    setAcceptedTask(false);
+    setPoints(770)
+
+  }; */
 
   useEffect(() => {
     let intervalId;
 
     if (acceptedTask) {
       intervalId = setInterval(() => {
-      if (tiempoRestante > 0) {
-        setTiempoRestante(tiempoRestante - 1);
-      } else {
-        clearInterval(intervalId);
-        // Aquí puedes agregar acciones al finalizar la cuenta atrás
-        console.log('¡Tiempo agotado!');
-      }
-    }, 1000);
+        if (tiempoRestante > 0) {
+          setTiempoRestante(tiempoRestante - 1);
+        } else {
+          clearInterval(intervalId);
+          // Aquí puedes agregar acciones al finalizar la cuenta atrás
+          console.log("¡Tiempo agotado!");
+        }
+      }, 1000);
     }
     return () => clearInterval(intervalId);
   }, [acceptedTask, tiempoRestante]);
@@ -54,120 +69,162 @@ function Profile() {
   const minutos = Math.floor((tiempoRestante % 3600) / 60);
   const segundos = tiempoRestante % 60;
 
-
-
-  if (!users?.length)
+    if (!users?.length)
     return null
-
-  
-    return (
-      <>
-      <Header2/>
+  return (
+    <>
+      <Header2 />
       <link rel="stylesheet" href="css/stylesMainProfile.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossOrigin="anonymous" referrerPolicy="no-referrer"></link>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossOrigin="anonymous"
+        referrerPolicy="no-referrer"
+      ></link>
       {/* <!-- Main Section --> */}
-    <main className="profile">
-    <section className="header__3">
-        <div className="card-contenedor2">
-          <div className="product-card">
-            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto"/>
-              <div className="product-details">
-                <div>
-                  <div className="product-title">Don’t use any transport today (only walk)</div>
+      <main className="profile">
+        <section className="header__3"></section>
+        <section className="header__1">
+          <div className="container">
+            <div className="left">
+              <div className="card-contenedor2">
+                <div className="product-card">
+                  <img
+                    src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png"
+                    alt="Producto"
+                  />
+                  <div className="product-details">
+                    <div>
+                      <h3 className="product-title">
+                        Don’t use any transport today (only walk)
+                      </h3>
+                    </div>
+                    <button
+      onClick={cambiarEstado}
+      className={`accept-btn ${estadoBoton}`} // Aplica clases CSS dinámicas
+    >
+      {estadoBoton}
+
+      <p className="contador">{horas}:{minutos}:{segundos}</p>
+    </button>
+                    {/* {acceptedTask ? (
+                      <button
+                        className="accept-btn"
+                        style={{ backgroundColor: "#93DB70" }}
+                        onClick={completarTarea}
+                      >
+                        Complete
+                        <p>
+                          {horas}:{minutos}:{segundos}
+                        </p>
+                      </button>
+                    ) : (
+                      <button
+                        className="accept-btn"
+                        style={{ backgroundColor: "#5bb4f4cf" }}
+                        onClick={aceptarTarea}
+                      >
+                        Start
+                      </button>
+                    )} */}
+                  </div>
                 </div>
-                {acceptedTask ? (
-        <button className="accept-btn"style={{ backgroundColor: '#93DB70' }}
-          onClick={completarTarea}>
-            Completar
-            <p>{horas}:{minutos}:{segundos}</p>
-        </button>
-                ) : (
-        <button className="accept-btn"style={{ backgroundColor: '#5bb4f4cf' }}
-          onClick={aceptarTarea}>
-            Aceptar
-        </button>)}
               </div>
-          </div>
-         </div>
-      </section>
-      <section className="header__1">
-        <div className="container" >
-        <div className="left">
-            <h1>Tips for Success:</h1>
-            <ul className="List">
-              <li>1. Plan Ahead: Map your walking routes.</li>
-              <li>2. Dress Comfortably: Wear suitable shoes and weather-appropriate clothes.</li>
-              <li>3. Stay Hydrated: Carry a reusable water bottle.</li>
-              <li>4. Allow Extra Time: Start earlier to account for walking time.</li>
-              <li>5. Combine Errands: Group tasks into one walk.</li>
-              <li>6. Track Progress: Use a fitness app or tracker.</li>
-              <li>7. Enjoy It: Listen to music or podcasts.</li>
-              <li>8. Walk with a Friend: Make it social.</li>
-              <li>9. Take Breaks: Rest when needed.</li>
-              <li>10. Explore: Discover new routes and enjoy nature.</li>
-            </ul>
-          </div>
-          <div className="right">
-            <header className="header__2">
-              <div className="header__left">  
-                <p><i className="fa-regular fa-clock"></i>Timer Left</p>
-                
+              <div className="right">
+                <div className="header__right">
+                  <h4>
+                    <i className="fa-regular fa-calendar"></i> This week: 2nd
+                    place
+                  </h4>
+                </div>
+                <div className="Content">
+                  <ul className="ranking">
+                    <li className="li__ranking">
+                      <span id="medal">🥇</span>
+                      <span>{users[1]['username']}</span>
+                      <span id="points">{users[1]['points']}</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span id="medal">🥈</span>
+                      <span>Fernando</span>
+                      <span id="points">{points}</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span id="medal">🥉</span>
+                      <span>Alejandro</span>
+                      <span id="points">700</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span>4.</span>
+                      <span>Maria</span>
+                      <span id="points">675</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span>5.</span>
+                      <span>Anastasiia</span>
+                      <span id="points">630</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span>6.</span>
+                      <span>Luis</span>
+                      <span id="points">600</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span>7.</span>
+                      <span>Celia</span>
+                      <span id="points">580</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="header__right">
-                <p><i className="fa-regular fa-calendar"></i>Today</p>
-                <p>2 places</p>
-              </div>
-            </header>
-            <div className="Content">
-              <ul className="ranking">
-                <li className="li__ranking">
-                  <span>1.</span>
-                  <span>{users[0]['username']}</span>
-                  <span>{users[0]['points']}</span>
+            </div>
+            <div className="Tips">
+              <h1>Tips for Success:</h1>
+              <ul className="List">
+                <li>1. Plan Ahead: Map your walking routes.</li>
+                <li>
+                  2. Dress Comfortably: Wear suitable shoes and
+                  weather-appropriate clothes.
                 </li>
-                <li className="li__ranking">
-                  <span>2.</span>
-                  <span>Martin</span>
-                  <span>720</span>
+                <li>3. Stay Hydrated: Carry a reusable water bottle.</li>
+                <li>
+                  4. Allow Extra Time: Start earlier to account for walking
+                  time.
                 </li>
-                <li className="li__ranking">
-                  <span>3.</span>
-                  <span>Alejandro</span>
-                  <span>700</span>
+                <li>5. Combine Errands: Group tasks into one walk.</li>
+                <li>6. Track Progress: Use a fitness app or tracker.</li>
+                <li>7. Enjoy It: Listen to music or podcasts.</li>
+                <li>8. Walk with a Friend: Make it social.</li>
+                <li>9. Take Breaks: Rest when needed.</li>
+                <li>10. Explore: Discover new routes and enjoy nature.</li>
+                <li>
+                  11. Stretch Beforehand: Warm up your muscles with light
+                  stretches to avoid stiffness.
                 </li>
-                <li className="li__ranking">
-                  <span>4.</span>
-                  <span>Maria</span>
-                  <span>675</span>
+                <li>
+                  12. Pace Yourself: Walk at a comfortable speed to avoid
+                  overexertion.
                 </li>
-                <li className="li__ranking">
-                  <span>5.</span>
-                  <span>Anastasiia</span>
-                  <span>630</span>
+                <li>
+                  13. Break It Up: If it's a long distance, split it into
+                  smaller, manageable walks throughout the day.
                 </li>
-                <li className="li__ranking">
-                  <span>6.</span>
-                  <span>Luis</span>
-                  <span>600</span>
+                <li>
+                  14. Mind Your Posture: Keep a good posture to avoid discomfort
+                  or strain.
                 </li>
-                <li className="li__ranking">
-                  <span>7.</span>
-                  <span>Celia</span>
-                  <span>580</span>
-                </li>
-                <li className="li__ranking">
-                  <span>8.</span>
-                  <span>Ivan</span>
-                  <span>525</span>
+                <li>
+                  15. Reward Yourself: Treat yourself to something you enjoy
+                  after completing the challenge to stay motivated.
                 </li>
               </ul>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-</>
-      )
-    }
-    
-    export default Profile
+        </section>
+      </main>
+    </>
+  );
+}
+
+export default Profile;
