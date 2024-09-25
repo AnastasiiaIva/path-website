@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
+import Header2 from "../misc/Header2"
 
 function TheApp() {
 
     return (
       <>
+      <Header2/>
 <link rel="stylesheet" href="css/theapp.css" />
 
 <section className="hero-app">

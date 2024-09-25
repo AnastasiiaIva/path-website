@@ -2,15 +2,16 @@
 /* eslint-disable react/prop-types */
 import Card from "../misc/Card";
 import { FaqItem } from "../misc/FaqItem";
-import Header from "../misc/Header";
+import Header2 from "../misc/Header2";
 
 
 
-function Home({openpopuplogin, closePopup}) {
+function Main({openpopuplogin, closepopup}) {
 
   return (
     <>
-    <Header />
+    <Header2/>
+    
       <link rel="stylesheet" href="css/stylesMain.css" />
         {/* <!-- Main Section --> */}
     <section className="main-container">
@@ -19,7 +20,7 @@ function Home({openpopuplogin, closePopup}) {
         <h1>Welcome To Your Daily Challenge Hub!</h1>
         <div className="content-h2">
           <h2>We&apos;re here to help you become the best version of yourself:</h2>
-          <button className="btn-try" onClick={openpopuplogin} closePopup={closePopup} >Try It Now</button>
+          <button className="btn-try" onClick={openpopuplogin} closepopup={closepopup} >Try It Now</button>
         </div>
         </div>
         <div className="button-group">
@@ -94,4 +95,4 @@ function Home({openpopuplogin, closePopup}) {
   )
 }
 
-export default Home
+export default Main

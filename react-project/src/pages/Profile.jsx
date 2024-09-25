@@ -1,13 +1,72 @@
-
+import backendData from "../../json/users.json"
+import Header2 from "../misc/Header2"
+import React, { useState, useEffect } from 'react';
 
 function Profile() {
+  // const data = backendData
+  const [tiempoRestante, setTiempoRestante] = useState(24 * 60 * 60); // Tiempo en segundos
+  const [acceptedTask, setAcceptedTask] = useState(false);
 
+  const aceptarTarea = () => {
+    // Call to backend
+    setAcceptedTask(true)
+  }
+
+  const completarTarea = () => {
+    // TODO: call to backend, complete task and add points
+    setAcceptedTask(false)
+  }
+
+  useEffect(() => {
+    let intervalId;
+
+    if (acceptedTask) {
+      intervalId = setInterval(() => {
+      if (tiempoRestante > 0) {
+        setTiempoRestante(tiempoRestante - 1);
+      } else {
+        clearInterval(intervalId);
+        // Aquí puedes agregar acciones al finalizar la cuenta atrás
+        console.log('¡Tiempo agotado!');
+      }
+    }, 1000);
+    }
+    return () => clearInterval(intervalId);
+  }, [acceptedTask, tiempoRestante]);
+
+  const horas = Math.floor(tiempoRestante / 3600);
+  const minutos = Math.floor((tiempoRestante % 3600) / 60);
+  const segundos = tiempoRestante % 60;
     return (
       <>
+      <Header2/>
       <link rel="stylesheet" href="css/stylesMainProfile.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossOrigin="anonymous" referrerPolicy="no-referrer"></link>
       {/* <!-- Main Section --> */}
     <main className="profile">
+    <section className="header__3">
+        <div className="card-contenedor2">
+          <div className="product-card">
+            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto"/>
+              <div className="product-details">
+                <div>
+                  <div className="product-title">Don’t use any transport today (only walk)</div>
+                </div>
+                {acceptedTask ? (
+        <button className="accept-btn"style={{ backgroundColor: '#93DB70' }}
+          onClick={completarTarea}>
+            Completar
+            <p>{horas}:{minutos}:{segundos}</p>
+        </button>
+                ) : (
+        <button className="accept-btn"style={{ backgroundColor: '#5bb4f4cf' }}
+          onClick={aceptarTarea}>
+            Aceptar
+        </button>)}
+              </div>
+          </div>
+         </div>
+      </section>
       <section className="header__1">
         <div className="container" >
         <div className="left">
@@ -20,7 +79,7 @@ function Profile() {
               <li>5. Combine Errands: Group tasks into one walk.</li>
               <li>6. Track Progress: Use a fitness app or tracker.</li>
               <li>7. Enjoy It: Listen to music or podcasts.</li>
-              <li>8. Walk with a Friend: Make it social..</li>
+              <li>8. Walk with a Friend: Make it social.</li>
               <li>9. Take Breaks: Rest when needed.</li>
               <li>10. Explore: Discover new routes and enjoy nature.</li>
             </ul>
@@ -29,7 +88,7 @@ function Profile() {
             <header className="header__2">
               <div className="header__left">  
                 <p><i className="fa-regular fa-clock"></i>Timer Left</p>
-                <p>00:23:45 hs</p>
+                
               </div>
               <div className="header__right">
                 <p><i className="fa-regular fa-calendar"></i>Today</p>
@@ -40,67 +99,45 @@ function Profile() {
               <ul className="ranking">
                 <li className="li__ranking">
                   <span>1.</span>
-                  <span>Anastassia</span>
-                  <span>120</span>
+                  <span>Sandra</span>
+                  <span>780</span>
                 </li>
                 <li className="li__ranking">
                   <span>2.</span>
-                  <span>Anastassia</span>
-                  <span>90</span>
+                  <span>Martin</span>
+                  <span>720</span>
                 </li>
                 <li className="li__ranking">
                   <span>3.</span>
-                  <span>Anastassia</span>
-                  <span>70</span>
+                  <span>Alejandro</span>
+                  <span>700</span>
                 </li>
                 <li className="li__ranking">
                   <span>4.</span>
-                  <span>Anastassia</span>
-                  <span>50</span>
+                  <span>Maria</span>
+                  <span>675</span>
                 </li>
                 <li className="li__ranking">
                   <span>5.</span>
-                  <span>Anastassia</span>
-                  <span>100</span>
+                  <span>Anastasiia</span>
+                  <span>630</span>
                 </li>
                 <li className="li__ranking">
                   <span>6.</span>
-                  <span>Anastassia</span>
-                  <span>60</span>
+                  <span>Luis</span>
+                  <span>600</span>
                 </li>
                 <li className="li__ranking">
                   <span>7.</span>
-                  <span>Anastassia</span>
-                  <span>80</span>
+                  <span>Celia</span>
+                  <span>580</span>
                 </li>
                 <li className="li__ranking">
                   <span>8.</span>
-                  <span>Anastassia</span>
-                  <span>25</span>
+                  <span>Ivan</span>
+                  <span>525</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="header__3">
-        <div className="card-contenedor2">
-          <div className="product-card">
-            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto"/>
-              <div className="product-details">
-                <div>
-                  <div className="product-title">Don’t use any transport today (only walk)</div>
-                </div>
-                <button className="accept-btn">Aceptar</button>
-              </div>
-          </div>
-          <div className="product-card">
-            <img src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png" alt="Producto"/>
-            <div className="product-details">
-              <div>
-                <div className="product-title">Don’t use any transport today (only walk)</div>
-              </div>
-              <button className="accept-btn">Aceptar</button>
             </div>
           </div>
         </div>

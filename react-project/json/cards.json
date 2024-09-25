@@ -1,40 +1,38 @@
-{"cards":
 [
   {
-    "id": 1,
-    "image":
+    "card_id": 1,
+    "img":
       "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png",
-    "text": "Don’t use any transport today (only walk)",
-    "missionText":
+    "card": "Don’t use any transport today (only walk)",
+    "missiont":
       "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease.",
-    "challengeText":
+    "challenget":
       "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease.",
-    "lifeText":
+    "lifet":
       "Walking increases your cardiovascular fitness, strengthens muscles, and improves mood. Science shows that just 30 minutes of walking daily can reduce the risk of heart disease."
   },
   {
-    "id": 2,
-    "image":
+    "card_id": 2,
+    "img":
       "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image2.png",
-    "text": "Plant a Tree or a Plant",
-    "missionText":
+    "card": "Plant a Tree or a Plant",
+    "missiont":
       "Gardening is a great moderate exercise that improves strength, flexibility, and mood. Science shows it reduces stress and boosts immune function.",
-    "challengeText":
+    "challenget":
       "Trees absorb carbon dioxide and release oxygen, combating climate change, improving air quality, and supporting biodiversity.",
-    "lifeText":
+    "lifet":
       "Planting fosters a sense of accomplishment and connection to nature. Research indicates it enhances mental well-being and life satisfaction."
   },
   {
-    "id": 3,
-    "image":
+    "card_id": 3,
+    "img":
       "https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image3.png",
-    "text": "Declutter and Donate",
-    "missionText":
+    "card": "Declutter and Donate",
+    "missiont":
       "A tidy space reduces anxiety, improves focus, and enhances mental well-being. Plus, decluttering encourages physical activity, boosting cardiovascular health.",
-    "challengeText":
+    "challenget":
       "Donating items helps reduce waste and the demand for new products. Reusing and recycling conserve resources and decrease landfill waste.",
-    "lifeText":
+    "lifet":
       "Donating fosters community and purpose, enhancing personal happiness and social connections. A clutter-free space also boosts productivity and creativity."
   }
 ]
-}

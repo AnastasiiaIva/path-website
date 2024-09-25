@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import LoginPlaceholder from "./LoginPlaceholder";
+import Dashboard from "./Dashboard";
 
-function Header({openPopupLogin, openPopupRegister, closePopup}) {
+function Header2() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
  
@@ -50,10 +50,10 @@ function Header({openPopupLogin, openPopupRegister, closePopup}) {
               </div>
 
               {/* Action Buttons (optional) */}
-              <div className="navbar-menu-btn" >
-                <LoginPlaceholder openPopupLogin={openPopupLogin} openPopupRegister={openPopupRegister} closePopup={closePopup} />
+              {/* <div className="navbar-menu-btn" > */}
+                <Dashboard/>
                 {/* <a href="#" className="btn2">Sign Up</a> */}
-              </div>
+              {/* </div> */}
             </div>
 
             {/* Burger Menu */}
@@ -71,4 +71,4 @@ function Header({openPopupLogin, openPopupRegister, closePopup}) {
   );
 }
 
-export default Header;
+export default Header2;

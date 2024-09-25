@@ -1,4 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 
@@ -38,9 +39,10 @@ function Login() {
                 <Field type="password" name="password" />
                 <ErrorMessage name="password" component="div" />
 
-                <button type="submit" disabled={isSubmitting}>
+                <Link to="/home"><button type="submit" disabled={isSubmitting}>
                   Enviar
                 </button>
+                </Link>
                 </div>
               </Form>
             )}
