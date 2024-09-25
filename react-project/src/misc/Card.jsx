@@ -1,12 +1,11 @@
 // import data as backendData from '../json/cards.json'
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react'
-import backendData from '../../json/cards.json'
+import { useEffect, useState } from 'react' 
 import { Link } from 'react-router-dom';
 
 
-function Card({openpopuplogin, closepopup}) {
+function Card() {
     // const data = backendData
     const [cards, setCards] = useState([])
     const [currentIndex, setCurrentIndex] = useState(0);

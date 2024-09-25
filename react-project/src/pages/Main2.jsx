@@ -6,7 +6,7 @@ import Header2 from "../misc/Header2";
 
 
 
-function Main({openpopuplogin, closepopup}) {
+function Main() {
 
   return (
     <>
@@ -20,7 +20,7 @@ function Main({openpopuplogin, closepopup}) {
         <h1>Welcome To Your Daily Challenge Hub!</h1>
         <div className="content-h2">
           <h2>We&apos;re here to help you become the best version of yourself:</h2>
-          <button className="btn-try" onClick={openpopuplogin} closepopup={closepopup} >Try It Now</button>
+          <button className="btn-try">Try It Now</button>
         </div>
         </div>
         <div className="button-group">

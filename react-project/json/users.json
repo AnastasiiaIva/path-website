@@ -1,29 +1,38 @@
-{"users":
+
 [
     {
-        "id": 1,
-        "username":
-        "Anastasiia",
-        "points": 1230
-        },
+        "user_id": 1,
+        "username": "user",
+        "email": null,
+        "password": "1234",
+        "points": 0
+    },
     {
-        "id": 2,
-        "username":
-            "asdfgh",
-        "points": 123
-        },
+        "user_id": 2,
+        "username": "user-1",
+        "email": null,
+        "password": "12345",
+        "points": 10
+    },
     {
-        "id": 3,
-        "username":
-            "asdfgh",
-        "points": 123
-        },
+        "user_id": 3,
+        "username": "user-8",
+        "email": null,
+        "password": "1281345",
+        "points": 19819
+    },
     {
-        "id": 4,
-        "username":
-            "asdfgh",
-        "points": 123
-        }
-
+        "user_id": 4,
+        "username": "user-90",
+        "email": null,
+        "password": "1asdfg",
+        "points": 155
+    },
+    {
+        "user_id": 5,
+        "username": null,
+        "email": "a@a.com",
+        "password": "asdfghjkl",
+        "points": null
+    }
 ]
-}

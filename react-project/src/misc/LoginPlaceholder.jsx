@@ -29,9 +29,7 @@ function LoginPlaceholder() {
     setTabIndex(0);
   };
 
-  const updateTabIndex = (index) => {
-    setTabIndex(index)
-  }
+  
 
 
 

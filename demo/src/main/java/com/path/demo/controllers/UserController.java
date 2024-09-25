@@ -28,4 +28,10 @@ public class UserController {
     public ResponseEntity<User> createUser(@RequestBody User username) {
         return ResponseEntity.ok(userService.createNewUser(username));
     }
+
+    @PutMapping("/points/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long user_id, @RequestBody User username) {
+        username.setUser_id(user_id);
+        return ResponseEntity.ok(userService.updateUser(username));
+    }
 }

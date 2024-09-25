@@ -1,11 +1,27 @@
-import backendData from "../../json/users.json"
+//import data as backendData from '../json/users.json'
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
+/* eslint-disable no-undef */
 import Header2 from "../misc/Header2"
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function Profile() {
-  // const data = backendData
+     // const data = backendData
   const [tiempoRestante, setTiempoRestante] = useState(24 * 60 * 60); // Tiempo en segundos
   const [acceptedTask, setAcceptedTask] = useState(false);
+  const [users, setUsers] = useState([])
+ 
+
+  useEffect(() => {
+    async function getUsers() {
+      const users = await fetch('http://localhost:8080/api/v1/users/')
+          .then(response => response.json())
+          .then(data => data)
+      console.log(users)
+      setUsers(users)
+    }
+    getUsers()
+  }, [])
 
   const aceptarTarea = () => {
     // Call to backend
@@ -37,6 +53,13 @@ function Profile() {
   const horas = Math.floor(tiempoRestante / 3600);
   const minutos = Math.floor((tiempoRestante % 3600) / 60);
   const segundos = tiempoRestante % 60;
+
+
+
+  if (!users?.length)
+    return null
+
+  
     return (
       <>
       <Header2/>
@@ -99,8 +122,8 @@ function Profile() {
               <ul className="ranking">
                 <li className="li__ranking">
                   <span>1.</span>
-                  <span>Sandra</span>
-                  <span>780</span>
+                  <span>{users[0]['username']}</span>
+                  <span>{users[0]['points']}</span>
                 </li>
                 <li className="li__ranking">
                   <span>2.</span>
