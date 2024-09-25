@@ -10,13 +10,13 @@
 /* Ліва частина */
 .profile .left {
   display: flex;
-  flex-direction: column; 
-  width: 50%; 
-  gap: 5px; 
+  flex-direction: column;
+  width: 50%;
+  gap: 5px;
 }
 
 .profile .card-contenedor2 {
-  width: 100%; 
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,6 @@
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
-  gap: 20px;
   overflow: hidden;
 }
 
@@ -56,7 +55,7 @@
 /* Кнопка "Accept" */
 .profile .accept-btn {
   border-radius: 30px;
-  padding: 10px 20px;
+  padding: 10px 30%;
   margin-top: 15px;
   border: none;
   color: white;
@@ -69,7 +68,8 @@
   background-color: var(--orange); /* Жовтий фон для тіпсів */
   border-radius: 20px;
   padding: 15px;
-  width: 100%;
+  width: 50%;
+  align-self: start;
 }
 
 .profile .Tips h1 {
@@ -91,10 +91,10 @@
 
 /* Права частина */
 .profile .right {
-  background-color: #320C49;
+  background-color: #320c49;
   border-radius: 24px;
   padding: 20px;
-  width: 50%; /* Права частина займає 40% ширини */
+  width: 100%; /* Права частина займає 40% ширини */
   color: white;
   align-self: start;
 }
@@ -107,7 +107,7 @@
   text-align: center;
 }
 
-.header__right h4{
+.header__right h4 {
   color: black;
 }
 
@@ -121,11 +121,24 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: #450D5E;
+  background-color: #450d5e;
   border-radius: 10px;
   margin-bottom: 5px;
 }
 
+#points {
+  border: 1px solid white;
+  border-radius: 30%;
+  padding: 3px 15px;
+  background-color: #fff;
+  color: #450d5e;
+}
+
+#medal {
+  font-size: 22px;
+  margin: 0;
+  padding: 0;
+}
 
 @media (max-width: 768px) {
   .profile .container {
@@ -144,8 +157,8 @@
     min-height: 50%;
   }
 
-  .profile .right {
+  .profile .Tips {
     width: 100%;
     order: 2;
+  }
 }
-

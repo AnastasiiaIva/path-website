@@ -72,7 +72,7 @@ function Profile() {
                         style={{ backgroundColor: "#93DB70" }}
                         onClick={completarTarea}
                       >
-                        Completar
+                        Complete
                         <p>
                           {horas}:{minutos}:{segundos}
                         </p>
@@ -83,85 +83,100 @@ function Profile() {
                         style={{ backgroundColor: "#5bb4f4cf" }}
                         onClick={aceptarTarea}
                       >
-                        Aceptar
+                        Start
                       </button>
                     )}
                   </div>
                 </div>
               </div>
-              <div className="Tips">
-                <h1>Tips for Success:</h1>
-                <ul className="List">
-                  <li>1. Plan Ahead: Map your walking routes.</li>
-                  <li>
-                    2. Dress Comfortably: Wear suitable shoes and
-                    weather-appropriate clothes.
-                  </li>
-                  <li>3. Stay Hydrated: Carry a reusable water bottle.</li>
-                  <li>
-                    4. Allow Extra Time: Start earlier to account for walking
-                    time.
-                  </li>
-                  <li>5. Combine Errands: Group tasks into one walk.</li>
-                  <li>6. Track Progress: Use a fitness app or tracker.</li>
-                  <li>7. Enjoy It: Listen to music or podcasts.</li>
-                  <li>8. Walk with a Friend: Make it social.</li>
-                  <li>9. Take Breaks: Rest when needed.</li>
-                  <li>10. Explore: Discover new routes and enjoy nature.</li>
-                </ul>
+              <div className="right">
+                <div className="header__right">
+                  <h4>
+                    <i className="fa-regular fa-calendar"></i> This week: 2nd
+                    place
+                  </h4>
+                </div>
+                <div className="Content">
+                  <ul className="ranking">
+                    <li className="li__ranking">
+                      <span id="medal">🥇</span>
+                      <span>Sandra</span>
+                      <span id="points">780</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span id="medal">🥈</span>
+                      <span>Martin</span>
+                      <span id="points">720</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span id="medal">🥉</span>
+                      <span>Alejandro</span>
+                      <span id="points">700</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span>4.</span>
+                      <span>Maria</span>
+                      <span id="points">675</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span>5.</span>
+                      <span>Anastasiia</span>
+                      <span id="points">630</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span>6.</span>
+                      <span>Luis</span>
+                      <span id="points">600</span>
+                    </li>
+                    <li className="li__ranking">
+                      <span>7.</span>
+                      <span>Celia</span>
+                      <span id="points">580</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-            <div className="right">
-              <div className="header__right">
-                <h4>
-                  <i className="fa-regular fa-calendar"></i> This week: 2nd
-                  place
-                </h4>
-              </div>
-              <div className="Content">
-                <ul className="ranking">
-                  <li className="li__ranking">
-                    <span>1.</span>
-                    <span>Sandra</span>
-                    <span id="points">780</span>
-                  </li>
-                  <li className="li__ranking">
-                    <span>2.</span>
-                    <span>Martin</span>
-                    <span id="points">720</span>
-                  </li>
-                  <li className="li__ranking">
-                    <span>3.</span>
-                    <span>Alejandro</span>
-                    <span id="points">700</span>
-                  </li>
-                  <li className="li__ranking">
-                    <span>4.</span>
-                    <span>Maria</span>
-                    <span id="points">675</span>
-                  </li>
-                  <li className="li__ranking">
-                    <span>5.</span>
-                    <span>Anastasiia</span>
-                    <span id="points">630</span>
-                  </li>
-                  <li className="li__ranking">
-                    <span>6.</span>
-                    <span>Luis</span>
-                    <span id="points">600</span>
-                  </li>
-                  <li className="li__ranking">
-                    <span>7.</span>
-                    <span>Celia</span>
-                    <span id="points">580</span>
-                  </li>
-                  <li className="li__ranking">
-                    <span>8.</span>
-                    <span>Ivan</span>
-                    <span id="points">525</span>
-                  </li>
-                </ul>
-              </div>
+            <div className="Tips">
+              <h1>Tips for Success:</h1>
+              <ul className="List">
+                <li>1. Plan Ahead: Map your walking routes.</li>
+                <li>
+                  2. Dress Comfortably: Wear suitable shoes and
+                  weather-appropriate clothes.
+                </li>
+                <li>3. Stay Hydrated: Carry a reusable water bottle.</li>
+                <li>
+                  4. Allow Extra Time: Start earlier to account for walking
+                  time.
+                </li>
+                <li>5. Combine Errands: Group tasks into one walk.</li>
+                <li>6. Track Progress: Use a fitness app or tracker.</li>
+                <li>7. Enjoy It: Listen to music or podcasts.</li>
+                <li>8. Walk with a Friend: Make it social.</li>
+                <li>9. Take Breaks: Rest when needed.</li>
+                <li>10. Explore: Discover new routes and enjoy nature.</li>
+                <li>
+                  11. Stretch Beforehand: Warm up your muscles with light
+                  stretches to avoid stiffness.
+                </li>
+                <li>
+                  12. Pace Yourself: Walk at a comfortable speed to avoid
+                  overexertion.
+                </li>
+                <li>
+                  13. Break It Up: If it's a long distance, split it into
+                  smaller, manageable walks throughout the day.
+                </li>
+                <li>
+                  14. Mind Your Posture: Keep a good posture to avoid discomfort
+                  or strain.
+                </li>
+                <li>
+                  15. Reward Yourself: Treat yourself to something you enjoy
+                  after completing the challenge to stay motivated.
+                </li>
+              </ul>
             </div>
           </div>
         </section>
