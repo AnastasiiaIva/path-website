@@ -24,6 +24,13 @@ function Profile() {
   }, [estadoBoton]);
 
   useEffect(() => {
+    if (estadoBoton === 'Congrats') {
+      // Aquí va la función que quieres ejecutar
+      setPoints(770);
+    }
+  }, [estadoBoton]);
+
+  useEffect(() => {
     async function getUsers() {
       const users = await fetch('http://localhost:8080/api/v1/users/')
           .then(response => response.json())
@@ -91,13 +98,13 @@ function Profile() {
               <div className="card-contenedor2">
                 <div className="product-card">
                   <img
-                    src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image1.png"
+                    src="https://raw.githubusercontent.com/AnastasiiaIva/path-website/main/assets/images/Image2.png"
                     alt="Producto"
                   />
                   <div className="product-details">
                     <div>
                       <h3 className="product-title">
-                        Don’t use any transport today (only walk)
+                      Plant a Tree or a Plant
                       </h3>
                     </div>
                     <button

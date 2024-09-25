@@ -19,6 +19,7 @@ function Card() {
 
       return () => clearInterval(interval)
     })
+    
 
     useEffect(() => {
       async function getCards() {
