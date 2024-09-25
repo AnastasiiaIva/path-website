@@ -13,7 +13,7 @@ function Dashboard () {
   return (
     <>
     
-    <Link to="/profile" className='btnn1'>Fernando /  </Link>
+    <Link to="/profile" className='btnn1'>Fernando</Link>
    
     </>
   );

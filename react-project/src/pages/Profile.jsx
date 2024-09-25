@@ -80,43 +80,43 @@ function Profile() {
               <ul className="ranking">
                 <li className="li__ranking">
                   <span>1.</span>
-                  <span>{data['users'][0]['username']}</span>
-                  <span>{data['users'][0]['points']}</span>
+                  <span>Sandra</span>
+                  <span>780</span>
                 </li>
                 <li className="li__ranking">
                   <span>2.</span>
-                  <span>Anastassia</span>
-                  <span>90</span>
+                  <span>Martin</span>
+                  <span>720</span>
                 </li>
                 <li className="li__ranking">
                   <span>3.</span>
-                  <span>Anastassia</span>
-                  <span>70</span>
+                  <span>Alejandro</span>
+                  <span>700</span>
                 </li>
                 <li className="li__ranking">
                   <span>4.</span>
-                  <span>Anastassia</span>
-                  <span>50</span>
+                  <span>Maria</span>
+                  <span>675</span>
                 </li>
                 <li className="li__ranking">
                   <span>5.</span>
-                  <span>Anastassia</span>
-                  <span>100</span>
+                  <span>Anastasiia</span>
+                  <span>630</span>
                 </li>
                 <li className="li__ranking">
                   <span>6.</span>
-                  <span>Anastassia</span>
-                  <span>60</span>
+                  <span>Luis</span>
+                  <span>600</span>
                 </li>
                 <li className="li__ranking">
                   <span>7.</span>
-                  <span>Anastassia</span>
-                  <span>80</span>
+                  <span>Celia</span>
+                  <span>580</span>
                 </li>
                 <li className="li__ranking">
                   <span>8.</span>
-                  <span>Anastassia</span>
-                  <span>25</span>
+                  <span>Ivan</span>
+                  <span>525</span>
                 </li>
               </ul>
             </div>
